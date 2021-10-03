@@ -3,6 +3,6 @@
 # HI THIS IS ROHIT 
 ## WELCOME TO OUR GITHUB COLLABRATION
 # HI THIS IS KUNAL
-### This project is about an hospitpal management
+### This project is about an hospital management
 
 ## welcome to everyone 
