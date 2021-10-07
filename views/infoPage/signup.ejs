@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/infoPage/css/signup.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="signup">SignUp</div>
+            <form>
+                <p class='spn'>and get acess to your reports!</p>
+                <div class="user-details">
+                    <div class="input-box">
+                        <label for="fname" class="details">First Name</label>
+                        <div class="fname error"></div>
+                        <input type="name" name="fname" placeholder="" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="lname" class="details">Last Name</label>
+                        <div class="lname error"></div>
+                        <input type="name" name="lname" placeholder="" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="uname" class="details">Username</label>
+                        <div class="uname error"></div>
+                        <input type="username" name="uname" placeholder="" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="email" class="details">Email</label>
+                        <div class="email error"></div>
+                        <input type="email" name="email" placeholder="" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="password" class="details">Password</label>
+                        <div class="password error"></div>
+                        <input type="Password" name="password" placeholder="" required>
+                    </div>
+                </div>
+                <button class="button">SignUp</button>
+        </form>
+</body>
+<script>
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', async (e)=>{
+        e.defaultPrevented();
+
+        const fname = form.fname.value;
+        const lname = form.lname.value;
+        const uname = form.uname.value;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        try{
+            const res = await fetch('/home/signup', { 
+                method: 'POST',
+                body: JSON.stringify({ fname, lname, uname, email, password}),
+                headers:{'Content-Type': 'application/json'}
+            });
+        }
+        catch(err){
+            console.log(err);
+        };
+    });
+
+</script>
+</html>

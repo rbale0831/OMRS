@@ -1,0 +1,725 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 500;
+}
+
+li {
+  font-size: 1.6rem;
+}
+
+a {
+  font-size: 1.6rem;
+}
+
+/* ###################### utility classes ######################## */
+
+.container {
+  max-width: auto;
+  width: 95%;
+  margin: auto;
+}
+
+.text-red {
+  color: #e63946;
+}
+
+.text-light {
+  color: #f4f4f4;
+}
+
+.text-black {
+  color: #333;
+}
+
+.text-gray {
+  color: #718096;
+}
+
+.letter-sp {
+  letter-spacing: 0.04em;
+}
+
+.bg-green {
+  background: #53b572;
+}
+
+.rows-s1 {
+  display: flex;
+  border: 2px solid black;
+  flex-direction: column;
+}
+
+.rows-s2 {
+  width: 674px;
+}
+
+/* ######### hamburger menu ######## */
+
+.welcome {
+  margin: 20px;
+  padding: 25px;
+  padding-bottom: 5px;
+  width: auto;
+  font-size: 45px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.title {
+  box-shadow: 2px 6px 6px 4px rgba(114, 111, 111, 0.342);
+  border-radius: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 50px;
+  background-color: #1877f2;
+  color: #f4f4f4;
+  margin: 0px;
+  text-align: center;
+}
+
+.content1 {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* ################# navbar ################ */
+nav {
+  position: fixed;
+  height: 75px;
+  width: 100%;
+  background: #0f5be7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  padding: 0px 50px 0px 50px;
+}
+
+#click {
+  display: none;
+  font-size: 20px;
+}
+
+nav .logo {
+  font-size: 30px;
+  color: aliceblue;
+  font-weight: 700;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  transition: 0.5s all ease-in-out;
+}
+nav ul li {
+  margin: 0 10px;
+  font-weight: 600;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 10px;
+  border-radius: 7px;
+  transition: 0.5s all ease-in-out;
+}
+
+nav ul li a.login {
+  padding: 9px 15px;
+}
+
+nav ul li a:hover,
+nav ul li a.login {
+  background: white;
+  color: #0f5be7;
+}
+
+nav .menu-btn i {
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 940px) {
+  nav .menu-btn i {
+    display: block;
+  }
+
+  #click:checked ~ .menu-btn i::before {
+    content: "\f00d";
+  }
+
+  nav ul {
+    position: fixed;
+    top: 75px;
+    right: -100%;
+    background: #212329;
+    height: 90vh;
+    width: 100%;
+    display: block;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+  }
+
+  #click:checked ~ ul {
+    right: 0%;
+  }
+
+  nav ul li {
+    margin: 40px 0;
+  }
+
+  nav ul li a {
+    font-size: 20px;
+  }
+
+  nav ul li a.login {
+    background: none;
+    color: #fff;
+  }
+
+  nav ul li a:hover {
+    color: #0f5be7;
+    background: none;
+  }
+}
+
+/* ################################# Showcase Styling ################################# */
+
+.showcase {
+  height: 95vh;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
+    url("/Medical_record_tablet.jpg");
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 95vh;
+}
+
+.showcase-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 1.6rem;
+}
+
+.showcase-container .main-content {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 0px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.008));
+}
+
+.showcase-container .main-content h1 {
+  font-size: 35px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  margin-top: 40px;
+}
+
+.showcase-container .main-content p {
+  margin: 10px 0px;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+}
+
+.showcase-container .main-content a {
+  margin: 10px 0px;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  border-radius: 40px;
+  padding: 15px;
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+.showcase-container .main-content a:hover {
+  background: #ed5d60;
+  transition: 0.5s ease-in-out;
+}
+
+/* ################################# Feature_1 Styling ################################# */
+
+.services {
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  margin: 15px;
+  position: relative;
+  z-index: -1;
+}
+
+.services::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 7px;
+  width: 177px;
+  background-color: #2259b0;
+}
+
+.info-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.info-content p {
+  text-align: justify;
+}
+
+.container1 {
+  max-width: 1400px;
+  width: 90%;
+  margin: auto;
+}
+
+.rows {
+  display: grid;
+  grid-template:
+    "row_1 row_2 row_3" 1fr
+    "row_4 row_5 row_6" 1fr
+    / 1fr 1fr 1fr;
+  grid-gap: 15px;
+}
+
+.row1 {
+  grid-area: "row_1";
+}
+.row2 {
+  grid-area: "row_2";
+}
+.row3 {
+  grid-area: "row_3";
+}
+.row4 {
+  grid-area: "row_4";
+}
+.row5 {
+  grid-area: "row_5";
+}
+.row6 {
+  grid-area: "row_6";
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  margin: 10px 10px;
+  padding: 18px;
+  line-break: none;
+  border-radius: 10px;
+  box-shadow: 0px 2px 12px 2px rgb(177 175 175);
+}
+
+.img_1 {
+  height: 60px;
+  width: 60px;
+  grid-area: "img";
+}
+
+.txt {
+  grid-area: "txt";
+  text-align: justify;
+}
+
+.row .txt h4 {
+  text-transform: uppercase;
+  margin: 5px 0;
+  font-size: 18px;
+}
+
+.row .txt p {
+  text-align: justify;
+  line-break: 1px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.link a {
+  display: block;
+  font-size: 14px;
+  text-decoration: none;
+  color: #1877f2;
+  margin-top: 5px;
+}
+
+.link a:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
+/* ################################# footer ###### */
+
+.footer .logo-name {
+  color: #fff;
+  font-size: 40px;
+}
+
+.footer-container {
+  bottom: 0;
+  background-color: #212329;
+  padding-bottom: 4rem;
+}
+
+.footer {
+  width: 100%;
+  height: 35vh;
+  background-color: #212329;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 40px auto;
+}
+
+.footer-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  margin-right: 30px;
+}
+
+.footer-heading .head1 {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.footer-heading .head {
+  margin-top: 5rem;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  border-bottom: 4px solid #1877f2;
+}
+
+.footer-heading a {
+  text-decoration: none;
+  color: #fff;
+  margin-top: 1rem;
+}
+
+.footer-heading a:hover {
+  color: #1877f2;
+  transition: 0.5s ease-out;
+  text-decoration: underline;
+}
+
+.footer-email-form input {
+  height: 35px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  padding: 0 10px 0 12px;
+}
+
+.footer-email-form h2 {
+  margin-top: 5rem;
+  font-size: 20px;
+  font-weight: 600;
+  border-bottom: 4px solid #1877f2;
+}
+
+#footer-email {
+  width: 240px;
+  margin-top: 1.6rem;
+  font-size: 15px;
+}
+
+.footer-email-form #footer-email:hover {
+  box-shadow: 0px 0px 10px 1px #1877f2;
+}
+
+#footer-email-btn {
+  cursor: pointer;
+  width: 85px;
+  border: none;
+  margin-left: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #1877f2;
+}
+
+#footer-email-btn:hover {
+  background-color: #fff;
+  color: #1877f2;
+  transition: 0.4s ease;
+}
+
+@media only screen and (max-width: 950px) {
+  .footer {
+    height: 60vh;
+    display: flex;
+    flex-direction: row;
+  }
+  #footer-email-btn {
+    display: block;
+    margin-top: 10px;
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 475px) {
+  .footer {
+    height: 140vh;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .footer-heading .head {
+    margin-left: 20px;
+  }
+
+  .footer-heading a {
+    margin-left: 20px;
+  }
+
+  .footer-email-form h2 {
+    margin-left: 20px;
+  }
+
+  .footer-email-form input {
+    margin-left: 20px;
+  }
+  #footer-email-btn {
+    margin-left: 20px;
+  }
+}
+
+/* ############# Media Querys ################## */
+
+@media only screen and (max-width: 1200px) {
+  .rows {
+    display: grid;
+    grid-template:
+      "row_1 row_2 " 1fr
+      "row_3 row_4 " 1fr
+      "row_5 row_6" 1fr
+      / 1fr 1fr;
+    grid-gap: 20px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .feature_1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rows {
+    display: flex;
+    flex-direction: column;
+    max-width: 550px;
+    padding: 18px;
+  }
+}
+
+/* **************** Login Css ***************** */
+
+
+.section-login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7rem;
+}
+
+img {
+  height: 100vh;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.container {
+  background: #fff;
+  box-shadow: 1px 1px 11px 1px rgb(135 135 135);
+  padding: 14px 10px 14px 10px;
+  max-width: 400px;
+  max-height: 530px;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+/*############ login heading########### */
+.container .login {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 30px;
+  font-weight: 600;
+  padding: 4px 0;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.container .login::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 5px;
+  width: 80px;
+  background-color: royalblue;
+}
+/* ########### below login text######### */
+form p {
+  text-align: center;
+  font-size: 15px;
+}
+
+/* ######### username password container */
+.container form .user-details {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding-left: 21px;
+}
+
+/* ######## inputbox */
+form .user-details .input-box {
+  margin-top: 5px;
+}
+
+.user-details .input-box .details {
+  font-weight: 600;
+  font-size: 17px;
+}
+
+/* ####### inside inputbox  */
+.user-details .input-box input {
+  margin-top: 5px;
+  height: 40px;
+  width: 90%;
+  padding: 5px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  outline: none;
+  font-size: 14px;
+  border: 2px solid #ccc;
+  transition: 0.5s ease-in-out;
+  border-bottom-width: 3.5px;
+}
+
+.user-details .input-box input:hover {
+  border-color: royalblue;
+  box-shadow: 0px 0px 13px 0px royalblue;
+}
+
+.check-box {
+  font-size: 15px;
+  font-weight: 600;
+  text-align: justify;
+}
+
+.check-box input {
+  cursor: pointer;
+}
+
+/* ###### login button */
+
+
+/* ##### login button #### */
+form .button input {
+  text-align: center;
+  width: 90%;
+  height: 55px;
+  margin-left: 20px;
+  margin-top: 8px;
+  padding: 8px;
+  outline: none;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 3px;
+  background-color: royalblue;
+  color: aliceblue;
+  cursor: pointer;
+  border: 2px solid #fff;
+  transition: 0.5s ease-in-out;
+}
+
+form .button input:hover {
+  background-color: aliceblue;
+  color: royalblue;
+  border-color: royalblue;
+  box-shadow: 0px 0px 13px 0px royalblue;
+}
+
+.fas fa-sign-in-alt {
+  font-size: 20px;
+}
+
+/* ####### forget password text ####### */
+
+.forget {
+  text-align: center;
+  color: black;
+  text-decoration: none;
+  margin-top: 8px;
+  display: block;
+  font-size: 12px;
+  transition: 0.5s ease;
+}
+
+form a:hover {
+  text-decoration: underline;
+  color: blue;
+}
+
+.link a {
+  font-size: 13px;
+  display: inline-block;
+  color: royalblue;
+  margin-top: 25px;
+}
+
+.link a:hover {
+  text-decoration: underline;
+  color: blue;
+}
+
+.link {
+  font-size: 12px;
+  margin-left: 40px;
+  font-weight: 500;
+}
+
+
