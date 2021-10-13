@@ -70,7 +70,16 @@ module.exports.userSignup_post = async (req, res) => {
 
 module.exports.userLogin_post =  async (req, res) => {
     const { email, password} = req.body;
-    console.log(email, password);
-    res.status(201).send('new login');
+    
+    try {
+        const user = await User.login(email, password);
+        const token = createToken(user._id);
+        res.cookie('clogin', token, { httpOnly: true, maxAge: maxAge * 3 });
+        res.status(200).json({user: user._id});
+    }
+    catch (err) {
+        const errors = handleErrors(err);
+        res.status(400).json({ errors });
+    };
 };
 
