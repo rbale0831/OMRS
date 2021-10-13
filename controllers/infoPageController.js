@@ -25,15 +25,15 @@ const handleErrors = (err) => {
 
 
 module.exports.index_get = (req, res) => {
-    res.status(200).render('infoPage/home');
+    res.status(200).render('infoPage/home', { title: 'Home' });
 };
 
 module.exports.userSignup_get = (req, res) => {
-    res.status(200).render('infoPage/signup');
+    res.status(200).render('infoPage/signup', { title: 'User Signup' });
 };
 
 module.exports.userLogin_get = (req, res) => {
-    res.status(200).render('infoPage/login');
+    res.status(200).render('infoPage/login', { title: 'User Login' });
 };
 
 module.exports.userSignup_post = async (req, res) => {

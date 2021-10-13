@@ -1,4 +1,3 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap");
 
 *,
@@ -76,6 +75,7 @@ a {
 /* ######### hamburger menu ######## */
 
 .welcome {
+  /* display:flex; */
   margin: 20px;
   padding: 25px;
   padding-bottom: 5px;
@@ -98,6 +98,7 @@ a {
 }
 
 .content1 {
+  /* text-align: center; */
   font-size: 15px;
   font-weight: 500;
 }
@@ -193,6 +194,7 @@ nav .menu-btn i {
 
   nav ul li a {
     font-size: 20px;
+    /* display: block; */
   }
 
   nav ul li a.login {
@@ -211,7 +213,7 @@ nav .menu-btn i {
 .showcase {
   height: 95vh;
   background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
-    url("/Medical_record_tablet.jpg");
+    url("/infoPage/img/background.jpg");
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
@@ -552,174 +554,6 @@ nav .menu-btn i {
   }
 }
 
-/* **************** Login Css ***************** */
 
-
-.section-login{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 7rem;
-}
-
-img {
-  height: 100vh;
-  width: 100%;
-  left: 0;
-  top: 0;
-}
-
-.container {
-  background: #fff;
-  box-shadow: 1px 1px 11px 1px rgb(135 135 135);
-  padding: 14px 10px 14px 10px;
-  max-width: 400px;
-  max-height: 530px;
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
-}
-
-/*############ login heading########### */
-.container .login {
-  text-align: center;
-  margin-top: 15px;
-  font-size: 30px;
-  font-weight: 600;
-  padding: 4px 0;
-  margin-bottom: 15px;
-  position: relative;
-}
-
-.container .login::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  height: 5px;
-  width: 80px;
-  background-color: royalblue;
-}
-/* ########### below login text######### */
-form p {
-  text-align: center;
-  font-size: 15px;
-}
-
-/* ######### username password container */
-.container form .user-details {
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  padding-left: 21px;
-}
-
-/* ######## inputbox */
-form .user-details .input-box {
-  margin-top: 5px;
-}
-
-.user-details .input-box .details {
-  font-weight: 600;
-  font-size: 17px;
-}
-
-/* ####### inside inputbox  */
-.user-details .input-box input {
-  margin-top: 5px;
-  height: 40px;
-  width: 90%;
-  padding: 5px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  outline: none;
-  font-size: 14px;
-  border: 2px solid #ccc;
-  transition: 0.5s ease-in-out;
-  border-bottom-width: 3.5px;
-}
-
-.user-details .input-box input:hover {
-  border-color: royalblue;
-  box-shadow: 0px 0px 13px 0px royalblue;
-}
-
-.check-box {
-  font-size: 15px;
-  font-weight: 600;
-  text-align: justify;
-}
-
-.check-box input {
-  cursor: pointer;
-}
-
-/* ###### login button */
-
-
-/* ##### login button #### */
-form .button input {
-  text-align: center;
-  width: 90%;
-  height: 55px;
-  margin-left: 20px;
-  margin-top: 8px;
-  padding: 8px;
-  outline: none;
-  font-size: 17px;
-  font-weight: 600;
-  border-radius: 3px;
-  background-color: royalblue;
-  color: aliceblue;
-  cursor: pointer;
-  border: 2px solid #fff;
-  transition: 0.5s ease-in-out;
-}
-
-form .button input:hover {
-  background-color: aliceblue;
-  color: royalblue;
-  border-color: royalblue;
-  box-shadow: 0px 0px 13px 0px royalblue;
-}
-
-.fas fa-sign-in-alt {
-  font-size: 20px;
-}
-
-/* ####### forget password text ####### */
-
-.forget {
-  text-align: center;
-  color: black;
-  text-decoration: none;
-  margin-top: 8px;
-  display: block;
-  font-size: 12px;
-  transition: 0.5s ease;
-}
-
-form a:hover {
-  text-decoration: underline;
-  color: blue;
-}
-
-.link a {
-  font-size: 13px;
-  display: inline-block;
-  color: royalblue;
-  margin-top: 25px;
-}
-
-.link a:hover {
-  text-decoration: underline;
-  color: blue;
-}
-
-.link {
-  font-size: 12px;
-  margin-left: 40px;
-  font-weight: 500;
-}
-
+/* *************** signup & login ****************** */
 
