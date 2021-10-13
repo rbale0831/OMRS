@@ -31,13 +31,22 @@
        </nav>
     <form>
         <h2>Sign up</h2>
+        <label for="fname">First Name</label>
+        <input type="text" name="fname" required />
+        <div class="fname error"></div>
+        <label for="lname">last Name</label>
+        <input type="text" name="lname" required />
+        <div class="lname error"></div>
+        <label for="uname">Username</label>
+        <input type="text" name="uname" required />
+        <div class="uname error"></div>
         <label for="email">Email</label>
         <input type="text" name="email" required />
         <div class="email error"></div>
         <label for="password">Password</label>
         <input type="password" name="password" required />
         <div class="password error"></div>
-        <button>Sign up</button>
+        <button>Signup</button>
     </form>
       <br>
       <div class="footer-container">
@@ -77,29 +86,48 @@
     </div>
     </section>
   </body>
-<script>
+  <script>
     const form = document.querySelector('form');
+    const unameError = document.querySelector('.uname.error');
+    const emailError = document.querySelector('.email.error');
+    const passwordError = document.querySelector('.password.error');
 
-    form.addEventListener('submit', async (e)=>{
-        e.defaultPrevented();
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-        const fname = form.fname.value;
-        const lname = form.lname.value;
-        const uname = form.uname.value;
-        const email = form.email.value;
-        const password = form.password.value;
+      // reset errors
+      unameError.textContent = '';
+      emailError.textContent = '';
+      passwordError.textContent = '';
 
-        try{
-            const res = await fetch('/home/signup', { 
-                method: 'POST',
-                body: JSON.stringify({ fname, lname, uname, email, password}),
-                headers:{'Content-Type': 'application/json'}
-            });
+      // get values
+      const fname = form.fname.value;
+      const lname = form.lname.value;
+      const uname = form.uname.value;
+      const email = form.email.value;
+      const password = form.password.value;
+
+      try {
+        const res = await fetch('/home/signup', { 
+          method: 'POST', 
+          body: JSON.stringify({ fname, lname, uname, email, password }),
+          headers: {'Content-Type': 'application/json'}
+        });
+        const data = await res.json();
+        console.log(data);
+        if (data.errors) {
+          unameError.textContent = data.errors.uname;
+          emailError.textContent = data.errors.email;
+          passwordError.textContent = data.errors.password;
         }
-        catch(err){
-            console.log(err);
-        };
+        if (data.user) {
+          location.assign('/home/login');
+        }
+      }
+      catch (err) {
+        console.log(err);
+      }
     });
-
-</script>
+  </script>
+  
 </html>
