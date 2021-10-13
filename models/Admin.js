@@ -34,6 +34,14 @@ const adminSchema = new mongoose.Schema({
     },
 });
 
+// fires a function before doc saved to db
+adminSchema.pre('save', async function(next){
+    const salt = await bcrpt.genSalt();
+    this.password = await bcrypt.hash(this.password, salt);
+    next();
+});
+
+
 
 const Admin = mongoose.model('admin', adminSchema);
 module.exports = Admin;

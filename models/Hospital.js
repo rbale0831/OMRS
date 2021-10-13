@@ -26,5 +26,13 @@ const hospitalSchema = new mongoose.Schema({
     },
 });
 
+// fires a function before doc saved to db
+hospitalSchema.pre('save', async function(next){
+    const salt = bcrpt.genSalt();
+    this.password = await bcrypt.hash(this.password, salt);
+    next();
+});
+
+
 const Hospital = mongoose.model('hospital', hospitalSchema);
 module.exports = Hospital;

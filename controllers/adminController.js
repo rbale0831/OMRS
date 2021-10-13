@@ -12,6 +12,18 @@ const handleErrors = (err) => {
         return errors;
     }
 
+    // Incorrect Email Address
+    if(err.message === 'Incorrect Email'){
+        errors.email = 'That Email is Not Registered';
+        return errors;
+    }
+
+    // Incorrect Password 
+    if(err.message === 'Incorrect Password'){
+        errors.password = 'Admin Password is Incorrect';
+        return errors;
+    }
+
     //validate errors
     if (err.message.includes('admin validation failed')) {
         Object.values(err.errors).forEach(({ properties }) => {

@@ -34,6 +34,14 @@ const userSchema = new mongoose.Schema({
     },
 });
 
+// fires a function before doc saved to db
+userSchema.pre('save', async function(next){
+    const salt = await bcrpt.genSalt();
+    this.password = await bcrypt.hash(this.password, salt);
+    next();
+});
+
+
 
 const User = mongoose.model('user', userSchema);
 module.exports = User;
