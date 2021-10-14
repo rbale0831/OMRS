@@ -36,11 +36,27 @@ const adminSchema = new mongoose.Schema({
 
 // fires a function before doc saved to db
 adminSchema.pre('save', async function(next){
-    const salt = await bcrpt.genSalt();
+    const salt = await bcrypt.genSalt();
     this.password = await bcrypt.hash(this.password, salt);
     next();
 });
 
+// statics method to login admin
+adminSchema.statics.login = async function (email, password){
+    const admin = await this.findOne({ email });
+    if (admin){
+        const auth = await bcrypt.compare(password, this.password);
+        if (auth){
+            return admin;
+        } 
+        else {
+            throw Error('Incorrect Password');
+        };
+    }
+    else{
+        throw Error('Incorrect Email');
+    };
+};
 
 
 const Admin = mongoose.model('admin', adminSchema);

@@ -34,6 +34,7 @@ const handleErrors = (err) => {
     return errors;
 }
 
+// create json web token
 maxAge = 3 * 24 * 60 * 60;
 const createToken = (id) => {
     return jwt.sign({ id }, 'omrs meridan',{
@@ -81,5 +82,5 @@ module.exports.userLogin_post =  async (req, res) => {
         const errors = handleErrors(err);
         res.status(400).json({ errors });
     };
-};
+}; 
 

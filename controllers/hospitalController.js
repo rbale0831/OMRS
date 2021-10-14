@@ -10,6 +10,16 @@ const handleErrors = (err) => {
         errors.hosname = "That hospital name is already registered";
         errors.email = "That email is already registered";
         return errors;
+    };
+
+    // incorrect email
+    if (err.message === 'Incorrect Email') {
+        errors.email = 'Email Is Not Registered';
+    }
+
+    // incorrect password
+    if (err.message === 'Incorrect Password') {
+        errors.password = 'Password Is Incorrect';
     }
 
     //validate errors
@@ -18,11 +28,18 @@ const handleErrors = (err) => {
             errors[properties.path] = properties.message;
             return errors;
         });
-    }
+    };
 
     return errors;
 }
 
+// create json web token
+maxAge = 3 * 24 * 60 * 60;
+const createToken = (id) =>{
+    return jwt.sign({id},'omrs mediran hospital',{
+        expiresIn: maxAge
+    });
+};
 
 
 module.exports.index_get = (req, res) => {
