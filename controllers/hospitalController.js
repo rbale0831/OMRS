@@ -59,7 +59,9 @@ module.exports.hospitalSignup_post = async (req, res) => {
     
     try{
         const hospital = await Hospital.create({ hosname, email, password });
-        res.status(201).json(hospital);
+        const token = createToken(hospital._id);
+        res.cookie('hsign', token, { httpOnly: true, maxAge: maxAge * 3 })
+        res.status(201).json({hospital : hospital._id});
     }
     catch (err){
         const errors = handleErrors(err);

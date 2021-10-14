@@ -1,9 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const infoPageRoutes = require('./routes/infoPageRoutes');
+const userRoutes = require('./routes/userRoutes');
 const hospitalRoutes = require('./routes/hospitalRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const cookieParser = require('cookie-parser');
+const { userAuth } = require('./middleware/authMiddleware');
 
 const app = express();
 
@@ -29,6 +31,7 @@ app.get('/', (req, res) => {
 
 // info_page Routes
 app.use('/home', infoPageRoutes); 
+app.use('/user', userAuth, userRoutes);
 app.use('/hospital', hospitalRoutes);
 app.use('/admin', adminRoutes);
 
