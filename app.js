@@ -1,8 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const infoPageRoutes = require('./routes/infoPageRoutes');
+const userRoutes = require('./routes/userRoutes');
 const hospitalRoutes = require('./routes/hospitalRoutes');
 const adminRoutes = require('./routes/adminRoutes');
+const cookieParser = require('cookie-parser');
+const { userAuth } = require('./middleware/authMiddleware');
 
 const app = express();
 
@@ -10,11 +13,11 @@ const app = express();
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cookieParser());
 
 
 // register view engine
 app.set('view engine', 'ejs');
-
 const dbURL = 'mongodb+srv://rbale0831:rohit3108@cluster0.dzwxs.mongodb.net/partial';
 mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true/*, useCreateIndex: true*/})
     .then((result) => app.listen(9000))
@@ -28,6 +31,7 @@ app.get('/', (req, res) => {
 
 // info_page Routes
 app.use('/home', infoPageRoutes); 
+app.use('/user', userAuth, userRoutes);
 app.use('/hospital', hospitalRoutes);
 app.use('/admin', adminRoutes);
 

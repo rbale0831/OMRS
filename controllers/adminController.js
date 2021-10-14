@@ -1,4 +1,5 @@
 const Admin = require('../models/Admin');
+const jwt = require('jsonwebtoken');
 
 // handele errors
 const handleErrors = (err) => {
@@ -35,9 +36,16 @@ const handleErrors = (err) => {
     return errors;
 }
 
+// create json web token
+maxAge = 3 * 24 * 60 * 60;
+const createToken = (id) =>{
+    return jwt.sign({id}, 'omrs meridan admin',{
+        expiresIn: maxAge
+    });
+};
  
 module.exports.index_get = (req, res) => {
-    res.status(200).render('admin/index', { title: "Admin Dashboard" });
+    res.status(200).render('admin/index', );
 };
 
 module.exports.adminSignup_get = (req, res) => {
@@ -62,8 +70,29 @@ module.exports.adminSignup_post = async (req, res) => {
 };
 
 module.exports.adminLogin_post = async (req, res) => {
-    const { fname, lname, uname, email, password } = req.body;
-    console.log( fname, lname, uname, email, password );
-    res.send('new login');
+    const { email, password } = req.body;
+    
+    try {
+        const admin = await Admin.login(email, password);
+        const token = createToken(admin._id);
+        res.cookie('alogin', token, { httpOnly: true, maxAge: maxAge * 3 });
+        res.status(200).json({admin: admin._id});
+    }
+    catch (err) {
+        const errors = handleErrors(err);
+        res.status(400).json({ errors });
+    };
 };
 
+module.exports.adminDashboard_get = (req, res)=>{
+    res.status(200).render('admin/dashboard', { title: "Admin Dashboard" });
+};
+
+module.exports.adminProfile_get = (req, res)=>{
+    res.status(200).render('admin/profile', { title: "Admin Profile" });
+};
+
+module.exports.adminLogout_get = (req, res) => {          
+    res.cookie('alogin','',{ maxAge: 1 });
+    res.redirect('/admin/login'); 
+};

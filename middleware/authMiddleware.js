@@ -26,7 +26,7 @@ const userAuth = (req, res, next) => {
 const hospitalAuth = (req, res, next) => {
     const token = req.cookies.hlogin
     
-    // check json web token exists & is verified
+    // check json web token exists & is verified 
     if(token){
         jwt.verify(token, 'omrs meridan hospital', (err, decodedToken)=>{
             if(err){

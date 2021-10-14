@@ -28,11 +28,26 @@ const hospitalSchema = new mongoose.Schema({
 
 // fires a function before doc saved to db
 hospitalSchema.pre('save', async function(next){
-    const salt = bcrpt.genSalt();
+    const salt = bcrypt.genSalt();
     this.password = await bcrypt.hash(this.password, salt);
     next();
 });
 
+hospitalSchema.statics.login = async function (email, password) {
+    const hospital = await this.findOne({ email });
+    if(hospital){
+        const auth = bcrypt.compare(password, this.password);
+        if (auth){
+            return hospital
+        }
+        else{
+            throw Error('Incorrect Password');
+        };
+    }
+    else{
+        throw Error('Incorrect Email');
+    };
+};
 
 const Hospital = mongoose.model('hospital', hospitalSchema);
 module.exports = Hospital;
