@@ -5,12 +5,12 @@ const bcrypt = require('bcrypt');
 const adminSchema = new mongoose.Schema({
     fname:{
         type: String,
-        required: [true, "Enter your First Name"],
+        required: true,
         lowercase: true,
     },
     lname:{
         type: String,
-        required: [true, "Enter your Last Name"],
+        required: true,
         lowercase: true,
     },
     uname:{
@@ -42,7 +42,7 @@ adminSchema.pre('save', async function(next){
 });
 
 // statics method to login admin
-adminSchema.statics.login = async function (email, password){
+adminSchema.statics.login = async function(email, password){
     const admin = await this.findOne({ email });
     if (admin){
         const auth = await bcrypt.compare(password, this.password);

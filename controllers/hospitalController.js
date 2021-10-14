@@ -1,4 +1,5 @@
 const Hospital = require('../models/Hospital');
+const jwt = require('jsonwebtoken');
  
 // handele errors
 const handleErrors = (err) => {
@@ -36,7 +37,7 @@ const handleErrors = (err) => {
 // create json web token
 maxAge = 3 * 24 * 60 * 60;
 const createToken = (id) =>{
-    return jwt.sign({id},'omrs mediran hospital',{
+    return jwt.sign({id},'omrs meridan hospital',{
         expiresIn: maxAge
     });
 };
@@ -70,8 +71,28 @@ module.exports.hospitalSignup_post = async (req, res) => {
 };
 
 module.exports.hospitalLogin_post = async (req, res) => {
-    const { hosname, email, password } = req.body;
-    console.log(hosname, email, password);
-    res.send('new login');
+    const { email, password } = req.body;
+    
+    try {
+        const hospital = await Hospital.login(email, password);
+        const token = createToken(hospital._id);
+        res.cookie('hlogin', token, { httpOnly: true, maxAge: maxAge * 3 });
+        res.status(200).json({hospital: hospital._id});
+    }
+    catch (err) {
+        const errors = handleErrors(err);
+        res.status(400).json({ errors });
+    };
 };
 
+module.exports.hospitalDashboard_get = (req, res)=>{
+    res.status(200).render('hospital/dashboard');
+};
+module.exports.hospitalProfile_get = (req, res)=>{
+    res.status(200).render('hospital/profile');
+};
+
+module.exports.hospitalLogout_get = (req, res) => {          
+    res.cookie('hlogin','',{ maxAge: 1 });
+    res.redirect('/hospital/login')
+};
