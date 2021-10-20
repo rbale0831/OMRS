@@ -21,7 +21,7 @@ app.use('/public', express.static('/public'))
 
 // register view engine
 app.set('view engine', 'ejs');
-const dbURL = 'mongodb+srv://rbale0831:rohit3108@cluster0.dzwxs.mongodb.net/kim';
+const dbURL = 'mongodb+srv://rbale0831:rohit3108@cluster0.dzwxs.mongodb.net/partial';
 mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true/*, useCreateIndex: true*/})
     .then((result) => app.listen(9000))
     .catch((error) => console.log(error));
