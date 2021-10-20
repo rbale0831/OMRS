@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0;
+  /* width:0; */
+}
+
+/* img{
+    height:95vh;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
+    url("img 1.jpg");
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
+
+header {
+  font-size: 40px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.822);
+  /* margin-top: 10px; */
+  margin-bottom: 20px;
+  text-align: center;
+  /* text-shadow: 0 0 3px #0077ff; */
+  /* text-transform: uppercase; */
+}
+
+body {
+  background: url();
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: 120vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 680px;
+  max-height: 700px;
+  margin-bottom: 25px;
+  width: 100%;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 15px;
+  background-color: "";
+  box-shadow: 1px 1px 10px 0px rgb(139, 139, 139);
+}
+
+/* ####### Create Account head ######## */
+.container .Enroll {
+  /* text-transform: uppercase; */
+  font-size: 30px;
+  font-weight: 600;
+  /* text-align: center; */
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.container .Enroll::before {
+  content: "";
+  position: absolute;
+  /* left: 0; */
+  bottom: 0;
+  height: 5px;
+  width: 275px;
+  background: #0f5be7;
+}
+
+/* ####### all .user details ######### */
+.container form .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+form .user-details .inputbox {
+  width: calc(100% / 2 - 20px);
+  margin: 20px 0 12px 0;
+}
+
+.user-details .inputbox .details {
+  font-weight: 600;
+  display: block;
+  font-size: 16px;
+}
+
+.user-details .inputbox input {
+  height: 50px;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 5px;
+  padding: 5px;
+  outline: none;
+  border: 2px solid #ccc;
+  font-size: 15px;
+  /* text-shadow: 2px 2px 4px #ccc; */
+  border-bottom-width: 2.5px;
+  transition: 0.6s ease-in-out;
+}
+.user-details .inputbox input:hover {
+  border-color: #0f5be7;
+  box-shadow: 0px 0px 11px 0px #0f5be7;
+}
+
+/* ###### gender details ####### */
+form .gender-details .gender-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+form .gender-details {
+  margin-top: 10px;
+}
+
+form .gender-details .category {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  margin: 18px 0 0 0;
+}
+
+/* ######## Create button ####### */
+form .button {
+  height: 45px;
+  margin: 30px 0;
+  justify-content: center;
+}
+
+form .button input {
+  height: 110%;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 5px;
+  transition: 0.5s ease-in-out;
+  border: 2px solid #fff;
+  background-color: #0f5be7;
+  color: azure;
+  cursor: pointer;
+}
+
+form .button input:hover {
+  box-shadow: 0px 0px 13px 0px #0f5be7;
+  /* border-color: black; */
+  border-color: #0f5be7;
+  color: #0f5be7;
+  font-weight: 600;
+  background-color: #fff;
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    width: 95%;
+    height: auto;
+  }
+  form .button {
+    margin: 30px 0;
+  }
+}
