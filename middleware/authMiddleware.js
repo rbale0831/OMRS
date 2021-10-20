@@ -14,7 +14,7 @@ const userAuth = (req, res, next) => {
                 res.redirect('/home/login');
             }
             else{
-                console.log(decodedToken);
+                // console.log(decodedToken);
                 next();
             };
         });

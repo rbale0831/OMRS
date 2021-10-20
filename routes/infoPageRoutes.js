@@ -9,4 +9,5 @@ router.post('/signup', infoPageController.userSignup_post);
 router.get('/login', infoPageController.userLogin_get);
 router.post('/login', infoPageController.userLogin_post);
 
+
 module.exports = router; 
