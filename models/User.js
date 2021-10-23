@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
     fname:{
-        type: String,
+        type: String, 
         required: true,
         lowercase: true,
     },
@@ -38,6 +38,82 @@ const userSchema = new mongoose.Schema({
         minlength: [8, 'Minimum password length 8 charaters'],
         maxlength: [16, 'Maximum password length 16 charaters'],
     },
+    //  address details
+    add1:{
+        type: String,
+        lowercase: true,
+    },
+    add2:{
+        type: String,
+        lowercase: true,
+    },
+    locality:{
+        type: String,
+        lowercase: true,
+    },
+    district:{
+        type: String,
+        lowercase: true,
+    },
+    state:{
+        type: String,
+        lowercase: true,
+    },
+    pincode:{
+        type: String,
+        lowercase: true,
+    },
+    //Other information 
+    diabetes:{
+        type: String,
+        lowercase: true,
+    },
+    bp:{
+        type: String,
+        lowercase: true,
+    },
+    cr:{
+        type: String,
+        lowercase: true,
+    },
+    //contact Details
+    primno:{
+        type:String,
+        unique: true,
+        lowercase: true,
+    },
+    secno:{
+        type:String,
+        unique: true,
+        lowercase: true,
+    },
+    langpref:{
+        type:String,
+        unique: true,
+        lowercase: true,
+    },
+    // general information 
+    dob:{
+        type:String,
+        unique: true,
+        lowercase: true,
+    },
+    age:{
+        type:String,
+        unique: true,
+        lowercase: true,
+    },
+    bdgroup:{
+        type:String,
+        unique: true,
+        lowercase: true,
+    },
+    occupation:{
+        type:String,
+        unique: true,
+        lowercase: true,
+    },
+
 });
 
 // fires a function before doc saved to db
