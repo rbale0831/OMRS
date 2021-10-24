@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const { isEmail } = require('validator');
 const bcrypt = require('bcrypt');
+// const jwt = require('jsonwebtoken');
 
 const userSchema = new mongoose.Schema({
     fname:{
@@ -32,87 +33,87 @@ const userSchema = new mongoose.Schema({
         minlength: [8, 'Minimum password length 8 charaters'],
         maxlength: [16, 'Maximum password length 16 charaters'],
     },
-    cpassword: {
-        type: String,
-        required: [true, 'Enter your password'],
-        minlength: [8, 'Minimum password length 8 charaters'],
-        maxlength: [16, 'Maximum password length 16 charaters'],
-    },
-    //  address details
-    add1:{
-        type: String,
-        lowercase: true,
-    },
-    add2:{
-        type: String,
-        lowercase: true,
-    },
-    locality:{
-        type: String,
-        lowercase: true,
-    },
-    district:{
-        type: String,
-        lowercase: true,
-    },
-    state:{
-        type: String,
-        lowercase: true,
-    },
-    pincode:{
-        type: String,
-        lowercase: true,
-    },
-    //Other information 
-    diabetes:{
-        type: String,
-        lowercase: true,
-    },
-    bp:{
-        type: String,
-        lowercase: true,
-    },
-    cr:{
-        type: String,
-        lowercase: true,
-    },
-    //contact Details
-    primno:{
-        type:String,
-        unique: true,
-        lowercase: true,
-    },
-    secno:{
-        type:String,
-        unique: true,
-        lowercase: true,
-    },
-    langpref:{
-        type:String,
-        unique: true,
-        lowercase: true,
-    },
-    // general information 
-    dob:{
-        type:String,
-        unique: true,
-        lowercase: true,
-    },
-    age:{
-        type:String,
-        unique: true,
-        lowercase: true,
-    },
-    bdgroup:{
-        type:String,
-        unique: true,
-        lowercase: true,
-    },
-    occupation:{
-        type:String,
-        unique: true,
-        lowercase: true,
-    },
+    // cpassword: {
+    //     type: String,
+    //     required: [true, 'Enter your password'],
+    //     minlength: [8, 'Minimum password length 8 charaters'],
+    //     maxlength: [16, 'Maximum password length 16 charaters'],
+    // },
+    // //  address details
+    // add1:{
+    //     type: String,
+    //     lowercase: true,
+    // },
+    // add2:{
+    //     type: String,
+    //     lowercase: true,
+    // },
+    // locality:{
+    //     type: String,
+    //     lowercase: true,
+    // },
+    // district:{
+    //     type: String,
+    //     lowercase: true,
+    // },
+    // state:{
+    //     type: String,
+    //     lowercase: true,
+    // },
+    // pincode:{
+    //     type: String,
+    //     lowercase: true,
+    // },
+    // //Other information 
+    // diabetes:{
+    //     type: String,
+    //     lowercase: true,
+    // },
+    // bp:{
+    //     type: String,
+    //     lowercase: true,
+    // },
+    // cr:{
+    //     type: String,
+    //     lowercase: true,
+    // },
+    // //contact Details
+    // primno:{
+    //     type:String,
+    //     unique: true,
+    //     lowercase: true,
+    // },
+    // secno:{
+    //     type:String,
+    //     unique: true,
+    //     lowercase: true,
+    // },
+    // langpref:{
+    //     type:String,
+    //     unique: true,
+    //     lowercase: true,
+    // },
+    // // general information 
+    // dob:{
+    //     type:String,
+    //     unique: true,
+    //     lowercase: true,
+    // },
+    // age:{
+    //     type:String,
+    //     unique: true,
+    //     lowercase: true,
+    // },
+    // bdgroup:{
+    //     type:String,
+    //     unique: true,
+    //     lowercase: true,
+    // },
+    // occupation:{
+    //     type:String,
+    //     unique: true,
+    //     lowercase: true,
+    // },
 
 });
 

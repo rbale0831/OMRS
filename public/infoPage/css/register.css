@@ -35,15 +35,16 @@ body {
   background-size: cover;
   display: flex;
   flex-direction: column;
-  height: 120vh;
+  height: 200vh;
   justify-content: center;
   align-items: center;
 }
 
 .container {
   max-width: 680px;
-  max-height: 700px;
+  max-height: 1200px;
   margin-bottom: 25px;
+  top: auto;
   width: 100%;
   background: #fff;
   padding: 25px 30px;
@@ -97,15 +98,15 @@ form .user-details .inputbox {
   margin-top: 5px;
   padding: 5px;
   outline: none;
-  border: 2px solid #ccc;
+  border: 1.5px solid #ccc;
   font-size: 15px;
   /* text-shadow: 2px 2px 4px #ccc; */
-  border-bottom-width: 2.5px;
+  border-bottom-width: 1.5px;
   transition: 0.6s ease-in-out;
 }
 .user-details .inputbox input:hover {
-  border-color: #0f5be7;
-  box-shadow: 0px 0px 11px 0px #0f5be7;
+  border-color: #020202f8;
+  /* box-shadow: 0px 0px 11px 0px #0f5be7; */
 }
 
 /* ###### gender details ####### */
@@ -146,14 +147,14 @@ form .button input {
   cursor: pointer;
 }
 
-form .button input:hover {
-  box-shadow: 0px 0px 13px 0px #0f5be7;
+/* form .button input:hover {
+  /* box-shadow: 0px 0px 13px 0px #0f5be7; */
   /* border-color: black; */
-  border-color: #0f5be7;
-  color: #0f5be7;
-  font-weight: 600;
+  /* border-color: #0f5be7; */
+  /* color: #0f5be7; */
+  /* font-weight: 600;
   background-color: #fff;
-}
+} */ 
 
 @media only screen and (max-width: 800px) {
   .container {
@@ -164,3 +165,6 @@ form .button input:hover {
     margin: 30px 0;
   }
 }
+
+
+
