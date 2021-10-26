@@ -116,14 +116,15 @@ form .gender-details .gender-title {
 }
 
 form .gender-details {
-  margin-top: 10px;
+  margin-top: 1.5rem;
 }
 
 form .gender-details .category {
   display: flex;
-  width: 50%;
-  justify-content: space-between;
-  margin: 18px 0 0 0;
+}
+form .gender-details .category label{
+  margin-top: .5rem;
+  margin-right: .5rem;
 }
 
 /* ######## Create button ####### */
