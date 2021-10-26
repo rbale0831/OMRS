@@ -84,6 +84,7 @@ const adminAuth = (req, res, next) => {
 //         res.locals.user = null;
 //     }
 // }
+//
 // const checkHospital = async (req, res, next) =>{
 //     const token = req.cookies.hlogin
 
@@ -104,6 +105,7 @@ const adminAuth = (req, res, next) => {
 //         res.locals.hospital = null;
 //     }
 // }
+//
 // const checkAdmin = async (req, res, next) =>{
 //     const token = req.cookies.alogin
 

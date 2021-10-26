@@ -105,7 +105,7 @@
           emailError.textContent = data.errors.email;
           passwordError.textContent = data.errors.password;
         };
-        if (data.user) {
+        if (data.admin) {
           location.assign('/admin/dashboard');
         };
       }
