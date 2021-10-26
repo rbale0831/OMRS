@@ -6,11 +6,13 @@ const hospitalRoutes = require('./routes/hospitalRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const cookieParser = require('cookie-parser');
 const { userAuth } = require('./middleware/authMiddleware');
+const path = require('path')
+// const port = process.env.PORT || 3000;
 
 const multer = require('multer')
 
 
-const path = require('path')
+// const path = require('path')
 
 
 
@@ -25,9 +27,6 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
-app.use('/public', express.static('/public'))
-
-
 app.use('/public', express.static('/public'))
 
 
@@ -47,6 +46,7 @@ app.use(express.static(static_path))
 app.get('/', (req, res) => {
     res.redirect('/home');
 });
+
 
 
 app.get('/index1' , (req, res)=>{
@@ -86,9 +86,12 @@ var storage = multer.diskStorage({
 
 
 
+
 app.get('/register',(req,res)=>{
     res.render("./user/index")
 })
+
+
 
 
 // info_page Routes

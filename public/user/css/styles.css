@@ -20,10 +20,13 @@ body {
     border: 10px solid #ccc;
     border-radius: 50%;
 <<<<<<< HEAD
+<<<<<<< HEAD
     /* border-radius: 50%; */
     overflow: hidden;
     
 
+=======
+>>>>>>> 5a5243a1e0d9119fadf878607c4d67309c00dda1
 =======
 >>>>>>> 5a5243a1e0d9119fadf878607c4d67309c00dda1
 }
@@ -43,6 +46,7 @@ body {
     font-size: 14px;
     padding: 5px 10px;
     color: #000;
+<<<<<<< HEAD
 <<<<<<< HEAD
 }
 #uploadBtn{
@@ -88,6 +92,8 @@ body {
 #photo{
     /* height: 100%;
     width: 100%; */
+=======
+>>>>>>> 5a5243a1e0d9119fadf878607c4d67309c00dda1
 =======
 >>>>>>> 5a5243a1e0d9119fadf878607c4d67309c00dda1
 }
