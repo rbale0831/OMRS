@@ -6,7 +6,12 @@ const hospitalRoutes = require('./routes/hospitalRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const cookieParser = require('cookie-parser');
 const { userAuth } = require('./middleware/authMiddleware');
+const multer = require('multer')
+
+
 const path = require('path')
+
+
 // const port = process.env.PORT || 3000;
 
 const app = express();
@@ -16,7 +21,11 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
+
+
 app.use('/public', express.static('/public'))
+
+
 
 
 // register view engine
@@ -34,9 +43,46 @@ app.get('/', (req, res) => {
     res.redirect('/home');
 });
 
+
+app.get('/index1' , (req, res)=>{
+    res.render('index1')
+
+})
+
+
+
+// multer   uploading files checking 
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, 'public/uploads')
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+    }
+  })
+   
+  var upload = multer({ storage: storage })
+  var multipleUpload = upload.fields([{ name: 'file1' }, { name: 'file2', maxCount: 3 }])
+
+  app.post("/uploadfile" , multipleUpload , (req, res , next )=>{
+      if(req.files){
+          console.log("files uploaded")
+          console.log(req.files)
+      }
+      else {
+         
+            // res.redirect('/home');
+        
+      }
+  })
+
+
+
+
 app.get('/register',(req,res)=>{
     res.render("./user/index")
 })
+
 
 // info_page Routes
 app.use('/home', infoPageRoutes); 
