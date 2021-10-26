@@ -1,6 +1,7 @@
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 
+
 // handele errors
 const handleErrors = (err) => {
     console.log(err.message,err.code);     
@@ -12,6 +13,7 @@ const handleErrors = (err) => {
         errors.email = "That email is already registered";
         return errors;
     }
+
 
     // incorrect email
     if (err.message === 'Incorrect Email') {
