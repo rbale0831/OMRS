@@ -32,12 +32,7 @@ const userSchema = new mongoose.Schema({
         minlength: [8, 'Minimum password length 8 charaters'],
         maxlength: [16, 'Maximum password length 16 charaters'],
     },
-    // cpassword: {
-    //     type: String,
-    //     required: [true, 'Enter your password'],
-    //     minlength: [8, 'Minimum password length 8 charaters'],
-    //     maxlength: [16, 'Maximum password length 16 charaters'],
-    // },
+    
 });
 
 // fires a function before doc saved to db
