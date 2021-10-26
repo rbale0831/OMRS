@@ -62,6 +62,8 @@ module.exports.adminSignup_post = async (req, res) => {
     try{
         const admin = await Admin.create({ fname, lname, uname, email, password });
         res.status(201).json(admin);
+        res.cookie('asign', token, { httpOnly: true, maxAge: maxAge * 3 })
+        res.status(201).json({admin : admin._id});
     }
     catch (err){
         const errors = handleErrors(err);

@@ -48,7 +48,7 @@ module.exports.index_get = (req, res) => {
 };
 
 module.exports.userSignup_get = (req, res) => {
-    res.status(200).render('infoPage/signup', { title: 'User Signup' });
+    res.status(200).render('infoPage/signup', { title: 'User Register' });
 };
 
 module.exports.userLogin_get = (req, res) => {
