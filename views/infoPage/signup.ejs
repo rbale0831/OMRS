@@ -34,7 +34,7 @@
     <section class="regPage">
         <div class="header" id="head">Registration page </div>
          <div class="container">
-             <div class="Enroll">Registration Form</div>
+             <!-- <div class="Enroll">Registration Form</div> -->
              <form action="">
                  <div class="user-details">
                      <div class="inputbox"> 
@@ -54,21 +54,21 @@
                      </div>
                      <div class="inputbox">  
                         <span class="details">Date Of Birth</span>
-                        <input id="dob" type="text" required>
+                        <input id="dob" type="date" required>
                         <div class="dob error"></div>
                     </div>
                     <div class="gender-details">
                       <span class="gender-title">Gender</span>
                       <div class="category">
-                          <label for="">
+                          <label for="male">
                             <input id="male" type="radio"name="gender">
                             <span class="gender">Male</span>
                           </label>
-                          <label for="">
+                          <label for="female">
                             <input id="female" type="radio" name='gender'>
                             <span class="gender">Female</span>
                          </label>
-                          <label for="">
+                          <label for="other">
                             <input id="other" type="radio" name='gender'>
                             <span class="gender">Other</span>
                          </label>
@@ -105,6 +105,19 @@
                         <div class="pincode error"></div>
                     </div>
                     <div class="inputbox">  
+                    
+                      <select class="Select"  >
+                        <option value="" disabled selected>Your Blood Group</option>
+                        <option value="a+">A+</option>
+                        <option value="a-"> A-</option>
+                        <option value="b+ ">B+</option>
+                      </select> 
+                      <!-- <div class="berror"></div> -->
+
+
+                  </div>
+                  
+                    <div class="inputbox">  
                         <span class="details">Occupation</span>
                         <input id="occupation" type="address"  required>
                         <div class="occupation error"></div>
@@ -123,6 +136,18 @@
                       <input id="email" type="email"  required>
                       <div class="email error"></div>
                   </div>
+                  <div class="inputbox">  
+                    
+                    <select class="Select"  >
+                      <option value="" disabled selected>Your Preferd Language</option>
+                      <option value="english">English</option>
+                      <option value="hindi"> Hindi</option>
+                      <option value="marathi">Marathi</option>
+                    </select> 
+                    <!-- <div class="berror"></div> -->
+
+
+                </div>
                   <div class="inputbox">  
                       <span class="details">Password</span>
                       <input id="password" type="password"  required>
