@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/infoPage/css/register.css">
+    <link rel="stylesheet" href="/infoPage/css/register.css">
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
   <link rel="stylesheet"
     href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">
@@ -15,7 +15,7 @@
 <body>
     <section>
         <header class="header">
-            <nav>
+            <!-- <nav>
               <div class="logo">Meridian</div>
               <input type="checkbox" id='click'>
               <label for="click" class="menu-btn">
@@ -28,7 +28,37 @@
                 <li><a href="#">Contact</a></li>
                 <li><a class="login" href="/home/login">Login</a></li>
               </ul>
-            </nav>
+            </nav> -->
+            <div class="wrapper">
+              <nav>
+                <input type="checkbox" id="show-menu">
+                <label for="show-menu" class="menu-icon">
+                  <i class="fas fa-bars"></i>
+                </label>
+                <div class="content">
+                <div class="logo"><a href="#">Meridian</a></div>
+                  <ul class="links">
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Advice</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li>
+                      <a href="#" class="desktop-link">Login</a>
+                      <input type="checkbox" id="show-features">
+                      <label for="show-features">Login</label>
+                      <ul>
+                        <li><a href="/admin/login">Admin</a></li>
+                        <li><a href="/hospital/login">Hospital</a></li>
+                        <li><a href="/home/login">User</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <label for="show-search" class="search-icon">
+                  
+                </label>
+              </nav>
+            </div>
           </header>
     </section>
     <section class="regPage">
@@ -61,15 +91,15 @@
                       <span class="gender-title">Gender</span>
                       <div class="category">
                           <label for="male">
-                            <input id="male" type="radio"name="gender">
+                            <input id="male" value="Male" type="radio" name="gender">
                             <span class="gender">Male</span>
                           </label>
                           <label for="female">
-                            <input id="female" type="radio" name='gender'>
+                            <input id="female" value="Female" type="radio" name='gender'>
                             <span class="gender">Female</span>
                          </label>
                           <label for="other">
-                            <input id="other" type="radio" name='gender'>
+                            <input id="other" value="Other" type="radio" name='gender'>
                             <span class="gender">Other</span>
                          </label>
                      </div>
@@ -111,6 +141,11 @@
                         <option value="a+">A+</option>
                         <option value="a-"> A-</option>
                         <option value="b+ ">B+</option>
+                        <option value="b- ">B-</option>
+                        <option value="o+ ">O+</option>
+                        <option value="o- ">O-</option>
+                        <option value="ab+ ">AB+</option>
+                        <option value="ab- ">AB-</option>
                       </select> 
                       <!-- <div class="berror"></div> -->
 
@@ -195,4 +230,61 @@
   </div>
   </section>
 </body>
+<script>
+  const form = document.querySelector('form');
+  const fname = document.getElementById('fname').value;
+  const lname = document.getElementById('lname').value;
+  const uname = document.getElementById('uname').value;
+  const dob = document.getElementById('dob').value;
+  const male = document.getElementById('male').value;
+  const female = document.getElementById('female').value;
+  const other = document.getElementById('other').value;
+  const add1 = document.getElementById('add1').value;
+  const add2 = document.getElementById('add2').value;
+  const locality = document.getElementById('locality').value;
+  const state = document.getElementById('state').value;
+  const pincode = document.getElementById('pincode').value;
+  // const  = document.getElementById('').value;
+    // const unameError = document.querySelector('.uname.error');
+    // const emailError = document.querySelector('.email.error');
+    // const passwordError = document.querySelector('.password.error');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // reset errors
+      unameError.textContent = '';
+      emailError.textContent = '';
+      passwordError.textContent = '';
+
+      // get values
+      const fname = form.fname.value;
+      const lname = form.lname.value;
+      const uname = form.uname.value;
+      const email = form.email.value;
+      const password = form.password.value;
+      const password = form.password.value;
+
+      try {
+        const res = await fetch('/home/signup', { 
+          method: 'POST', 
+          body: JSON.stringify({ fname, lname, uname, email, password }),
+          headers: {'Content-Type': 'application/json'}
+        });
+        const data = await res.json();
+        console.log(data);
+        if (data.errors) {
+          unameError.textContent = data.errors.uname;
+          emailError.textContent = data.errors.email;
+          passwordError.textContent = data.errors.password;
+        }
+        if (data.user) {
+          location.assign('/home/login');
+        }
+      }
+      catch (err) {
+        console.log(err);
+      }
+    });
+</script>
 </html>

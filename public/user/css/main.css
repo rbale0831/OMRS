@@ -196,6 +196,11 @@ header label span {
   display: none;
 }
 
+/* .user-wrapper .sub-menu li:last-child a{
+  text-decoration: none;
+  border: none;
+} */
+
 .user-wrapper:hover {
   background: #f8f6f6;
 }
@@ -214,6 +219,7 @@ header label span {
   border-bottom: 1px solid #252424;
   margin-top: 0.5rem;
 }
+
 
 .user-wrapper:hover .sub-menu li span {
   margin-right: 0.35rem;

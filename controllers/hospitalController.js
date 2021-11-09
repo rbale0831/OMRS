@@ -85,8 +85,13 @@ module.exports.hospitalLogin_post = async (req, res) => {
     };
 };
 
+
+
 module.exports.hospitalDashboard_get = (req, res)=>{
-    res.status(200).render('hospital/dashboard');
+    res.status(200).render('hospital/index');
+};
+module.exports.hospitalAddPatientDetails_get = (req, res)=>{
+    res.status(200).render('hospital/add');
 };
 module.exports.hospitalProfile_get = (req, res)=>{
     res.status(200).render('hospital/profile');
