@@ -64,11 +64,11 @@ const adminAuth = (req, res, next) => {
     };
 };
 
-const checkUser = async (req, res, next) =>{
+const checkUser = (req, res, next) =>{
     const token = req.cookies.clogin
 
     if (token){
-        jwt.verify(token, 'omrs meridan', (err, decodedToken)=>{
+        jwt.verify(token, 'omrs meridan', async (err, decodedToken)=>{
             if(err){
                 res.locals.user = null;
                 next();
