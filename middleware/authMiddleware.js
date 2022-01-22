@@ -64,27 +64,27 @@ const adminAuth = (req, res, next) => {
     };
 };
 
-// const checkUser = async (req, res, next) =>{
-//     const token = req.cookies.clogin
+const checkUser = (req, res, next) =>{
+    const token = req.cookies.clogin
 
-//     if (token){
-//         jwt.verify(token, 'omrs meridan', (err, decodedToken)=>{
-//             if(err){
-//                 res.locals.user = null;
-//                 next();
-//             }
-//             else{
-//                 let user = await User.findById(decodedToken.id);
-//                 res.locals.user = user;
-//                 next();
-//             };
-//         });
-//     }
-//     else{
-//         res.locals.user = null;
-//     }
-// }
-//
+    if (token){
+        jwt.verify(token, 'omrs meridan', async (err, decodedToken)=>{
+            if(err){
+                res.locals.user = null;
+                next();
+            }
+            else{
+                let user = await User.findById(decodedToken.id);
+                res.locals.user = user;
+                next();
+            };
+        });
+    }
+    else{
+        res.locals.user = null;
+    }
+}
+
 // const checkHospital = async (req, res, next) =>{
 //     const token = req.cookies.hlogin
 
@@ -127,4 +127,4 @@ const adminAuth = (req, res, next) => {
 //     }
 // }
 
-module.exports = { userAuth, hospitalAuth, adminAuth/*, checkUser, checkHospital, checkAdmin */};
+module.exports = { userAuth, hospitalAuth, adminAuth, checkUser/*, checkHospital, checkAdmin */};
