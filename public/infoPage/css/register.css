@@ -143,6 +143,7 @@ nav .menu-btn i {
   background: #0f5be7;
   position: fixed;
   width: 100%;
+  /* margin-top: -1.8rem; */
   margin-top: -1.8rem;
 }
 .wrapper nav {
