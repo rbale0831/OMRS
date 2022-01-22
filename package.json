@@ -24,11 +24,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Saleem2250/Online-Medical-Report-System.git"
+    "url": "git" 
   },
   "bugs": {
-    "url": "https://github.com/Saleem2250/Online-Medical-Report-System/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/Saleem2250/Online-Medical-Report-System#readme",
+  "homepage": "",
   "description": ""
 }
