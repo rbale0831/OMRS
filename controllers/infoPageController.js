@@ -1,6 +1,7 @@
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 
+
 // handele errors
 const handleErrors = (err) => {
     console.log(err.message,err.code);     
@@ -12,6 +13,7 @@ const handleErrors = (err) => {
         errors.email = "That email is already registered";
         return errors;
     }
+
 
     // incorrect email
     if (err.message === 'Incorrect Email') {
@@ -48,7 +50,7 @@ module.exports.index_get = (req, res) => {
 };
 
 module.exports.userSignup_get = (req, res) => {
-    res.status(200).render('infoPage/signup', { title: 'User Signup' });
+    res.status(200).render('infoPage/signup', { title: 'User Register' });
 };
 
 module.exports.userLogin_get = (req, res) => {
@@ -58,7 +60,7 @@ module.exports.userLogin_get = (req, res) => {
 module.exports.userSignup_post = async (req, res) => {
     const { fname, lname, uname, email, password } = req.body;
     try {
-        const user = await User.create({ fname, lname, uname, email, password});
+        const user = await User.create({ fname, lname, uname, email, password });
         const token = createToken(user._id);
         res.cookie('csign', token, { httpOnly: true, maxAge: maxAge * 3 });
         res.status(201).json({ user: user._id });

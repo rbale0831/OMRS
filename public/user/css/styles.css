@@ -19,6 +19,16 @@ body {
     margin: 10px auto;
     border: 10px solid #ccc;
     border-radius: 50%;
+<<<<<<< HEAD
+<<<<<<< HEAD
+    /* border-radius: 50%; */
+    overflow: hidden;
+    
+
+=======
+>>>>>>> 5a5243a1e0d9119fadf878607c4d67309c00dda1
+=======
+>>>>>>> 5a5243a1e0d9119fadf878607c4d67309c00dda1
 }
 
 .student-profile .card h3 {
@@ -36,4 +46,54 @@ body {
     font-size: 14px;
     padding: 5px 10px;
     color: #000;
+<<<<<<< HEAD
+<<<<<<< HEAD
+}
+#uploadBtn{
+    /* height: 40px; */
+    top: 50%;
+    /* width: 100%; */
+    position: absolute;
+    /* bottom: 0; */
+    left: 50%;
+    /* right: 50%; */
+    transform: translateX(-50%);
+    /* transform: translateY() ; */
+    /* transform: translateZ(5044%); */
+
+    /* text-align: center; */
+    background: rgba(0, 0, 0, 0.7);
+    color: wheat;
+    line-height: 30px;
+    font-family: sans-serif;
+    font-size:14px ;
+    overflow: hidden;
+
+    /* #uploadBtn{
+        height: 40px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        background: rgba(0, 0, 0, 0.7);
+        color: wheat;
+        line-height: 30px;
+        font-family: sans-serif;
+        font-size: 15px;
+        cursor: pointer;
+        display: none;
+    } */
+}
+#file{
+    display: none;
+}
+#photo{
+    /* height: 100%;
+    width: 100%; */
+=======
+>>>>>>> 5a5243a1e0d9119fadf878607c4d67309c00dda1
+=======
+>>>>>>> 5a5243a1e0d9119fadf878607c4d67309c00dda1
 }

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <link rel="stylesheet"
+    href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
+  <link rel="stylesheet" href="/user/css/main2.css" />
+
+  <title>Meridan</title>
+</head>
+
+<body>
+  <input type="checkbox" id="nav-toggle" />
+  <div class="sidebar">
+    <div class="sidebar-brand">
+      <h2><span class="lab la-magento"></span><span>Meridan</span></h2>
+    </div>
+    <div class="sidebar-menu">
+      <ul>
+        <li>
+          <input type="checkbox" id="sidebar-dash_toggle"  />
+          <a href="#"></a>
+          <!-- <span class="las la-igloo"></span> 
+              <span>Dashboard</span> -->
+          <label for="sidebar-dash_toggle"><span class="las la-clipboard-list"></span>
+            <span>Dashboard</span></label></a></a>
+          <div class="sub-menu-1">
+            <ul>
+              <li>
+                <a href="/hospital/dashboard"><span class="las la-clipboard-check"></span>
+                  <span>My Profile</span></a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!-- <li>
+            <a href="/user/records"
+              ><span class="las la-file"></span> <span>Records</span></a
+            >
+          </li> -->
+        <li>
+          <input type="checkbox" id="sidebar-toggle" checked/>
+          <a href="#"><label for="sidebar-toggle"><span class="las la-clipboard-list"></span>
+              <span>Admission</span></label></a>
+          <div class="sub-menu-1">
+            <ul>
+              <li>
+                <a href="/hospital/addPatientDetails" class="active"><span class="las la-clipboard-check"></span>
+                  <span>Add Patient details</details></span></a>
+              </li>
+              <!-- <li>
+                  <a href="/user/appointment_history"
+                    ><span class="las la-clipboard-check"></span>
+                    <span>kkkkk</span></a
+                  >
+                </li> -->
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="main-content">
+    <header>
+      <h2>
+        <label for="nav-toggle">
+          <span class="las la-bars"></span>
+        </label>
+        Dashboard
+      </h2>
+      <div class="search-wrapper">
+        <span class="las la-search">
+          <input type="search" placeholder="Search here" />
+        </span>
+      </div>
+      <div class="user-wrapper">
+        <img src="./img/img_1.jpg" width="40px" height="40px" alt="" />
+        <div>
+          <h4>Rohit Bale</h4>
+          <small>Super Admin</small>
+        </div>
+        <div class="sub-menu">
+          <ul>
+            <li><span class="las la-user"></span>My Profile</li>
+            <li><span class="las la-key"></span>Change Password</li>
+            <li><span class="las la-sign-out-alt"></span><a href="/hospital/logout">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <section>
+      <main>
+        <div class="cards">
+        <div class = "card-single">
+          <div>
+            <h1>54</h1>
+            <span>Patients</span>
+          </div>
+          <div>
+            <span class="las la-users"></span>
+          </div>
+        </div>
+
+        <div class = "card-single">
+          <div>
+            <h1>54</h1>
+            <span>Patients</span>
+          </div>
+          <div>
+            <span class="las la-users"></span>
+          </div>
+        </div>
+
+        <div class = "card-single">
+          <div>
+            <h1>54</h1>
+            <span>Patients</span>
+          </div>
+          <div>
+            <span class="las la-users"></span>
+          </div>
+        </div>
+
+        <div class = "card-single">
+          <div>
+            <h1>54</h1>
+            <span>Patients</span>
+          </div>
+          <div>
+            <span class="las la-users"></span>
+          </div>
+        </div>
+      </div>
+        <div class="recent-grid">
+          <div class="projects">
+            <div class="card">
+              <div class="card-header">
+                <h2>Recent Projects</h2>
+                <button>See all <span class="las la-arrow-right"></span></button>
+              </div>
+  
+              <div class="card-body">
+                <table width="100%">
+                  <thead>
+                    <tr class="titles">
+                      <td>First Name</td>
+                      <td>Last Name</td>
+                      <td>UserName</td>
+                      <td>Email</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Kunal</td>
+                      <td>Shinde</td>
+                      <td>kunal22</td>
+                      <td>
+                        <span class="status"></span>
+                        kunal@gmail.com
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Web Development</td>
+                      <td>Frontend</td>
+                      <td>Frontend</td>
+                      <td>
+                        <span class="status"></span>
+                        in progress
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Ushop app</td>
+                      <td>Mobile Team</td>
+                      <td>Mobile Team</td>
+                      <td>
+                        <span class="status"></span>
+                        pending
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>UI/UX design</td>
+                      <td>UI Team</td>
+                      <td>UI Team</td>
+                      <td>
+                        <span class="status"></span>
+                        review
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Web Development</td>
+                      <td>Frontend</td>
+                      <td>Frontend</td>
+                      <td>
+                        <span class="status"></span>
+                        in progress
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Ushop app</td>
+                      <td>Mobile Team</td>
+                      <td>Mobile Team</td>
+                      <td>
+                        <span class="status"></span>
+                        pending
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </section>
+  </div>
+</body>
+
+</html>

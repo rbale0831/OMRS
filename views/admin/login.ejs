@@ -15,7 +15,7 @@
   </head>
   <body>
     <header class="header">
-      <nav>
+      <!-- <nav>
         <div class="logo">Meridian</div>
         <input type="checkbox" id='click'>
         <label for="click" class="menu-btn">
@@ -28,7 +28,38 @@
             <li><a href="#">Contact</a></li>
             <li><a class="login" href="/home/login">Login</a></li>
         </ul>
-       </nav>
+       </nav> -->
+       <div class="wrapper">
+        <nav>
+          <input type="checkbox" id="show-menu">
+          <label for="show-menu" class="menu-icon">
+            <i class="fas fa-bars"></i>
+          </label>
+          <div class="content">
+          <div class="logo"><a href="#">Meridian</a></div>
+            <ul class="links">
+              <li><a href="/home">Home</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Advice</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li>
+                <a href="#" class="desktop-link">Login</a>
+                <input type="checkbox" id="show-features">
+                <label for="show-features">Login</label>
+                <ul>
+                  <li><a href="/admin/login">Admin</a></li>
+                  <li><a href="/hospital/login">Hospital</a></li>
+                  <li><a href="/home/login">User</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <label for="show-search" class="search-icon">
+            
+          </label>
+        </nav>
+      </div>
+    </header>
         <form>
         <h2>Admin <br> Log in</h2>
         <label for="email">Email</label>
