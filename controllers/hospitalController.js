@@ -43,11 +43,6 @@ const createToken = (id) =>{
     });
 };
 
-
-module.exports.index_get = (req, res) => {
-    res.status(200).render('hospital/index', { title: "Hospital" });
-};
-
 module.exports.hospitalSignup_get = (req, res) => {
     res.status(200).render('hospital/signup',{ title: "Hospital Sign" });
 };
@@ -93,7 +88,7 @@ module.exports.hospitalDashboard_get = (req, res)=>{
 };
 module.exports.hospitalAddPatientDetails_get = async (req, res)=>{
     const id = req.params._id
-    console.log(id);
+    // console.log(id);
     await User.find()
         .then(result => {
             res.status(200).render('hospital/add', { users: result, title: 'Patient Details' })
