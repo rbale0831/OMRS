@@ -58,7 +58,7 @@ module.exports.userLogin_get = (req, res) => {
 };
 
 module.exports.userSignup_post = async (req, res) => {
-    const { fname, lname, uname, email, password } = req.body;
+    const { fname, lname, uname, dob, gender, add1, add2, locality, district, state, pincode, occupation, pmn, smn, email, password } = req.body;
     try {
         const user = await User.create({ fname, lname, uname, email, password });
         const token = createToken(user._id);

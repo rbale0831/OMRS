@@ -19,6 +19,8 @@ app.use(cookieParser());
 app.use('/public', express.static('/public'))
 
 
+
+
 // register view engine
 app.set('view engine', 'ejs');
 const dbURL = 'mongodb+srv://rbale0831:rohit3108@cluster0.dzwxs.mongodb.net/partial';

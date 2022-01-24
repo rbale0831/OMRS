@@ -196,10 +196,11 @@ header label span {
   display: none;
 }
 
-/* .user-wrapper .sub-menu li:last-child a{
+.user-wrapper .sub-menu li:last-child a{
   text-decoration: none;
   border: none;
-} */
+  color: #252424;
+}
 
 .user-wrapper:hover {
   background: #f8f6f6;
