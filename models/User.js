@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 const { isEmail } = require('validator');
+<<<<<<< HEAD
 const bcrypt = require('bcryptjs');
+=======
+const bcrypt = require('bcrypt');
+>>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
 // const jwt = require('jsonwebtoken');
 
 const userSchema = new mongoose.Schema({

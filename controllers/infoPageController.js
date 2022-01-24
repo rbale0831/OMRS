@@ -60,7 +60,11 @@ module.exports.userLogin_get = (req, res) => {
 module.exports.userSignup_post = async (req, res) => {
     const { fname, lname, uname, dob, gender, add1, add2, locality, district, state, pincode, occupation, pmn, smn, email, password } = req.body;
     try {
+<<<<<<< HEAD
         const user = await User.create({ fname, lname, uname, dob, gender, add1, add2, locality, district, state, pincode, occupation, pmn, smn, email, password });
+=======
+        const user = await User.create({ fname, lname, uname, email, password });
+>>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
         const token = createToken(user._id);
         res.cookie('csign', token, { httpOnly: true, maxAge: maxAge * 3 });
         res.status(201).json({ user: user._id });

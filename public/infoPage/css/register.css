@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap");
 
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
 *,
 *::after,
 *::before {
@@ -11,7 +18,11 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+<<<<<<< HEAD
 a {
+=======
+a{
+>>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
   text-decoration: none;
   outline: none;
   border: none;
@@ -25,6 +36,11 @@ a {
   text-align: center;
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
 /*************/
 
 /* 
@@ -235,9 +251,16 @@ nav .content .links {
   top: 0;
 }
 
+<<<<<<< HEAD
 /**********/
 
 .regPage {
+=======
+
+/**********/
+
+.regPage{
+>>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
   /* margin-top: 2.5rem; */
   background: url();
   background-position: bottom;
@@ -250,6 +273,7 @@ nav .content .links {
   justify-content: center;
   align-items: center;
 }
+
 
 .container {
   max-width: 680px;
@@ -266,6 +290,11 @@ nav .content .links {
 
 /* ####### Create Account head ######## */
 .container .Enroll {
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
   font-size: 30px;
   font-weight: 600;
 
@@ -326,15 +355,33 @@ form .gender-details .gender-title {
 }
 
 form .gender-details {
+<<<<<<< HEAD
   margin-top: 1.5rem;
+=======
+
+
+  margin-top: 1.5rem;
+
+>>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
 }
 
 form .gender-details .category {
   display: flex;
+<<<<<<< HEAD
 }
 form .gender-details .category label {
   margin-top: 0.5rem;
   margin-right: 0.5rem;
+=======
+
+
+}
+form .gender-details .category label{
+  margin-top: .5rem;
+  margin-right: .5rem;
+
+
+>>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
 }
 
 /* ######## Create button ####### */
@@ -344,7 +391,15 @@ form .button {
   justify-content: center;
 }
 
+<<<<<<< HEAD
 button.button {
+=======
+
+
+
+
+button.button{
+>>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
   height: 110%;
   width: 100%;
   padding: 1rem;
@@ -356,11 +411,23 @@ button.button {
   transition: 0.5s ease-in-out;
   border: 2px solid #fff;
   background-color: #0f5be7;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
   color: white;
   cursor: pointer;
 }
 
+<<<<<<< HEAD
+=======
+
+ 
+
+
+ 
+>>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
 @media only screen and (max-width: 800px) {
   .container {
     width: 95%;
@@ -371,7 +438,171 @@ button.button {
   }
 }
 
+<<<<<<< HEAD
 /* ################################# footer ###### */
+=======
+ 
+
+
+ 
+/* ################################# footer ###### */
+
+.footer .logo-name {
+  color: #fff;
+  font-size: 40px;
+}
+
+.footer-container {
+  bottom: 0;
+  background-color: #212329;
+  padding-bottom: 4rem;
+}
+
+.footer {
+  width: 100%;
+  height: 35vh;
+  background-color: #212329;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 40px auto;
+}
+
+.footer-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  margin-right: 30px;
+}
+
+.footer-heading .head1 {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.footer-heading .head {
+  margin-top: 5rem;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  border-bottom: 4px solid #1877f2;
+}
+
+.footer-heading a {
+  text-decoration: none;
+  color: #fff;
+  margin-top: 1rem;
+}
+
+.footer-heading a:hover {
+  color: #1877f2;
+  transition: 0.5s ease-out;
+  text-decoration: underline;
+}
+
+.footer-email-form input {
+  height: 35px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  padding: 0 10px 0 12px;
+}
+
+.footer-email-form h2 {
+  margin-top: 5rem;
+  font-size: 20px;
+  font-weight: 600;
+  border-bottom: 4px solid #1877f2;
+}
+
+#footer-email {
+  width: 240px;
+  margin-top: 1.6rem;
+  font-size: 15px;
+}
+
+.footer-email-form #footer-email:hover {
+  box-shadow: 0px 0px 10px 1px #1877f2;
+}
+
+#footer-email-btn {
+  cursor: pointer;
+  width: 85px;
+  border: none;
+  margin-left: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #1877f2;
+}
+
+#footer-email-btn:hover {
+  background-color: #fff;
+  color: #1877f2;
+  transition: 0.4s ease;
+}
+
+@media only screen and (max-width: 950px) {
+  .footer {
+    height: 60vh;
+    display: flex;
+    flex-direction: row;
+  }
+  #footer-email-btn {
+    display: block;
+    margin-top: 10px;
+    margin-left: 0;
+  }
+}
+.Select {
+  /* max-width: 12px; */
+  height: 50px;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 30px;
+  padding: 5px;
+  outline: none;
+  border: 1.5px solid #fff;
+  font-size: 15px;
+  /* text-shadow: 2px 2px 4px #ccc; */
+  border-bottom-width: 1.5px;
+  transition: 0.6s ease-in-out;
+  font-weight: 600;
+  display: block;
+  /* font-size: 16px; */
+}
+
+@media only screen and (max-width: 475px) {
+  .footer {
+    height: 140vh;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .footer-heading .head {
+    margin-left: 20px;
+  }
+
+  .footer-heading a {
+    margin-left: 20px;
+  }
+
+  .footer-email-form h2 {
+    margin-left: 20px;
+  }
+
+  .footer-email-form input {
+    margin-left: 20px;
+  }
+  #footer-email-btn {
+    margin-left: 20px;
+  }
+
+
+
+}
+>>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
 
 .footer .logo-name {
   color: #fff;

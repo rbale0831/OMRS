@@ -75,14 +75,18 @@ a {
 /* ######### hamburger menu ######## */
 
 .welcome {
+<<<<<<< HEAD
    display:flex; 
+=======
+  display: flex;
+>>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
   margin: 20px;
   padding: 25px;
   padding-bottom: 5px;
   width: auto;
   font-size: 45px;
   font-weight: bold;
-  text-align: center;
+  justify-content: center;
 }
 
 .title {
@@ -98,7 +102,11 @@ a {
 }
 
 .content1 {
+<<<<<<< HEAD
   text-align: center; 
+=======
+  text-align: center;
+>>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
   font-size: 15px;
   font-weight: 500;
 }
@@ -611,6 +619,7 @@ nav .content .links {
 }
 
 .footer-heading .head {
+  color: #fff;
   margin-top: 5rem;
   font-size: 20px;
   font-weight: 600;
@@ -639,6 +648,7 @@ nav .content .links {
 }
 
 .footer-email-form h2 {
+  color: #fff;
   margin-top: 5rem;
   font-size: 20px;
   font-weight: 600;
@@ -741,6 +751,4 @@ nav .content .links {
   }
 }
 
-
 /* *************** signup & login ****************** */
-

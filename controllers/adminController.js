@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 // handele errors
 const handleErrors = (err) => {
     console.log(err.message,err.code);     
-    let errors = {  fname:"", lname:"", uname:"", email:"", password:""};
+    let errors = {  fname:'', lname:'', uname:'', email:'', password:''};
 
     // duplicate errors
     if (err.code === 11000){
