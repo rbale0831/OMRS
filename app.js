@@ -7,22 +7,7 @@ const adminRoutes = require('./routes/adminRoutes');
 const cookieParser = require('cookie-parser');
 const { userAuth } = require('./middleware/authMiddleware');
 const path = require('path')
-<<<<<<< HEAD
-// const port = process.env.PORT || 3000;
-    
-const multer = require('multer')
-
-
-// const path = require('path')
-
-
-
-// const path = require('path')
-
-// const port = process.env.PORT || 3000;
-=======
 // const multer = require('multer')
->>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
 
 const app = express();
 
@@ -54,21 +39,11 @@ app.get('/', (req, res) => {
     res.redirect('/home');
 });
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
 // app.get('/index1' , (req, res)=>{
 //     res.render('index1')
 
 // })
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
 // // multer   uploading files checking 
 // var storage = multer.diskStorage({
 //     destination: function (req, file, cb) {
@@ -94,24 +69,9 @@ app.get('/', (req, res) => {
 //       }
 //   })
 
-<<<<<<< HEAD
-
-
-
-
-
-
 // app.get('/register',(req,res)=>{
 //     res.render("./user/index")
 // })
-
-
-
-=======
-// app.get('/register',(req,res)=>{
-//     res.render("./user/index")
-// })
->>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
 
 // info_page Routes
 app.use('/home', infoPageRoutes); 

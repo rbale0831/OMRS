@@ -1,4 +1,5 @@
 const Hospital = require('../models/Hospital');
+const User = require('../models/User');
 const jwt = require('jsonwebtoken');
  
 // handele errors
@@ -90,8 +91,17 @@ module.exports.hospitalLogin_post = async (req, res) => {
 module.exports.hospitalDashboard_get = (req, res)=>{
     res.status(200).render('hospital/index');
 };
-module.exports.hospitalAddPatientDetails_get = (req, res)=>{
-    res.status(200).render('hospital/add');
+module.exports.hospitalAddPatientDetails_get = async (req, res)=>{
+    const id = req.params._id
+    console.log(id);
+    await User.find()
+        .then(result => {
+            res.status(200).render('hospital/add', { users: result, title: 'Patient Details' })
+        })
+        .catch(err =>{
+            res.json(err);
+        })       
+
 };
 module.exports.hospitalProfile_get = (req, res)=>{
     res.status(200).render('hospital/profile');

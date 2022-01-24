@@ -85,46 +85,46 @@ const checkUser = (req, res, next) =>{
     }
 }
 
-// const checkHospital = async (req, res, next) =>{
-//     const token = req.cookies.hlogin
+const checkHospital = (req, res, next) =>{
+    const token = req.cookies.hlogin
 
-//     if (token){
-//         jwt.verify(token, 'omrs meridan hospital', (err, decodedToken)=>{
-//             if(err){
-//                 res.locals.hospital = null;
-//                 next();
-//             }
-//             else{
-//                 let hospital = await Hospital.findById(decodedToken.id);
-//                 res.locals.hospital = hospital;
-//                 next();
-//             };
-//         });
-//     }
-//     else{
-//         res.locals.hospital = null;
-//     }
-// }
-//
-// const checkAdmin = async (req, res, next) =>{
-//     const token = req.cookies.alogin
+    if (token){
+        jwt.verify(token, 'omrs meridan hospital', async (err, decodedToken)=>{
+            if(err){
+                res.locals.hospital = null;
+                next();
+            }
+            else{
+                let hospital = await Hospital.findById(decodedToken.id);
+                res.locals.hospital = hospital;
+                next();
+            };
+        });
+    }
+    else{
+        res.locals.hospital = null;
+    }
+}
 
-//     if (token){
-//         jwt.verify(token, 'omrs meridan admin', (err, decodedToken)=>{
-//             if(err){
-//                 res.locals.admin = null;
-//                 next();
-//             }
-//             else{
-//                 let admin = await Admin.findById(decodedToken.id);
-//                 res.locals.admin = admin;
-//                 next();
-//             };
-//         });
-//     }
-//     else{
-//         res.locals.admin = null;
-//     }
-// }
+const checkAdmin = (req, res, next) =>{
+    const token = req.cookies.alogin
 
-module.exports = { userAuth, hospitalAuth, adminAuth, checkUser/*, checkHospital, checkAdmin */};
+    if (token){
+        jwt.verify(token, 'omrs meridan admin', async (err, decodedToken)=>{
+            if(err){
+                res.locals.admin = null;
+                next();
+            }
+            else{
+                let admin = await Admin.findById(decodedToken.id);
+                res.locals.admin = admin;
+                next();
+            };
+        });
+    }
+    else{
+        res.locals.admin = null;
+    }
+}
+
+module.exports = { userAuth, hospitalAuth, adminAuth, checkUser, checkHospital, checkAdmin };

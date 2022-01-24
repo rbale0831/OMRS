@@ -1,12 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap");
 
-<<<<<<< HEAD
-=======
 
 
 
 
->>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
 *,
 *::after,
 *::before {
@@ -18,11 +15,7 @@
 body {
   font-family: "Poppins", sans-serif;
 }
-<<<<<<< HEAD
-a {
-=======
 a{
->>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
   text-decoration: none;
   outline: none;
   border: none;
@@ -36,11 +29,8 @@ a{
   text-align: center;
 }
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
 /*************/
 
 /* 
@@ -251,16 +241,10 @@ nav .content .links {
   top: 0;
 }
 
-<<<<<<< HEAD
-/**********/
-
-.regPage {
-=======
 
 /**********/
 
 .regPage{
->>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
   /* margin-top: 2.5rem; */
   background: url();
   background-position: bottom;
@@ -290,11 +274,8 @@ nav .content .links {
 
 /* ####### Create Account head ######## */
 .container .Enroll {
-<<<<<<< HEAD
-=======
 
 
->>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
   font-size: 30px;
   font-weight: 600;
 
@@ -355,24 +336,14 @@ form .gender-details .gender-title {
 }
 
 form .gender-details {
-<<<<<<< HEAD
-  margin-top: 1.5rem;
-=======
 
 
   margin-top: 1.5rem;
 
->>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
 }
 
 form .gender-details .category {
   display: flex;
-<<<<<<< HEAD
-}
-form .gender-details .category label {
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
-=======
 
 
 }
@@ -381,7 +352,6 @@ form .gender-details .category label{
   margin-right: .5rem;
 
 
->>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
 }
 
 /* ######## Create button ####### */
@@ -391,15 +361,11 @@ form .button {
   justify-content: center;
 }
 
-<<<<<<< HEAD
-button.button {
-=======
 
 
 
 
 button.button{
->>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
   height: 110%;
   width: 100%;
   padding: 1rem;
@@ -411,23 +377,16 @@ button.button{
   transition: 0.5s ease-in-out;
   border: 2px solid #fff;
   background-color: #0f5be7;
-<<<<<<< HEAD
-
-=======
   
->>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
   color: white;
   cursor: pointer;
 }
 
-<<<<<<< HEAD
-=======
 
  
 
 
  
->>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
 @media only screen and (max-width: 800px) {
   .container {
     width: 95%;
@@ -438,9 +397,6 @@ button.button{
   }
 }
 
-<<<<<<< HEAD
-/* ################################# footer ###### */
-=======
  
 
 
@@ -602,7 +558,6 @@ button.button{
 
 
 }
->>>>>>> ef410d53e6a3a0eac858d7b243a2978d9fc5d28f
 
 .footer .logo-name {
   color: #fff;
