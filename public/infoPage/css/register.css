@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap");
 
-
-
-
-
 *,
 *::after,
 *::before {
@@ -15,7 +11,7 @@
 body {
   font-family: "Poppins", sans-serif;
 }
-a{
+a {
   text-decoration: none;
   outline: none;
   border: none;
@@ -28,8 +24,6 @@ a{
   margin-bottom: 20px;
   text-align: center;
 }
-
-
 
 /*************/
 
@@ -241,10 +235,9 @@ nav .content .links {
   top: 0;
 }
 
-
 /**********/
 
-.regPage{
+.regPage {
   /* margin-top: 2.5rem; */
   background: url();
   background-position: bottom;
@@ -257,7 +250,6 @@ nav .content .links {
   justify-content: center;
   align-items: center;
 }
-
 
 .container {
   max-width: 680px;
@@ -274,8 +266,6 @@ nav .content .links {
 
 /* ####### Create Account head ######## */
 .container .Enroll {
-
-
   font-size: 30px;
   font-weight: 600;
 
@@ -336,22 +326,15 @@ form .gender-details .gender-title {
 }
 
 form .gender-details {
-
-
   margin-top: 1.5rem;
-
 }
 
 form .gender-details .category {
   display: flex;
-
-
 }
-form .gender-details .category label{
-  margin-top: .5rem;
-  margin-right: .5rem;
-
-
+form .gender-details .category label {
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 /* ######## Create button ####### */
@@ -361,11 +344,7 @@ form .button {
   justify-content: center;
 }
 
-
-
-
-
-button.button{
+button.button {
   height: 110%;
   width: 100%;
   padding: 1rem;
@@ -377,16 +356,11 @@ button.button{
   transition: 0.5s ease-in-out;
   border: 2px solid #fff;
   background-color: #0f5be7;
-  
+
   color: white;
   cursor: pointer;
 }
 
-
- 
-
-
- 
 @media only screen and (max-width: 800px) {
   .container {
     width: 95%;
@@ -397,10 +371,6 @@ button.button{
   }
 }
 
- 
-
-
- 
 /* ################################# footer ###### */
 
 .footer .logo-name {
@@ -554,8 +524,4 @@ button.button{
   #footer-email-btn {
     margin-left: 20px;
   }
-
-
-
 }
-
