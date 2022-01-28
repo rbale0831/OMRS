@@ -42,14 +42,14 @@ adminSchema.pre('save', async function(next){
 });
 
 // statics method to login admin
-adminSchema.statics.login = async function(email, password){
+adminSchema.statics.login = async function(email, password) {
     const admin = await this.findOne({ email });
     if (admin){
-        const auth = await bcrypt.compare(password, this.password);
+        const auth = await bcrypt.compare(password, admin.password);
         if (auth){
             return admin;
-        } 
-        else {
+        }
+        else{
             throw Error('Incorrect Password');
         };
     }
