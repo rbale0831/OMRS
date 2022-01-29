@@ -1,12 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meridan </title>
-</head>
+
+<%- include('./partials/head.ejs') %> 
+
 <body>
-    <h1>Admin Index</h1>
+  <input type="checkbox" id="nav-toggle" />
+  <div class="sidebar">
+    <div class="sidebar-brand">
+      <h2><span class="lab la-magento"></span><span>Meridan</span></h2>
+    </div>
+    <div class="sidebar-menu">
+      <ul>
+        <li>
+          <input type="checkbox" id="sidebar-dash_toggle" checked />
+          <a href="#"></a>
+            <!-- <span class="las la-igloo"></span> 
+            <span>Dashboard</span> -->
+            <label for="sidebar-dash_toggle"
+              ><span class="las la-clipboard-list"></span>
+              <span>Dashboard</span></label
+            ></a
+          ></a
+          >
+          <div class="sub-menu-1">
+            <ul>
+              <li>
+                <a href="/admin/dashboard" class="active"
+                  ><span class="las la-clipboard-check"></span>
+                  <span>My Profile</span></a
+                >
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!-- <li>
+          <a href="/user/records"
+            ><span class="las la-file"></span> <span>Records</span></a
+          >
+        </li> -->
+        <li>
+          <input type="checkbox" id="sidebar-toggle" />
+          <a href="#"
+            ><label for="sidebar-toggle"
+              ><span class="las la-clipboard-list"></span>
+              <span>Admission</span></label
+            ></a
+          >
+          <div class="sub-menu-1">
+            <ul>
+              <li>
+                <a href="/admin/listPaitents"
+                  ><span class="las la-clipboard-check"></span>
+                  <span>List of Paitents</details></span></a
+                >
+              </li>
+              <!-- <li>
+                <a href="/user/appointment_history"
+                  ><span class="las la-clipboard-check"></span>
+                  <span>kkkkk</span></a
+                >
+              </li> -->
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="main-content">
+    <header>
+      <h2>
+        <label for="nav-toggle">
+          <span class="las la-bars"></span>
+        </label>
+        Dashboard
+      </h2>
+      <div class="search-wrapper">
+        <span class="las la-search">
+          <input type="search" placeholder="Search here" />
+        </span>
+      </div>
+      <div class="user-wrapper">
+        <img src="./img/img_1.jpg" width="40px" height="40px" alt="" />
+        <div>
+          <h4><%= admin.fname %> <%= admin.lname %></h4>
+          <small>Super Admin</small>
+        </div>
+        <div class="sub-menu">
+          <ul>
+            <li><span class="las la-user"></span>My Profile</li>
+            <li><span class="las la-key"></span>Change Password</li>
+            <li><span class="las la-sign-out-alt"></span><a href="/admin/logout">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+  </div>
 </body>
 </html>
+

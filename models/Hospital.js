@@ -33,12 +33,12 @@ hospitalSchema.pre('save', async function(next){
     next();
 });
 
-hospitalSchema.statics.login = async function (email, password) {
+hospitalSchema.statics.login = async function(email, password) {
     const hospital = await this.findOne({ email });
-    if(hospital){
-        const auth = bcrypt.compare(password, this.password);
+    if (hospital){
+        const auth = await bcrypt.compare(password, hospital.password);
         if (auth){
-            return hospital
+            return hospital;
         }
         else{
             throw Error('Incorrect Password');

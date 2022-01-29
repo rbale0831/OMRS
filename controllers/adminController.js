@@ -53,7 +53,7 @@ module.exports.adminSignup_get = (req, res) => {
 };
 
 module.exports.adminLogin_get = (req, res) => {
-    res.status(200).render('admin/login',{ title: " Admin Login" });
+    res.status(200).render('admin/login',{ title: "Admin Login" });
 };
 
 module.exports.adminSignup_post = async (req, res) => {
@@ -79,7 +79,7 @@ module.exports.adminLogin_post = async (req, res) => {
         const token = createToken(admin._id);
         res.cookie('alogin', token, { httpOnly: true, maxAge: maxAge * 3 });
         res.status(200).json({admin: admin._id});
-    }
+    } 
     catch (err) {
         const errors = handleErrors(err);
         res.status(400).json({ errors });
@@ -92,6 +92,18 @@ module.exports.adminDashboard_get = (req, res)=>{
 
 module.exports.adminProfile_get = (req, res)=>{
     res.status(200).render('admin/profile', { title: "Admin Profile" });
+};
+
+module.exports.adminListPaitents = async (req, res)=>{
+    const id = req.params._id
+    // console.log(id);
+    await User.find()
+        .then(result => {
+            res.status(200).render('admin/listPaitents', { users: result, title: 'List of Paitents' })
+        })
+        .catch(err =>{
+            res.json(err);     
+        })
 };
 
 module.exports.adminLogout_get = (req, res) => {          
