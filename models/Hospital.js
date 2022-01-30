@@ -8,7 +8,6 @@ const hospitalSchema = new mongoose.Schema({
     hosname:{
         type: String,
         required: [true, "Enter your hospital name"],
-        lowercase: true,
         unique: true,
     },
     email: {
