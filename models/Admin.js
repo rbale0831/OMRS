@@ -6,12 +6,10 @@ const adminSchema = new mongoose.Schema({
     fname:{
         type: String,
         required: true,
-        lowercase: true,
     },
     lname:{
         type: String,
         required: true,
-        lowercase: true,
     },
     uname:{
         type: String,
