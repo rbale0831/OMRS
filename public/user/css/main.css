@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -196,7 +198,7 @@ header label span {
   display: none;
 }
 
-.user-wrapper .sub-menu li:last-child a{
+.user-wrapper .sub-menu li:last-child a {
   text-decoration: none;
   border: none;
   color: #252424;
@@ -220,7 +222,6 @@ header label span {
   border-bottom: 1px solid #252424;
   margin-top: 0.5rem;
 }
-
 
 .user-wrapper:hover .sub-menu li span {
   margin-right: 0.35rem;
@@ -276,6 +277,112 @@ header label span {
     width: calc(100% - 70px);
     left: 70px;
   }
+}
+
+/**************Profile************/
+.header {
+  font-size: 50px;
+  margin-left: 110px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.form1 {
+  margin-top: -220px;
+}
+.form2 {
+  margin-top: 40px;
+}
+
+.form-header1 {
+  margin-left: 110px;
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 4px;
+}
+.form-header1::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 5px;
+  width: 305px;
+  background: #0f5be7;
+}
+
+.form-header2 {
+  margin-left: 110px;
+  font-size: 30px;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 4px;
+}
+.form-header2::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 5px;
+  width: 130px;
+  background: #0f5be7;
+}
+
+.row {
+  margin-top: 10px;
+  margin-left: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.col1 {
+  margin-left: 30px;
+}
+
+.input {
+  height: 45px;
+  padding: 5px;
+  width: 220%;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid rgb(190, 190, 190);
+  transition: 0.4s ease-in-out;
+}
+.input:hover {
+  border-color: #0f5be7;
+}
+
+select.input {
+  border: 2px solid rgb(190, 190, 190);
+}
+
+span.details {
+  margin-bottom: 5px;
+  margin-top: 15px;
+  font-weight: 400;
+  display: block;
+}
+
+.btn {
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 25px;
+  margin-left: 110px;
+  width: 20%;
+  height: 50px;
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid #fff;
+  background-color: #0f5be7;
+  color: azure;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+.btn:hover {
+  border-color: #0f5be7;
+  color: #0f5be7;
+  background-color: #fff;
 }
 
 @media only screen and (max-width: 768px) {
