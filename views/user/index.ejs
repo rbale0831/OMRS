@@ -1,4 +1,3 @@
-
 <%- include('./partials/head.ejs') %>
 
   <body>
@@ -10,46 +9,33 @@
       <div class="sidebar-menu">
         <ul>
           <li>
-            <a href="#" 
-              ><span class="las la-igloo"></span> 
-              <span>Dashboard</span></a
-            >
+            <a href="#"><span class="las la-igloo"></span>
+              <span>Dashboard</span></a>
             <div class="sub-menu-1">
               <ul>
                 <li>
-                  <a href="/user/dashboard" class="active"
-                    ><span class="las la-clipboard-check"></span>
+                  <a href="/user/dashboard" class="active"><span class="las la-clipboard-check"></span>
                     <span>My Profile</span></a>
                 </li>
               </ul>
             </div>
           </li>
           <li>
-            <a href="/user/records"
-              ><span class="las la-file"></span> <span>Records</span></a
-            >
+            <a href="/user/records"><span class="las la-file"></span> <span>Records</span></a>
           </li>
           <li>
             <input type="checkbox" id="sidebar-toggle" />
-            <a href="#"
-              ><label for="sidebar-toggle"
-                ><span class="las la-clipboard-list"></span>
-                <span>Appointment</span></label
-              ></a
-            >
+            <a href="#"><label for="sidebar-toggle"><span class="las la-clipboard-list"></span>
+                <span>Appointment</span></label></a>
             <div class="sub-menu-1">
               <ul>
                 <li>
-                  <a href="/user/book_appointment"
-                    ><span class="las la-clipboard-check"></span>
-                    <span>Book Appointment</span></a
-                  >
+                  <a href="/user/book_appointment"><span class="las la-clipboard-check"></span>
+                    <span>Book Appointment</span></a>
                 </li>
                 <li>
-                  <a href="/user/appointment_history"
-                    ><span class="las la-clipboard-check"></span>
-                    <span>Appointment History</span></a
-                  >
+                  <a href="/user/appointment_history"><span class="las la-clipboard-check"></span>
+                    <span>Appointment History</span></a>
                 </li>
               </ul>
             </div>
@@ -73,7 +59,10 @@
         <div class="user-wrapper">
           <img src="./img/img_1.jpg" width="40px" height="40px" alt="" />
           <div>
-            <h4><%= user.fname %> <%= user.lname %></h4>
+            <h4>
+              <%= user.fname  %>
+                <%= user.lname %>
+            </h4>
             <small>Super Admin</small>
           </div>
           <div class="sub-menu">
@@ -86,51 +75,59 @@
         </div>
       </header>
 
-    <form class="form1" action="">
-      <div class="header">Profile</div>
-      <div class="form-header1">General Information</div>
+      <form class="form1" method="POST">
+        <div class="header">Profile</div>
+        <div class="form-header1">General Information</div>
         <div class="row">
-            <div class="col1">
-              <div class="inputbox"> 
-                <span class="details">Policy no.</span>
-                <input class="input" type="text" required>
-              </div>
-              <div class="inputbox"> 
-                <span class="details">First Name</span>
-                <input class="input" type="text" required>
-              </div>
-              <div class="inputbox"> 
-                <span class="details">Middle Name</span>
-                <input class="input" type="text" required>
-              </div>
-              <div class="inputbox"> 
-                <span class="details">Last Name</span>
-                <input class="input" type="text" required>
-              </div>
-              <div class="inputbox"> 
-                <span class="details">Email</span>
-                <input class="input" type="email" required>
-              </div>
-              <div class="inputbox"> 
-                <span class="details">Occupation</span>
-                <input class="input" type="text" required>
-              </div>
-          </div> 
-  
+          <div class="col1">
+            <div class="inputbox">
+              <span class="details">Policy no.</span>
+              <!-- <input id="policynum" class="input" type="text"> -->
+            </div>
+            <div class="inputbox">
+              <span class="details">First Name</span>
+              <span> <%=user.fname %>  </span> 
+              <!-- <input id="fname" class="input" type="text"> -->
+            </div>
+            <div class="inputbox">
+              <span class="details">Middle Name</span>
+              <input id="mname" class="input" type="text">
+            </div>
+            <div class="inputbox">
+              <span class="details">Last Name</span>
+              <p> <%=user.lname %>  </p>
+              <!-- <input id="lname" class="input" type="text"> -->
+            </div>
+            <div class="inputbox">
+              <span class="details">Username</span>
+              <p> <%=user.uname %>  </p>
+              <!-- <input id="uname" class="input" type="text"> -->
+            </div>
+            <div class="inputbox">
+              <span class="details">Email</span>
+              <p> <%=user.email %>  </p>
+              <!-- <input id="email" class="input" type="email"> -->
+            </div>
+            <div class="inputbox">
+              <span class="details">Occupation</span>
+              <input id="occupation" class="input" type="text">
+            </div>
+          </div>
+
           <div class="col2">
-            <div class="inputbox"> 
+            <div class="inputbox">
               <span class="details">Choose Photo</span>
-              <input class="input" type="text" required>
+              <input class="input" type="text">
             </div>
-  
-            <div class="inputbox"> 
+
+            <div class="inputbox">
               <span class="details">Age</span>
-              <input class="input" type="text" required>
+              <input id="age" class="input" type="text">
             </div>
-  
-            <div class="inputbox">  
-              <span class="details"value="" disabled selected>Blood Group</span>
-              <select class="input">
+
+            <div class="inputbox">
+              <span class="details"  value="" disabled selected>Blood Group</span>
+              <select class="input" id="bloodGroup">
                 <option value=""></option>
                 <option value="a+">A+</option>
                 <option value="a-"> A-</option>
@@ -141,45 +138,45 @@
                 <option value="ab+ ">AB+</option>
                 <option value="ab- ">AB-</option>
               </select>
-          </div>
-            <div class="inputbox">  
-              <span class="details"value="" disabled selected>Gender</span>
-              <select class="input">
+            </div>
+            <div class="inputbox">
+              <span class="details" value="" disabled selected>Gender</span>
+              <select class="input" id="gender">
                 <option value=""></option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
                 <option value="Other">Other</option>
               </select>
+            </div>
+            <div class="inputbox">
+              <span class="details">Date Of Birth</span>
+              <input id="dob" class="input" type="date">
+            </div>
+            <div class="inputbox">
+              <span class="details">Language</span>
+              <input id="language" class="input" type="text">
+            </div>
           </div>
-            <div class="inputbox">  
-                <span class="details">Date Of Birth</span>
-                <input class="input" type="date" required>
-            </div>
-            <div class="inputbox">  
-                <span class="details">Language</span>
-                <input class="input" type="text" required>
-            </div>
-          </div>
-            </div>
+        </div>
       </form>
-  
+
       <form class="form2" action="">
         <div class="form-header2">Address</div>
         <div class="row">
           <div class="col1">
-            <div class="inputbox"> 
+            <div class="inputbox">
               <span class="details">Home Address</span>
-              <input class="input" type="text" required>
+              <input id="address" class="input" type="text">
             </div>
-  
-            <div class="inputbox"> 
+
+            <div class="inputbox">
               <span class="details">Locality</span>
-              <input class="input" type="text" required>
+              <input id="localilty" class="input" type="text">
             </div>
-  
-            <div class="inputbox"> 
-              <span class="details"value="" disabled selected>State</span>
-              <select class="input">
+
+            <div class="inputbox">
+              <span class="details" value="" disabled selected>State</span>
+              <select class="input " id="state">
                 <option value=""></option>
                 <option value="Andhra Pradesh">Andhra Pradesh</option>
                 <option value="Andaman and Nicobar">Andaman and Nicobar</option>
@@ -216,32 +213,97 @@
                 <option value="Uttar Pradesh">Uttar Pradesh</option>
                 <option value="Uttarakhand">Uttarakhand</option>
                 <option value="West Bengal">West Bengal</option>
-                </select>
-              </div>
+              </select>
             </div>
-  
-            <div class="col2">
-            <div class="inputbox"> 
-              <span class="details">City</span>
-              <input class="input" type="text" required>
+          </div>
+
+          <div class="col2">
+            <div class="inputbox">
+              <span class="details">City </span>
+              <input  id="city" class="input" type="text">
             </div>
-            <div class="inputbox"> 
+            <div class="inputbox">
               <span class="details">Pin Code</span>
-              <input class="input" type="text" required>
+              <input id="pincode" class="input" type="text">
             </div>
-            <div class="inputbox"> 
+            <div class="inputbox">
               <span class="details">Contact no.</span>
-              <input class="input" type="number" required>
+              <input id="contact" class="input" type="number">
             </div>
           </div>
         </div>
-          <div class="button">
-            <input class="btn" type="submit" value="Submit">
-         </div>
+        <!-- <div class="button">
+          <input class="btn" type="submit" value="Submit">
+
+        </div> -->
+        <button onclick="fn1()">Click me</button>
       </form>
     </div>
   </body>
 
+  <script>
 
-</html>
 
+
+
+    async function fn1() {
+
+      event.preventDefault();
+      const policynum = document.getElementById('policynum').value ;
+      const age = document.getElementById('age').value;
+      const fname = document.getElementById("fname").value;
+      const lname = document.getElementById('lname').value;
+      const uname = document.getElementById('uname').value;
+      const email = document.getElementById('email').value;
+      const bloodGroup = document.getElementById('bloodGroup').value;
+      const state = document.getElementById('state').value;
+      const city = document.getElementById('city').value;
+      const pincode = document.getElementById('pincode').value;
+      const  contact= document.getElementById('contact').value;
+      const mname = document.getElementById('mname').value;
+      const gender = document.getElementById('gender').value;
+      //const bloodGroup = document.getElementById('bloodGroup').value;
+      console.log(policynum)
+
+      console.log(fname)
+      console.log(lname)
+      console.log(mname)
+      console.log(uname)
+      console.log(email)
+      console.log(bloodGroup)
+      console.log(city)
+      console.log(pincode)
+      console.log(state)
+      console.log(contact)
+      console.log(age)
+
+
+/*
+      try {
+        const res = await fetch('/user/dashboard', {
+          method: 'POST',
+          body: JSON.stringify({ fname, lname, email }),
+          headers: { 'Content-Type': 'application/json' }
+        });
+
+        const data = await res.json();
+      console.log(data)
+     
+      }
+
+
+      catch (err) {
+        console.log(err)
+      }
+      
+
+*/
+    }
+
+
+
+
+  </script>
+
+
+  </html>
