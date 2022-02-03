@@ -63,7 +63,7 @@
               <%= user.fname  %>
                 <%= user.lname %>
             </h4>
-            <small>Super Admin</small>
+            <small><%= user.uname %></small>
           </div>
           <div class="sub-menu">
             <ul>
@@ -117,7 +117,7 @@
           <div class="col2">
             <div class="inputbox">
               <span class="details">Choose Photo</span>
-              <input class="input" type="text">
+              <input class="input" type="file">
             </div>
 
             <div class="inputbox">
@@ -236,7 +236,7 @@
           <input class="btn" type="submit" value="Submit">
 
         </div> -->
-        <button onclick="fn1()">Click me</button>
+        <button class="button" onclick="fn1()">Click me</button>
       </form>
     </div>
   </body>
