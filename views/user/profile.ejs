@@ -27,13 +27,26 @@
         <div class="sidebar-menu">
           <ul>
             <li>
-              <a href="#"><span class="las la-igloo"></span>
-                <span>Dashboard</span></a>
-              <div class="sub-menu-1">
+              <input type="checkbox" id="sidebar-toggle_2" checked />
+              <a href="#"
+                ><label for="sidebar-toggle_2"
+                  ><span class="las la-igloo"></span>
+                  <span>Dashboard</span></label
+                ></a
+              >
+              <div class="sub-menu-2">
                 <ul>
                   <li>
-                    <a href="/user/dashboard" class="active"><span class="las la-clipboard-check"></span>
-                      <span>My Profile</span></a>
+                    <a href="/user/dashboard" class="active"
+                      ><span class="las la-clipboard-check"></span>
+                      <span>My Profile</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="/user/editProfile"
+                      ><span class="las la-clipboard-check"></span>
+                      <span>Edit Profile</span></a
+                    >
                   </li>
                 </ul>
               </div>
@@ -85,41 +98,15 @@
             </div>
             <div class="sub-menu">
               <ul>
-                <li><span class="las la-user"></span>My Profile</li>
+                <li><span class="las la-user"></span><a href="/user/editProfile">Edit Profile</a></li>
                 <li><span class="las la-key"></span>Change Password</li>
                 <li><span class="las la-sign-out-alt"></span><a href="/user/logout">Logout</a></li>
               </ul>
             </div>
           </div>
         </header>
-  
-  
-    <!-- <div class="ScriptTop">
-      <div class="rt-container">
-        <div class="col-rt-4" id="float-right">
-  
-        </div>
-        <div class="col-rt-2">
-          <ul>
-            <li><a href="" title="Back to main page">Back</a></li>
-          </ul>
-        </div>
       </div>
-    </div> -->
-  
-  
-  
-  
-    <!-- <header class="ScriptHeader">
-      <div class="rt-container">
-        <div class="col-rt-12">
-          <div class="rt-heading">
-            <h1>Profile page</h1>
-            <p>Patient Detils </p>
-          </div>
-        </div>
-      </div>
-    </header> -->
+      
   
   
   

@@ -50,12 +50,29 @@
 .sidebar-menu li:nth-child(3) .sub-menu-1 {
   display: none;
 }
+.sidebar-menu li:nth-child(1) {
+  position: relative;
+  margin-top: -0.3rem;
+}
+
+.sidebar-menu li:nth-child(1) .sub-menu-2 {
+  display: none;
+}
 
 .sidebar-menu li:nth-child(3) #sidebar-toggle {
   opacity: 0;
 }
 
 .sidebar-menu ul li:nth-child(3) #sidebar-toggle:checked ~ .sub-menu-1 {
+  display: block;
+  margin-top: 1.5rem;
+  margin-left: 0;
+}
+.sidebar-menu li:nth-child(1) #sidebar-toggle_2 {
+  opacity: 0;
+}
+
+.sidebar-menu ul li:nth-child(1) #sidebar-toggle_2:checked ~ .sub-menu-2 {
   display: block;
   margin-top: 1.5rem;
   margin-left: 0;

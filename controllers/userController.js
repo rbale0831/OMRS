@@ -32,6 +32,10 @@ module.exports.userRecords_get = (req, res) => {
 module.exports.userProfile_get = (req, res) => {
   res.status(200).render("user/profile", { title: "" });
 };
+module.exports.userEditProfile_get = (req, res) => {
+  res.status(200).render("user/editProfile", { title: "Edit Profile" });
+};
+
 module.exports.userLogout_get = (req, res) => {
   res.cookie("clogin", "", { maxAge: 1 });
   res.redirect("/home/login");

@@ -10,9 +10,29 @@
       <div class="sidebar-menu">
         <ul>
           <li>
-            <a href="/user/dashboard"
-              ><span class="las la-igloo"></span> <span>Dashboard</span></a
+            <input type="checkbox" id="sidebar-toggle_2"/>
+            <a href="#"
+              ><label for="sidebar-toggle_2"
+                ><span class="las la-igloo"></span>
+                <span>Dashboard</span></label
+              ></a
             >
+            <div class="sub-menu-2">
+              <ul>
+                <li>
+                  <a href="/user/dashboard"
+                    ><span class="las la-clipboard-check"></span>
+                    <span>My Profile</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/user/editProfile"
+                    ><span class="las la-clipboard-check"></span>
+                    <span>Edit Profile</span></a
+                  >
+                </li>
+              </ul>
+            </div>
           </li>
           <li>
             <a href="/user/records" class="active"
@@ -68,7 +88,7 @@
           </div>
           <div class="sub-menu">
             <ul>
-              <li><span class="las la-user"></span>My Profile</li>
+              <li><span class="las la-user"></span><a href="/user/editProfile">Edit Profile</a></li>
               <li>Change Password</li>
               <li><span class="las la-sign-out-alt"></span><a href="/user/logout">Logout</a></li>
             </ul>
