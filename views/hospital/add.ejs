@@ -84,7 +84,154 @@
         </div>
       </div>
     </header>
+    <section class="addCard"> 
+
+      <form class="signup-form" action="/register" method="post">
+  
+        <!-- form header -->
+        <div class="form-header">
+          <h1>Addmision Form</h1>
+        </div>
+    
+        <!-- form body -->
+      
+    
+          <!-- Firstname and Lastname -->
+          <div class="horizontal-group">
+            <div class="form-group left">
+              <label  class="label-title">Policy Number</label>
+              <input type="text"  id="text" class="form-input" placeholder="enter your first name"
+                required="required" />
+            </div>
+            <div class="form-group right">
+              <label  class="label-title">first name</label>
+              <input type="text" id="text" class="form-input" placeholder="enter your last name" />
+            </div>
+    
+            <div class="form-group left">
+              <label  class="label-title">Last name</label>
+              <input type="text" id="text" class="form-input" placeholder="enter your last name" />
+            </div>
+         
+    
+          
+          <!-- Email -->
+          <div class="form-group left" >
+            <label class="label-title" > Email</label>
+            <input type="email" id="text" class="form-input" placeholder="enter your email" required="required" style="margin-left: 12px;">
+          </div>
+          
+          <div class="form-group">
+             <div class="form-group right">
+              <div >Weight</label>
+            <input type="email" id="text" class="form-input" placeholder="enter your email" required="required">
+          </div>
+          
+          </div>
+          
+    
+          <div class="form-group left" >
+            <label for="email" class="label-title">Height</label>
+            <input type="text" id="text" class="form-input" placeholder="enter your Height" required="required">
+          </div>
+        </div>
+          
+          <!-- Gender and Hobbies -->
+          <div class="horizontal-group">
+            <div class="form-group left">
+              <label class="label-title">Gender:</label>
+              <div class="input-group">
+                <label for="male"><input type="radio" name="gender" value="male" id="male"> Male</label>
+                <label for="female"><input type="radio" name="gender" value="female" id="female"> Female</label>
+              </div>
+            </div>
+            <div class="form-group right">
+              <label class="label-title">Habbits</label>
+              <div>
+                <label><input type="checkbox" value="Web">Tobacco</label>
+                <label><input type="checkbox" value="iOS">Alcohal</label>
+                <label><input type="checkbox" value="Andriod">Sigrate</label>
+                <label><input type="checkbox" value="Game">Drugs</label>
+              </div>
+            </div>
+          </div>
+    
+    
+    
+          <div class="horizontal-group">
+            <div class="form-group left">
+              <label for="firstname" class="label-title">Date of Addmision</label>
+              <input type="date" class="form-input" id="text" placeholder="enter your first name"
+                required="required" />
+            </div>
+            <div class="form-group right">
+              <label for="lastname" class="label-title">Discharge Date</label>
+              <input type="date" class="form-input" id="text" placeholder="enter your last name" />
+            </div>
+    
+           
+         
+    
+            <div class="form-group right">
+              <label for="lastname" class="label-title">Refer Dr. </label>
+              <input type="text" class="form-input"  placeholder="Refer Dr. name" id="text"/>
+            </div>
+    
+            <div class="form-group left">
+              <label for="lastname" class="label-title">Consultant </label>
+              <input type="text"   placeholder="Refer Dr. name" id="text" "/>
+            </div>
+            <div class="horizontal-group">
+            <div class="form-group ">
+              <label for="lastname" class="label-title">Diagnostic </label>
+              <textarea class="form-input" rows="2" cols="55" style="  min-width: 50px;
+              min-height: 60px; " ></textarea>
+            </div>
+            
+    
+            <div class="form-group ">
+              <label  class="label-title">Treatments Given </label>
+              <textarea class="form-input" rows="2" cols="55" style="  min-width: 50px;
+              min-height: 60px; " ></textarea>
+            </div>
+    
+          </div>
+    
+           
+          </div>
+    
+    
+          <!-- Bio -->
+          <div class="horizontal-group">
+          <div class=  "form-group ">
+            <label for="choose-file" class="label-title">Bio</label>
+            <textarea class="form-input" rows="4" cols="55" style="height:auto"></textarea>
+          </div>
+          
+          <div class="form-group ">
+            <label for="choose-file"    class="label-title">Complaints</label>
+            <textarea class="form-input"  rows="2" cols="55"   ></textarea>
+          </div>
+        </div>
+      </div>
+    
+    
+        
+        <!-- form-footer -->
+        <div class="form-footer">
+          <span>* required </span>
+          <button type="submit" class="btn">Add</button>
+        </div>
+    
+      </form>
+    
+    
+    </section>
   </div>
+  
+  
+
+
 </body>
 </html>
 
