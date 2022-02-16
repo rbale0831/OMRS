@@ -83,4 +83,6 @@ app.use('/admin', adminRoutes);
 
 
 
-
+app.get('*', (req, res) => {
+    res.status(404).render('404page', {title:'404 Page'})
+});

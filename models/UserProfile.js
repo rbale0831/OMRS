@@ -7,9 +7,7 @@ const userProfileSchema = new mongoose.Schema({
   },
   occupation: {
     type: String,
-    required: [true, "Enter Your Email"],
-    unique: true,
-    lowercase: true,
+    required: [true, "Enter Your Occupation"],
   },
   age:{
     type: Number,
@@ -32,7 +30,7 @@ const userProfileSchema = new mongoose.Schema({
     required:true
   },
   cp:{
-    type:String,
+    type:[String],
   },
   hadd:{
     type: String,

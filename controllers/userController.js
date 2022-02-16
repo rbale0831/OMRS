@@ -1,6 +1,14 @@
 const UserProfile = require("../models/UserProfile")
 const User = require("../models/User");
 
+// create json web token
+maxAge = 3 * 24 * 60 * 60;
+const createToken = (id) => {
+    return jwt.sign({ id }, 'omrs meridan',{
+        expiresIn: maxAge
+    });
+};
+
  module.exports.userDashboard_get =  (req, res) => {
 
     res.status(200).render('user/index', { title: 'Profile' })
@@ -35,6 +43,22 @@ module.exports.userProfile_get = (req, res) => {
 module.exports.userEditProfile_get = (req, res) => {
   res.status(200).render("user/editProfile", { title: "Edit Profile" });
 };
+module.exports.userEditProfile_put = async (req, res) => {
+  const { fname, mname, lname, uname, email, occupation, age, bg, gender, dob, lan, cp, hadd, city, loc, state, pincode, cno } = req.body;
+  const id = req.params._id
+
+  try{
+    /* const profile  = await  UserProfile.create({fname , lname  , email}) */
+    const updateUser = await User.updateOne({ _id: id }, { fname, mname, lname, uname, email, occupation, age, bg, gender, dob, lan, cp, hadd, city, loc, state, pincode, cno })
+    const token = createToken(updateUser._id);
+    res.cookie('csign', token, { httpOnly: true, maxAge: maxAge * 3 });
+    res.status(201).json({ user: updateUser._id });
+    
+  }
+  catch (err){
+    throw err
+  }
+}
 
 module.exports.userLogout_get = (req, res) => {
   res.cookie("clogin", "", { maxAge: 1 });

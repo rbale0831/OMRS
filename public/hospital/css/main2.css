@@ -51,15 +51,15 @@ body {
   margin-top: -0.3rem;
 }
 
-.sidebar-menu li:nth-child(1) .sub-menu-1 {
+.sidebar-menu li:nth-child(1) .sub-menu-2 {
   display: none;
 }
 
-.sidebar-menu li:nth-child(1) #sidebar-dash_toggle {
+.sidebar-menu li:nth-child(1) #sidebar-toggle_2 {
   opacity: 0;
 }
 
-.sidebar-menu ul li:nth-child(1) #sidebar-dash_toggle:checked ~ .sub-menu-1 {
+.sidebar-menu ul li:nth-child(1) #sidebar-toggle_2:checked ~ .sub-menu-2 {
   display: block;
   margin-top: 1.5rem;
   margin-left: 0;
@@ -214,11 +214,11 @@ header label span {
   display: none;
 }
 
-.user-wrapper .sub-menu li:last-child a{
-    text-decoration: none;
-    border: none;
-    color: #252424;
-  }
+.user-wrapper .sub-menu li:last-child a {
+  text-decoration: none;
+  border: none;
+  color: #252424;
+}
 
 .user-wrapper:hover {
   background: #f8f6f6;

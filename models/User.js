@@ -7,6 +7,7 @@ const userSchema = new mongoose.Schema({
         type: String, 
         required: true,
     },
+    mname: String,
     lname:{
         type: String,
         required: true,
@@ -30,6 +31,28 @@ const userSchema = new mongoose.Schema({
         minlength: [8, 'Minimum password length 8 charaters'],
         maxlength: [16, 'Maximum password length 16 charaters'],
     },
+    occupation: String,
+    age: Number,
+    bg: String,
+    gender: String,
+    dob: String,
+    lan:[String],
+    hadd:String,
+    city:String,
+    loc:String,
+    state:String,
+    pincode:{
+        type: Number,
+        required:true,
+        minlength:[5,"Pincode is of 5 Numbers"],
+        maxlength:[5,"Pincode is of 5 Numbers"],
+    },
+    cno:{
+        type: Number,
+        required:true,
+        minlength:[10,"Pincode is of 5 Numbers"],
+        maxlength:[10,"Pincode is of 5 Numbers"],
+      },
 });
 
 

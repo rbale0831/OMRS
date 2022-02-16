@@ -39,13 +39,13 @@
           <div class="sub-menu-1">
             <ul>
               <li>
-                <a href="/hospital/listPatientDetails" 
+                <a href="/hospital/listPatientDetails" class="active"
                   ><span class="las la-clipboard-check"></span>
                   <span>Lists of Patient details</details></span></a
                 >
               </li>
               <li>
-                <a href="/hospital/addPatientDetails" class="active"
+                <a href="/hospital/addPatientDetails"
                   ><span class="las la-clipboard-check"></span>
                   <span>Add Patient</details></span></a
                 >
@@ -84,7 +84,63 @@
         </div>
       </div>
     </header>
+    <section>
+      <main>
+        <div class="cards">
+        <div class = "card-single">
+          <div>
+            <h1>54</h1>
+            <span>Patients</span>
+          </div>
+          <div>
+            <span class="las la-users"></span>
+          </div>
+        </div>
+
+      </div>
+        <div class="recent-grid">
+          <div class="projects">
+            <div class="card">
+              <div class="card-header">
+                <h2>Recent Projects</h2>
+                <button>See all <span class="las la-arrow-right"></span></button>
+              </div>
+  
+              <div class="card-body">
+                <table width="100%">
+                  <thead>
+                    <tr class="titles">
+                      <td>First Name</td>
+                      <td>Last Name</td>
+                      <td>UserName</td>
+                      <td>Email</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% if (users.length >0) {  %> 
+                      <% users.forEach(users => { %>
+                    <tr>
+                      <td><%= users.fname %>  </td>
+                      <td><%= users.lname %></td>
+                      <td><%= users.uname %></td>
+                      <td>
+                        <span class="status"></span>
+                        <%= users.email %>
+                      </td>
+                    </tr>
+                    <% }) %>
+                    <% } else {%>  
+                      <p>No Paitent Details</p>
+                      <% } %> 
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </section>
   </div>
 </body>
-</html>
 
+</html>
