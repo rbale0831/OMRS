@@ -40,6 +40,9 @@ module.exports.userRecords_get = (req, res) => {
 module.exports.userProfile_get = (req, res) => {
   res.status(200).render("user/profile", { title: "" });
 };
+module.exports.userChangePassword_get = (req, res) => {
+  res.status(200).render("user/changePassword", { title: "Change Password" });
+};
 module.exports.userEditProfile_get = (req, res) => {
   res.status(200).render("user/editProfile", { title: "Edit Profile" });
 };
