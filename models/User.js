@@ -3,31 +3,22 @@ const { isEmail } = require('validator');
 const bcrypt = require('bcryptjs');
 
 const userSchema = new mongoose.Schema({
-    fname:{
-        type: String, 
-        required: true,
-    },
+    fname: String,
     mname: String,
-    lname:{
-        type: String,
-        required: true,
-    },
+    lname: String,
     uname:{
         type: String,
-        required: [true, "Enter your Username"],
         unique: true,
         lowercase: true,
     },
     email: {
         type: String,
-        required: [true, "Enter Your Email Address"],
         unique: true,
         lowercase: true,
         validate: [isEmail, "Enter a Valid Email Address"],
     },
     password: {
         type: String,
-        required: [true, 'Enter your password'],
         minlength: [8, 'Minimum password length 8 charaters'],
         maxlength: [16, 'Maximum password length 16 charaters'],
     },
@@ -43,13 +34,11 @@ const userSchema = new mongoose.Schema({
     state:String,
     pincode:{
         type: Number,
-        required:true,
         minlength:[5,"Pincode is of 5 Numbers"],
         maxlength:[5,"Pincode is of 5 Numbers"],
     },
     cno:{
         type: Number,
-        required:true,
         minlength:[10,"Pincode is of 5 Numbers"],
         maxlength:[10,"Pincode is of 5 Numbers"],
       },
