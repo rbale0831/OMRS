@@ -607,6 +607,128 @@ span.details {
 
 /*************My Profile****************/
 
+.container_Profile {
+  margin-left: 2.5rem;
+  margin-top: -220px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas:
+    "userProfile userDetails"
+    "work_skills timeline_about"
+    "work_skills contact_info1";
+  width: 70rem;
+  height: 90vh;
+  padding: 1.5rem;
+}
+
+/* ===== =====>>  Container Cards Grid-Area Css Start  <<===== =====  */
+header {
+  grid-area: header;
+}
+
+.userProfile {
+  grid-area: userProfile;
+}
+
+.work_skills {
+  grid-area: work_skills;
+}
+
+.userDetails {
+  grid-area: userDetails;
+}
+
+.timeline_about {
+  grid-area: timeline_about;
+}
+.contact_info1 {
+  grid-area: contact_info1;
+}
+.basic_info1 {
+  grid-area: basic_info1;
+}
+
+/* ===== =====>>  Container Cards Css  <<===== =====  */
+.container_Profile .card {
+  border-radius: 0.5rem;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  border: 1px solid #ccc;
+  margin: 10px;
+}
+
+/* ===== =====>>  User Main-Profile Css Start  <<===== ===== */
+.container_Profile .userProfile {
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin-right: 10px;
+}
+
+.container .userProfile .profile figure img {
+  width: 13rem;
+  height: 15rem;
+  border-radius: 50rem;
+}
+
+/* ===== =====>>  User Details Css Start  <<===== ===== */
+
+.userDetails {
+  position: relative;
+  padding: 1.5rem 2.5rem;
+}
+
+.userDetails .userName h1 {
+  font-size: 2.2rem;
+}
+
+.userDetails .userName .map {
+  display: flex;
+  align-items: center;
+  margin: 5px 0px;
+  font-weight: 500;
+}
+.city {
+  font-size: 16px;
+}
+
+.userDetails .userName p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: royalblue;
+}
+.rank {
+  margin-top: 10px;
+}
+
+/* ===== =====>>general info<<===== ===== */
+
+h1.heading {
+  font-size: 25px;
+}
+
+h1.label {
+  display: inline-block;
+  margin: 10px 1px;
+  font-size: 15px;
+  font-weight: 500;
+}
+span.email {
+  color: royalblue;
+  cursor: pointer;
+}
+
+.timeline_about .contact_info1 .basic_info1 {
+  padding: 2.5rem;
+}
+
 /*********** Media ***************/
 @media only screen and (max-width: 768px) {
   .search-wrapper {
