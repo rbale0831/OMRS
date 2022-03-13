@@ -94,36 +94,36 @@
         </div>
       </header>
       <section class="editProfile_form">
-        <form>
+        <form action="/user/editProfile" method="PUT" enctype="multipart/form-data">
           <div class="header_1">Profile</div>
           <div class="st_bs1">
             <div class="form-header1">General Information</div>
             <div class="grid_1">
               <div class="f1">
                 <span class="textDesign" for="false1">Policy no.</span>
-                <input class="input" type="text" class="input" name="false1" />
+                <!-- <input class="input" type="text" class="input" name="false1" /> -->
               </div>
             </div>
             <div class="grid_2">
               <div class="r1">
-                <span class="textDesign" for="test1">First Name</span>
-                <input class="input_2" type="text" name="test1" />
+                <span class="textDesign" for="fname">First Name</span>
+                <input class="input_2" type="text" name="fname" id="fname" />
               </div>
               <div class="r2">
-                <span class="textDesign" for="test2">Middle Name</span>
-                <input class="input_2" type="text" name="test2" />
+                <span class="textDesign" for="mname">Middle Name</span>
+                <input class="input_2" type="text" name="mname" id="mname" />
               </div>
               <div class="r3">
                 <span class="textDesign" for="test3">Last Name</span>
-                <input class="input_2" type="text" name="test3" />
+                <input class="input_2" type="text" name="lname" id="lname" />
               </div>
               <div class="r4">
                 <span class="textDesign" for="test4">Age</span>
-                <input class="input_2" type="text" name="test4" />
+                <input class="input_2" type="text" name="age" id="age" />
               </div>
               <div class="r5">
                 <span class="textDesign" for="test5">Blood Group</span>
-                <select class="input_2" type="text" name="test5">
+                <select class="input_2" type="text" name="bg" id="bg">
                   <option value=""></option>
                   <option value="a+">A+</option>
                   <option value="a-"> A-</option>
@@ -137,7 +137,7 @@
               </div>
               <div class="r6">
                 <span class="textDesign" for="test6">Gender</span>
-                <select class="input_2" type="text" name="test6">
+                <select class="input_2" type="text" name="gender" id="gender">
                   <option value=""></option>
                       <option value="Male">Male</option>
                       <option value="Female">Female</option>
@@ -145,30 +145,32 @@
                     </select>
               </div>
             </div>
-            <div class="grid_3">
+            <div class="grid_3" enctype="multipart/form-data">
               <div class="u1">
                 <span class="textDesign" for="true1">Date of Birth</span>
-                <input class="input_3" type="date" name="true1" />
+                <input class="input_3" type="date" name="dob" id="dob" />
               </div>
-              <div class="u2">
+               <div class="u2">
                 <span class="textDesign" for="true1">Occupation</span>
-                <input class="input_3" type="text" name="true1" />
+                <input class="input_3" type="text" name="occ" id="occ" />
               </div>
               <div class="u3">
                 <span class="textDesign" for="true1">Username</span>
-                <input class="input_3" type="text" name="true1" />
+                <!-- <input class="input_3" type="text" name="true1" /> -->
+                <%= user.uname %>
               </div>
               <div class="u4">
                 <span class="textDesign" for="true1">Email</span>
-                <input class="input_3" type="email" name="true1" />
+                <!-- <input class="input_3" type="email" name="true1" /> -->
+                <%= user.email %> 
               </div>
-              <div class="u5">
+              <div class="u5" enctype="multipart/form-data">
                 <span class="textDesign" for="true1">Choose File</span>
-                <input class="input_3 c_css" type="file" name="true1" />
+                <input class="input_3 c_css" type="file" name="cp" id="cp" />
               </div>
               <div class="u6">
                 <span class="textDesign" for="true1">Language</span>
-                <select class="input_3" type="text" name="true1">
+                <select class="input_3" type="text" name="lan" id="lan">
                   <option value=""></option>
                   <option value="English">English</option>
                   <option value="Hindi">Hindi</option>
@@ -182,15 +184,15 @@
             <div class="grid_4">
               <div class="q1">
                 <span class="textDesign" for="true1">Home Address</span>
-                <input class="input_3" type="text" name="true1" />
+                <input class="input_3" type="text" name="hadd" id="hadd" />
               </div>
               <div class="q2">
                 <span class="textDesign" for="true1">Locality</span>
-                <input class="input_3" type="text" name="true1" />
+                <input class="input_3" type="text" name="loc" id="loc" />
               </div>
               <div class="q3">
                 <span class="textDesign" for="true1">State</span>
-                <select class="input_3" type="text" name="true1">
+                <select class="input_3" type="text" name="state" id="state">
                   <option value="">Select Your State</option>
                     <option value="Andhra Pradesh">Andhra Pradesh</option>
                     <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -225,16 +227,16 @@
                   </select>
               </div>
               <div class="q4">
-                <span class="textDesign" for="true1">City </span>
-                <input class="input_3" type="text" name="true1" />
+                <span class="textDesign" for="true1">City</span>
+                <input class="input_3" type="text" name="city"  id="city"/>
               </div>
               <div class="q5">
                 <span class="textDesign" for="true1">Pin Code</span>
-                <input class="input_3" type="number" name="true1" />
+                <input class="input_3" type="number" name="pincode"  id="pincode"/>
               </div>
               <div class="q6">
                 <span class="textDesign" for="true1">Contact no.</span>
-                <input class="input_3" type="number" name="true1" />
+                <input class="input_3" type="number" name="con" id="con"/>
               </div>
             </div>
           </div>
@@ -246,66 +248,60 @@
 
   <script>
 
-
-
-
     async function fn1() {
-
       event.preventDefault();
-      const policynum = document.getElementById('policynum').value ;
-      const age = document.getElementById('age').value;
+
       const fname = document.getElementById("fname").value;
+      const mname = document.getElementById('mname').value;
       const lname = document.getElementById('lname').value;
-      const uname = document.getElementById('uname').value;
-      const email = document.getElementById('email').value;
-      const bloodGroup = document.getElementById('bloodGroup').value;
+      const dob = document.getElementById('dob').value;
+      const age = document.getElementById('age').value;
+      const bloodGroup = document.getElementById('bg').value;
+      const gender = document.getElementById('gender').value;
+      const occupation = document.getElementById('occ').value;
+      const cp = document.getElementById('cp').value;
+      const language = document.getElementById('lan').value;
+      const hadd = document.getElementById('hadd').value;
       const state = document.getElementById('state').value;
       const city = document.getElementById('city').value;
+      const locality = document.getElementById('loc').value;
       const pincode = document.getElementById('pincode').value;
-      const  contact= document.getElementById('contact').value;
-      const mname = document.getElementById('mname').value;
-      const gender = document.getElementById('gender').value;
-      //const bloodGroup = document.getElementById('bloodGroup').value;
-      console.log(policynum)
+      const contact= document.getElementById('con').value;
 
-      console.log(fname)
-      console.log(lname)
-      console.log(mname)
-      console.log(uname)
-      console.log(email)
-      console.log(bloodGroup)
-      console.log(city)
-      console.log(pincode)
-      console.log(state)
-      console.log(contact)
-      console.log(age)
+      // console.log(fname)
+      // console.log(lname)
+      // console.log(mname)
+      // console.log(dob)
+      // console.log(age)
+      // console.log(bloodGroup)
+      // console.log(gender)
+      // console.log(occupation)
+      // console.log(cp)
+      // console.log(language)
+      // console.log(hadd)
+      // console.log(state)
+      // console.log(city)
+      // console.log(locality)
+      // console.log(pincode)
+      // console.log(contact)
 
-
-/*
-      try {
-        const res = await fetch('/user/dashboard', {
-          method: 'POST',
-          body: JSON.stringify({ fname, lname, email }),
-          headers: { 'Content-Type': 'application/json' }
+      try{
+        const res = await fetch('/user/editProfile', {
+          method: 'PUT',
+          body: JSON.stringify({ fname, lname, mname, dob, age, bloodGroup, gender, occupation, cp, language, hadd, state, city, locality, pincode, contact}),
+          headers: {'Content-Type': 'application/json'}
         });
-
-        const data = await res.json();
-      console.log(data)
-     
+        const data = await res.json()
+        console.log(data)
+        if (data.user) {
+          location.assign('/user/editProfile');
+        }
+      }
+      catch (err){
+        throw err
       }
 
-
-      catch (err) {
-        console.log(err)
-      }
-      
-
-*/
     }
-
-
-
-
   </script>
 
 

@@ -71,3 +71,12 @@ const userSchema = new mongoose.Schema({
         maxlength: [16, 'Maximum password length 16 charaters'],
     },
 });
+
+
+ fname = req.body.fname
+  mname = req.body.mname
+  lname = req.body.lname
+  occupation = req.body.occ
+  age = req.body.age
+
+  console.log(fname, mname, lname, occupation, age)
