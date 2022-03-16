@@ -10,16 +10,16 @@ const createToken = (id) => {
     });
 };
 
-const upload = multer({
-  storage:multer.diskStorage ({
-      destination:(req,file, cb)=>{
-          cb(null, './uploads')
-      },
-      filename:function(req,file, cb){
-          cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname)) // how multer save our file 
-      }
-  })
-});
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => cb(null, 'uploads/'),
+  filename: (req, file, cb) => {
+      const uniqueName = `${Date.now()}-${Math.round( Math.random() * 1e9 )}${path.extname(file.originalname)}`;
+      cb(null, uniqueName)
+  }
+})
+
+const handleMultipartData = multer({ storage}).single('image')
+
 
  module.exports.userDashboard_get =  (req, res) => {
 
@@ -58,21 +58,80 @@ module.exports.userChangePassword_get = (req, res) => {
 module.exports.userEditProfile_get = (req, res) => {
   res.status(200).render("user/editProfile", { title: "Edit Profile" });
 };
-module.exports.userEditProfile_put =  upload.single('cp'), async (req, res) => {
+// module.exports.userEditProfile_put =  async (req, res) => {
+//   const { fname, mname, lname, occupation, age, bg, gender, dob, lan, cp, hadd, city, loc, state, pincode, cno } = req.body;
+  
+//   const id = req.params.id
+//   handleMultipartData  (req, res, async (err) =>{
+    
+//     let filePath;
+//     if(req.file){
+//         filePath = req.file.path;
+//     }
+
+//     let updateUser;
+//     try{ 
+//       updateUser = await User.findOneAndUpdate({ _id: id}, { $set : { 
+//         fname,
+//         mname, 
+//         lname, 
+//         occupation, 
+//         age, 
+//         bg, 
+//         gender, 
+//         dob,
+//         lan,
+//         ...(req.file && { cp: filePath}),
+//         hadd, 
+//         city, 
+//         loc, 
+//         state, 
+//         pincode, 
+//         cno
+//        }})
+//     }
+//     catch (err){
+//       throw err
+//     }
+//     res.status(201).json({ user: updateUser });
+//   })
+// }
+module.exports.userEditProfile_put = /*handleMultipartData,*/ async (req, res) => {
   const { fname, mname, lname, occupation, age, bg, gender, dob, lan, cp, hadd, city, loc, state, pincode, cno } = req.body;
+  
+  const id = req.params.id
+    
+    // let filePath;
+    // if(req.file){
+    //     filePath = req.file.path;
+    // }
 
-  const id = req.params._id
-
-  try{
-    // const profile  = await  UserProfile.create({fname , lname  , email}) 
-    const updateUser = await User.findOneAndUpdate({ _id: id}, { $set : { fname, mname, lname, occupation, age, bg, gender, dob, lan, cp, hadd, city, loc, state, pincode, cno }})
-    const token = createToken(updateUser._id);
-    res.cookie('csign', token, { httpOnly: true, maxAge: maxAge * 3 });
-    res.status(201).json({ user: updateUser._id });
-  }
-  catch (err){
-    throw err
-  }
+    try{ 
+      const updateUser = await User.findOneAndUpdate({ _id: id}, { $set : { 
+        fname,
+        mname, 
+        lname, 
+        occupation, 
+        age, 
+        bg, 
+        gender, 
+        dob,
+        lan,
+        // ...(req.file && { cp: filePath}),
+        hadd, 
+        city, 
+        loc, 
+        state, 
+        pincode, 
+        cno
+       }},{ new: true })
+       res.status(201).json({ user: updateUser });
+    }
+    catch (err){
+      throw err
+    }
+    
+  
 }
 
 module.exports.userLogout_get = (req, res) => {
