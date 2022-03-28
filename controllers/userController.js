@@ -1,24 +1,39 @@
 const UserProfile = require("../models/UserProfile")
 const User = require("../models/User");
 const multer = require('multer');
+const path = require('path')
 
 // create json web token
-maxAge = 3 * 24 * 60 * 60;
-const createToken = (id) => {
-    return jwt.sign({ id }, 'omrs meridan',{
-        expiresIn: maxAge
-    });
-};
+// maxAge = 3 * 24 * 60 * 60;
+// const createToken = (id) => {
+//     return jwt.sign({ id }, 'omrs meridan',{
+//         expiresIn: maxAge
+//     });
+// };
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, 'uploads/'),
-  filename: (req, file, cb) => {
-      const uniqueName = `${Date.now()}-${Math.round( Math.random() * 1e9 )}${path.extname(file.originalname)}`;
-      cb(null, uniqueName)
-  }
-})
+// const storage = multer.diskStorage({
+//   destination: (req, file, cb) => cb(null, 'uploads/'),
+//   filename: (req, file, cb) => {
+//       const uniqueName = `${Date.now()}-${Math.round( Math.random() * 1e9 )}${path.extname(file.originalname)}`;
+//       cb(null, uniqueName)
+//   }
+// })
 
-const handleMultipartData = multer({ storage}).single('image')
+// const handleMultipartData = multer({ storage }).single('cp')
+
+// const upload = multer({ dest: 'uploads/' })
+
+const upload = multer({
+  storage:multer.diskStorage ({
+      destination:(req,file, cb)=>{
+          cb(null, './uploads')
+      },
+      filename:function(req,file, cb){
+          cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname)) // how multer save our file 
+      }
+  })
+});
+
 
 
  module.exports.userDashboard_get =  (req, res) => {
@@ -96,41 +111,52 @@ module.exports.userEditProfile_get = (req, res) => {
 //     res.status(201).json({ user: updateUser });
 //   })
 // }
-module.exports.userEditProfile_put = /*handleMultipartData,*/ async (req, res) => {
-  const { fname, mname, lname, occupation, age, bg, gender, dob, lan, cp, hadd, city, loc, state, pincode, cno } = req.body;
+module.exports.userEditProfile_put = /*handleMultipartData,*/  async (req, res) => {
   
+  const { fname, mname, lname, occupation, age, bg, gender, dob, lan, cp, hadd, city, loc, state, pincode, cno } = req.body;
+
+  
+  console.log("Enter to the function")
+  // console.log(handleMultipartData)
+  upload.single('cp')
+
+  console.log(fname)
   const id = req.params.id
     
-    // let filePath;
-    // if(req.file){
-    //     filePath = req.file.path;
-    // }
+    let filePath;
+    if(req.file){
+        filePath = req.file.path;
+    }
+
+    let updateUser;
+    console.log(upload.path)
+    // console.log(req.file)
 
     try{ 
-      const updateUser = await User.findOneAndUpdate({ _id: id}, { $set : { 
+        updateUser = await User.findOneAndUpdate({ _id: id}, { $set : { 
         fname,
-        mname, 
-        lname, 
+        mname,
+        lname,
         occupation, 
-        age, 
-        bg, 
-        gender, 
+        age,
+        bg,
+        gender,
         dob,
         lan,
-        // ...(req.file && { cp: filePath}),
-        hadd, 
-        city, 
-        loc, 
-        state, 
+        ...(req.file && { cp: filePath}),
+        hadd,
+        city,
+        loc,
+        state,
         pincode, 
         cno
        }},{ new: true })
-       res.status(201).json({ user: updateUser });
     }
     catch (err){
       throw err
     }
-    
+    console.log(updateUser)
+    res.status(201).json({ status: 1 });
   
 }
 

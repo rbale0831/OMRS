@@ -5,6 +5,7 @@ const userRoutes = require('./routes/userRoutes');
 const hospitalRoutes = require('./routes/hospitalRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 const { userAuth } = require('./middleware/authMiddleware');
 const path = require('path')
 
@@ -15,6 +16,10 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser());
+// app.use(bodyParser.urlencoded({     
+//     // to support URL-encoded bodies
+//     extended: true
+//   })); 
 app.use('/public', express.static('/public'))
 
 
