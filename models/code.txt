@@ -100,3 +100,9 @@ const userSchema = new mongoose.Schema({
 	"cno":"4567894561"
 }
 
+
+// app.use(bodyParser.urlencoded({     
+//     // to support URL-encoded bodies
+//     extended: true
+//   })); 
+
