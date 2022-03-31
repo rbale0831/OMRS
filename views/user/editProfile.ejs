@@ -25,13 +25,13 @@
                   >
                 </li>
                 <li>
-                  <a href="/user/editProfile" class="active"
+                  <a href="/user/editProfile/<%= user._id  %>"
                     ><span class="las la-clipboard-check"></span>
                     <span>Edit Profile</span></a
                   >
                 </li>
                 <li>
-                  <a href="/user/changePassword"
+                  <a href="/user/changePassword/<%= user._id  %>" 
                     ><span class="las la-clipboard-check"></span>
                     <span>Change Password</span></a
                   >
@@ -86,15 +86,15 @@
           </div>
           <div class="sub-menu">
             <ul>
-              <li><span class="las la-user"></span><a href="/user/editProfile">Edit Profile</a></li>
-              <li><span class="las la-key"></span><a href="/user/changePassword">Change Password</a></li>
+              <li><span class="las la-user"></span><a href="/user/editProfile/<%= user._id  %>">Edit Profile</a></li>
+              <li><span class="las la-key"></span><a href="/user/changePassword/<%= user._id  %>">Change Password</a></li>
               <li><span class="las la-sign-out-alt"></span><a href="/user/logout">Logout</a></li>
             </ul>
           </div>
         </div>
       </header>
       <section class="editProfile_form">
-        <form action="/user/editProfile" method="PUT" enctype="multipart/form-data">
+        <form action="/user/editProfile/<%= user._id  %>" method="PUT" enctype="multipart/form-data">
           <div class="header_1">Profile</div>
           <div class="st_bs1">
             <div class="form-header1">General Information</div>
@@ -236,7 +236,7 @@
               </div>
               <div class="q6">
                 <span class="textDesign" for="true1">Contact no.</span>
-                <input class="input_3" type="number" name="con" id="con"/>
+                <input class="input_3" type="number" name="con" id="cno"/>
               </div>
             </div>
           </div>
@@ -256,51 +256,50 @@
       const lname = document.getElementById('lname').value;
       const dob = document.getElementById('dob').value;
       const age = document.getElementById('age').value;
-      const bloodGroup = document.getElementById('bg').value;
+      const bg = document.getElementById('bg').value;
       const gender = document.getElementById('gender').value;
       const occupation = document.getElementById('occ').value;
       const cp = document.getElementById('cp').value;
-      const language = document.getElementById('lan').value;
+      const lan = document.getElementById('lan').value;
       const hadd = document.getElementById('hadd').value;
       const state = document.getElementById('state').value;
       const city = document.getElementById('city').value;
-      const locality = document.getElementById('loc').value;
+      const loc = document.getElementById('loc').value;
       const pincode = document.getElementById('pincode').value;
-      const contact= document.getElementById('con').value;
-
+      const cno= document.getElementById('cno').value;
+      
       // console.log(fname)
       // console.log(lname)
       // console.log(mname)
       // console.log(dob)
       // console.log(age)
-      // console.log(bloodGroup)
+      // console.log(bg)
       // console.log(gender)
       // console.log(occupation)
       // console.log(cp)
-      // console.log(language)
+      // console.log(lan)
       // console.log(hadd)
       // console.log(state)
       // console.log(city)
-      // console.log(locality)
+      // console.log(loc)
       // console.log(pincode)
-      // console.log(contact)
+      // console.log(cno)
 
       try{
-        const res = await fetch('/user/editProfile', {
+        const res = await fetch('/user/editProfile/<%= user._id  %>', {
           method: 'PUT',
-          body: JSON.stringify({ fname, lname, mname, dob, age, bloodGroup, gender, occupation, cp, language, hadd, state, city, locality, pincode, contact}),
-          headers: {'Content-Type': 'application/json'}
+          body: JSON.stringify({ fname, mname, lname, dob, age, bg, gender, occupation, cp, lan, hadd, state, city, loc, pincode, cno }),
+          headers: {'Content-Type': 'multipart/form-data'}
         });
         const data = await res.json()
         console.log(data)
         if (data.user) {
-          location.assign('/user/editProfile');
+          location.assign('/user/dashboard');
         }
       }
       catch (err){
         throw err
       }
-
     }
   </script>
 

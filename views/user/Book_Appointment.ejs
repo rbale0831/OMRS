@@ -27,13 +27,13 @@
                   >
                 </li>
                 <li>
-                  <a href="/user/editProfile"
+                  <a href="/user/editProfile/<%= user._id  %>"
                     ><span class="las la-clipboard-check"></span>
                     <span>Edit Profile</span></a
                   >
                 </li>
                 <li>
-                  <a href="/user/changePassword"
+                  <a href="/user/changePassword/<%= user._id  %>" 
                     ><span class="las la-clipboard-check"></span>
                     <span>Change Password</span></a
                   >
@@ -95,8 +95,8 @@
           </div>
           <div class="sub-menu">
             <ul>
-              <li><span class="las la-user"></span><a href="/user/editProfile">Edit Profile</a></li>
-              <li><span class="las la-key"></span><a href="/user/changePassword">Change Password</a></li>
+              <li><span class="las la-user"></span><a href="/user/editProfile/<%= user._id  %>">Edit Profile</a></li>
+              <li><span class="las la-key"></span><a href="/user/changePassword/<%= user._id  %>">Change Password</a></li>
               <li><span class="las la-sign-out-alt"></span><a href="/user/logout">Logout</a></li>
             </ul>
           </div>

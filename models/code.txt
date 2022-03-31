@@ -106,3 +106,19 @@ const userSchema = new mongoose.Schema({
 //     extended: true
 //   })); 
 
+      console.log(fname)
+      console.log(lname)
+      console.log(mname)
+      console.log(dob)
+      console.log(age)
+      console.log(bloodGroup)
+      console.log(gender)
+      console.log(occupation)
+      console.log(cp)
+      console.log(language)
+      console.log(hadd)
+      console.log(state)
+      console.log(city)
+      console.log(locality)
+      console.log(pincode)
+      console.log(contact)

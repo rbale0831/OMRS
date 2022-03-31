@@ -22,6 +22,10 @@ const userSchema = new mongoose.Schema({
         minlength: [8, 'Minimum password length 8 charaters'],
         maxlength: [16, 'Maximum password length 16 charaters'],
     },
+    resetLink:{
+        data: String,
+        default: ''
+    },
     occupation: String,
     age: Number,
     bg: String,
@@ -43,7 +47,7 @@ const userSchema = new mongoose.Schema({
         minlength:[10,"Pincode is of 5 Numbers"],
         maxlength:[10,"Pincode is of 5 Numbers"],
       },
-});
+},{timestamps: true});
 
 
 // fires a function before doc saved to db
@@ -69,6 +73,23 @@ userSchema.statics.login = async function(email, password) {
         throw Error('Incorrect Email');
     };
 };
+
+// userSchema.statics.changePassword = async function(id, oldpassword, newPassword){
+//     const user = await this.findOne({ id });
+//     if (user){
+//         const auth = await bcrypt.compare(oldpassword, user.password);
+//         if (auth){
+//             const salt = await bcrypt.genSalt()
+//             user.password = await bcrypt.hash(newPassword, salt)
+//         }
+//         else{
+//             throw Error('Old Password did match')
+//         }
+//     }
+//     else{
+//         throw Error('user not found')
+//     }
+// }
 
 const User = mongoose.model('user', userSchema);
 module.exports = User;

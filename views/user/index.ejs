@@ -25,13 +25,13 @@
                   >
                 </li>
                 <li>
-                  <a href="/user/editProfile"
+                  <a href="/user/editProfile/<%= user._id  %>"
                     ><span class="las la-clipboard-check"></span>
                     <span>Edit Profile</span></a
                   >
                 </li>
                 <li>
-                  <a href="/user/changePassword" 
+                  <a href="/user/changePassword/<%= user._id  %>" 
                     ><span class="las la-clipboard-check"></span>
                     <span>Change Password</span></a
                   >
@@ -86,8 +86,8 @@
           </div>
           <div class="sub-menu">
             <ul>
-              <li><span class="las la-user"></span><a href="/user/editProfile">Edit Profile</a></li>
-              <li><span class="las la-key"></span><a href="/user/changePassword">Change Password</a></li>
+              <li><span class="las la-user"></span><a href="/user/editProfile/<%= user._id  %>">Edit Profile</a></li>
+              <li><span class="las la-key"></span><a href="/user/changePassword/<%= user._id  %>">Change Password</a></li>
               <li><span class="las la-sign-out-alt"></span><a href="/user/logout">Logout</a></li>
             </ul>
           </div>
@@ -112,10 +112,10 @@
           <!-- ===== ===== User Details Sections ===== ===== -->
           <section class="userDetails card">
               <div class="userName">
-                  <h1 class="name">Kunal Shinde</h1>
+                  <h1 class="name"><%= user.fname %> <%= user.lname %> </h1>
                   <div class="map">
                       <i class="ri-map-pin-fill ri"></i>
-                      <span class="city">Bandra, MU</span>
+                      <span class="city"><%= user.loc %>, <%= user.city %></span>
                   </div>
               </div>
   
@@ -137,24 +137,24 @@
                           <span class="info">M11234567890</span>
                       <li class="phone">
                           <h1 class="label">First Name :</h1>
-                          <span class="info">Kunal</span>
+                          <span class="info"><%= user.fname %></span>
                       <li class="phone">
                           <h1 class="label">Middle Name :</h1>
-                          <span class="info">Sandeep</span>
+                          <span class="info"><%= user.mname %></span>
                       <li class="phone">
                           <h1 class="label">Last Name :</h1>
-                          <span class="info">Shinde</span>
+                          <span class="info"><%= user.lname %></span>
                       <li class="phone">
                           <h1 class="label">Date Of Birth :</h1>
-                          <span class="info">22/12/99</span>
+                          <span class="info"><%= user.dob %></span>
                       </li>
                       <li class="phone">
                           <h1 class="label">Gender :</h1>
-                          <span class="info">Male</span>
+                          <span class="info"><%= user.gender %></span>
                       </li>
                       <li class="phone">
                           <h1 class="label">Blood Group :</h1>
-                          <span class="info">B+</span>
+                          <span class="info"><%= user.bg %></span>
                       </li>
                   </div>
           </section>
@@ -165,22 +165,22 @@
                   <ul>
                       <li class="phone">
                           <h1 class="label">Phone:</h1>
-                          <span class="info">+9874563210</span>
+                          <span class="info"><%= user.cno %></span>
                       </li>
   
                       <li class="address">
                           <h1 class="label">Address:</h1>
-                          <span class="info">S34 bandra (East) <br> </span>
+                          <span class="info"><%= user.hadd %> <br> </span>
                       </li>
   
                       <li class="email">
                           <h1 class="label">E-mail:</h1>
-                          <span class="email">kunal@gmail.com</span>
+                          <span class="email"><%= user.email %></span>
                       </li>
   
                       <li class="site">
                           <h1 class="label">City:</h1>
-                          <span class="info">Mumbai</span>
+                          <span class="info"><%= user.city %></span>
                       </li>
                   </ul>
               </div>

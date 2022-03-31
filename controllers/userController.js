@@ -1,6 +1,8 @@
 const User = require("../models/User");
 const multer = require('multer');
 const path = require('path')
+const bcrypt = require('bcryptjs');
+const Joi = require('joi')
 
 
 const storage = multer.diskStorage({
@@ -13,12 +15,7 @@ const storage = multer.diskStorage({
 
 const handleMultipartData = multer({ storage }).single('cp')
 
-
-
-
-
  module.exports.userDashboard_get =  (req, res) => {
-
     res.status(200).render('user/index', { title: 'Profile' })
 };
 
@@ -40,6 +37,40 @@ module.exports.userProfile_get = (req, res) => {
 };
 module.exports.userChangePassword_get = (req, res) => {
   res.status(200).render("user/changePassword", { title: "Change Password" });
+};
+module.exports.userChangePassword_put = async (req, res) => {
+  const id = req.params.id
+
+  const changePasswordSchema = Joi.object({
+    oldPassword: Joi.string().pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')).required(),
+    newPassword: Joi.string().pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')).required(),
+    confirmPassword: Joi.ref('newPassword')
+
+  })
+  const { error } = changePasswordSchema.validate(req.body);
+        
+  if (error){
+      return next(error)
+  }
+
+  try{
+    const user = await User.findById({ _id: id})
+    // console.log(user)
+    if( await bcrypt.compare(oldPassword, user.password)){
+        const salt = await bcrypt.genSalt()
+        newHashedPassword = bcrypt.hashSync(newPassword, salt)
+        await User.findOneAndUpdate({ _id: id }, { $set: {
+          password: newHashedPassword
+        }})
+        res.status(201).json({ status: "Password Updated Sucessfully" })
+      }else{
+        throw Error("Password Entered didn't match with Old Password")
+      }
+  }catch(err){
+
+  }
+  
+  
 };
 module.exports.userEditProfile_get = (req, res) => {
   res.status(200).render("user/editProfile", { title: "Edit Profile" });
