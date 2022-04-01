@@ -15,6 +15,7 @@ const storage = multer.diskStorage({
 
 const handleMultipartData = multer({ storage }).single('cp')
 
+
  module.exports.userDashboard_get =  (req, res) => {
     res.status(200).render('user/index', { title: 'Profile' })
 };
@@ -52,6 +53,7 @@ module.exports.userChangePassword_put = async (req, res) => {
   if (error){
       return next(error)
   }
+  const { oldPassword, newPassword } = (req.body)
 
   try{
     const user = await User.findById({ _id: id})
@@ -67,17 +69,19 @@ module.exports.userChangePassword_put = async (req, res) => {
         throw Error("Password Entered didn't match with Old Password")
       }
   }catch(err){
-
+    throw Error("User not found")
   }
   
   
 };
 module.exports.userEditProfile_get = (req, res) => {
-  res.status(200).render("user/editProfile", { title: "Edit Profile" });
+  res.status(200).render("user/editProfile", { title: "Edit Profile", token: req.cookies.clogin });
 };
 module.exports.userEditProfile_put = (req, res) => { 
 
   const id = req.params.id
+  console.log(req.body)
+  
   handleMultipartData(req,res, async (err)=> {
 
     const { fname, mname, lname, occupation, age, bg, gender, dob, lan, hadd, city, loc, state, pincode, cno } = req.body;
@@ -88,7 +92,9 @@ module.exports.userEditProfile_put = (req, res) => {
     }
 
     let updateUser;
+    console.log(fname)
     try{ 
+
       updateUser = await User.findOneAndUpdate({ _id: id}, { $set : { 
       fname,
       mname,

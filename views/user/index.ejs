@@ -76,7 +76,7 @@
           </span>
         </div>
         <div class="user-wrapper">
-          <img src="./img/img_1.jpg" width="40px" height="40px" alt="" />
+          <img src="<%= user.cp %>" width="40px" height="40px" alt="" />
           <div>
             <h4>
               <%= user.fname  %>
@@ -99,7 +99,7 @@
           <!-- ===== ===== User Main-Profile ===== ===== -->
           <section class="userProfile card">
               <div class="profile">
-                  <figure><img src="Photo.jpg" alt="profile" width="250px" height="250px"></figure>
+                  <figure><img src="<%= user.cp %>" alt="profile" width="250px" height="250px"></figure>
               </div>
           </section>
   
@@ -115,14 +115,14 @@
                   <h1 class="name"><%= user.fname %> <%= user.lname %> </h1>
                   <div class="map">
                       <i class="ri-map-pin-fill ri"></i>
-                      <span class="city"><%= user.loc %>, <%= user.city %></span>
+                      <span class="city"><%= user.uname %></span>
                   </div>
               </div>
   
-              <div class="rank">
+              <!-- <div class="rank">
                   <h1 class="heading">Diagnosis</h1>
                   <span>Any diagnosis</span>
-              </div>
+              </div> -->
           </section>
   
   
@@ -163,25 +163,39 @@
               <div class="contact_info">
                   <h1 class="heading">Contact Information</h1>
                   <ul>
-                      <li class="phone">
-                          <h1 class="label">Phone:</h1>
-                          <span class="info"><%= user.cno %></span>
-                      </li>
-  
                       <li class="address">
-                          <h1 class="label">Address:</h1>
+                          <h1 class="label">Street Address:</h1>
                           <span class="info"><%= user.hadd %> <br> </span>
+                      </li>
+                      <li class="address">
+                          <h1 class="label">Locality:</h1>
+                          <span class="info"><%= user.loc %> <br> </span>
+                      </li>
+
+                      <li class="site">
+                          <h1 class="label">City:</h1>
+                          <span class="info"><%= user.city %></span>
+                      </li>
+                      <li class="site">
+
+                          <h1 class="label">State:</h1>
+                          <span class="info"><%= user.state %></span>
+                      </li>
+
+                      <li class="site">
+                          <h1 class="label">Pincode:</h1>
+                          <span class="info"><%= user.pincode %></span>
                       </li>
   
                       <li class="email">
                           <h1 class="label">E-mail:</h1>
                           <span class="email"><%= user.email %></span>
                       </li>
-  
-                      <li class="site">
-                          <h1 class="label">City:</h1>
-                          <span class="info"><%= user.city %></span>
-                      </li>
+
+                      <li class="phone">
+                        <h1 class="label">Phone:</h1>
+                        <span class="info"><%= user.cno %></span>
+                    </li>
                   </ul>
               </div>
           </section>
