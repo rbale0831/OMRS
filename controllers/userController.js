@@ -75,12 +75,17 @@ module.exports.userChangePassword_put = async (req, res) => {
   
 };
 module.exports.userEditProfile_get = (req, res) => {
-  res.status(200).render("user/editProfile", { title: "Edit Profile", token: req.cookies.clogin });
+  const id = req.params.id
+  User.findOne({ _id: id })
+      .then((user) => {
+        res.status(200).render("user/editProfile", { title: "Edit Profile", token: req.cookies.clogin, user });
+      })
+      .catch((err) => {});
+  
 };
 module.exports.userEditProfile_put = (req, res) => { 
 
   const id = req.params.id
-  console.log(req.body)
   
   handleMultipartData(req,res, async (err)=> {
 
@@ -92,7 +97,6 @@ module.exports.userEditProfile_put = (req, res) => {
     }
 
     let updateUser;
-    console.log(fname)
     try{ 
 
       updateUser = await User.findOneAndUpdate({ _id: id}, { $set : { 

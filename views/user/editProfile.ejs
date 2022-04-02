@@ -104,10 +104,13 @@
                 <!-- <input class="input" type="text" class="input" name="false1" /> -->
               </div>
             </div>
+            <script>
+              
+            </script>
             <div class="grid_2">
               <div class="r1">
                 <span class="textDesign" for="fname">First Name</span>
-                <input class="input_2" type="text" name="fname" id="fname" />
+                <input class="input_2" type="text" name="fname" id="fname" value="<%= user.fname %>" />
               </div>
               <div class="r2">
                 <span class="textDesign" for="mname">Middle Name</span>
@@ -275,51 +278,43 @@
       const fileField = document.querySelector('input[type="file"]');
 
       // formData.append('username', 'abc123');
-      formData.append('', fileField.files[0]);
+      form.append('', fileField.files[0]);
 
-      // fetch('https://example.com/profile/avatar', {
-      // method: 'PUT',
-      // body: formData
-      // })
-      // .then(response => response.json())
-      // .then(result => {
-      // console.log('Success:', result);
-      // })
-      // .catch(error => {
-      // console.error('Error:', error);
-      // });
+      /*fetch('https://example.com/profile/avatar', {
+      method: 'PUT',
+      body: formData
+      })
+      .then(response => response.json())
+      .then(result => {
+      console.log('Success:', result);
+      })
+      .catch(error => {
+      console.error('Error:', error);
+      });
       
-      // // const formData  = new FormData();
+      const formData  = new FormData();
 
-      // for(const name in data) {
-      //   formData.append(name, data[name]);
-      // }
+      for(const name in data) {
+        formData.append(name, data[name]);
+      }*/
 
-      // try{
-
-      //   const response = await fetch(url, {
-      //     method: 'PUT',
-      //     body: formData
-      //   });
-
-      //   const res = await fetch('/user/editProfile/<%= user._id  %>', {
-      //     method: 'PUT',
-      //     body: { fname, mname, lname, dob, age, bg, gender, occupation, cp, lan, hadd, state, city, loc, pincode, cno },
-      //     // body: form,
-          
-      //     // headers: {'Content-Type': 'multipart/form-data',
-      //     //           'Authorization': 'Bearer <%= token %>'
-      //     // }
-      //   });
-      //   const data = await res.json()
-      //   console.log(data)
-      //   if (data.user) {
-      //     location.assign('/user/dashboard');
-      //   }
-      // }
-      // catch (err){
-      //   throw err
-      // }
+      try{
+          const res = await fetch('/user/editProfile/<%= user._id  %>', {
+            method: 'PUT',
+            body: form,
+            headers: {//'Content-Type': 'multipart/form-data',
+                      'Authorization': 'Bearer <%= token %>'
+            }
+          });
+          const data = await res.json()
+          console.log(data)
+          if (data.user) {
+            location.assign('/user/dashboard');
+          }
+        }
+        catch (err){
+          throw err
+        }
       }
   </script>
   </html>
