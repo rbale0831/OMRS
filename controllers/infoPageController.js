@@ -59,7 +59,6 @@ module.exports.userLogin_get = (req, res) => {
 
 module.exports.userSignup_post = async (req, res) => {
     const { fname, lname, uname, email, password } = req.body;
-    const regx = /MER00/i
 
     try {
         const user = await User.create({ fname, lname, uname, email, password });

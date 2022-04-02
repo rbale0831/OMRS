@@ -86,8 +86,7 @@ module.exports.hospitalDashboard_get = (req, res)=>{
 };
 
 module.exports.hospitalListPatientDetails_get = async (req, res)=>{
-    const id = req.params._id
-    // console.log(id);
+    
     await User.find()
         .then(result => {
             res.status(200).render('hospital/list', { users: result, title: 'Add Patient' })
