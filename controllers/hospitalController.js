@@ -98,11 +98,10 @@ module.exports.hospitalListPatientDetails_get = async (req, res)=>{
 module.exports.hospitalListSinglePatientDetails_get = async (req, res)=>{
     
     const id = req.params.id
-    console.log(id)
 
     await User.findById({_id: id })
         .then(result => {
-            res.status(200).render('hospital/single.ejs', { users: result, title: 'Add Patient' })
+            res.status(200).render('hospital/single.ejs', { user: result, title: 'Add Patient' })
         })
         .catch(err =>{
             res.json(err);

@@ -125,10 +125,10 @@
                     <% if (users.length >0) {  %> 
                       <% users.forEach(users => { %>
                       <tr>
-                        <td><a href="/listSinglePatientDetails/<%= users._id %>"><%= users.fname %></a></td>
-                        <td><a href="/listSinglePatientDetails/<%= users._id %>"><%= users.lname %></a></td>
-                        <td><a href="/listSinglePatientDetails/<%= users._id %>"><%= users.uname %></a></td>
-                        <td><a href="/listSinglePatientDetails/<%= users._id %>"><%= users.email %></a></td>
+                        <td><a href="/hospital/listSinglePatientDetails/<%= users._id %>"><%= users.fname %></a></td>
+                        <td><a href="/hospital/listSinglePatientDetails/<%= users._id %>"><%= users.lname %></a></td>
+                        <td><a href="/hospital/listSinglePatientDetails/<%= users._id %>"><%= users.uname %></a></td>
+                        <td><a href="/hospital/listSinglePatientDetails/<%= users._id %>"><%= users.email %></a></td>
                       </tr>
                       <% }) %>
                     <% } else {%>  
