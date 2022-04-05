@@ -34,7 +34,7 @@ const hospitalAuth = (req, res, next) => {
                 res.redirect('/hospital/login');
             }
             else{
-                console.log(decodedToken);
+                // console.log(decodedToken);
                 next();
             };
         });
@@ -54,7 +54,7 @@ const adminAuth = (req, res, next) => {
                 res.redirect('/admin/login');
             }
             else{
-                console.log(decodedToken);
+                // console.log(decodedToken);
                 next();
             };
         });

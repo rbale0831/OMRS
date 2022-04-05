@@ -25,7 +25,7 @@
                   >
                 </li>
                 <li>
-                  <a href="/user/editProfile/<%= user._id  %>"
+                  <a href="/user/editProfile/<%= user._id  %>" class="active"
                     ><span class="las la-clipboard-check"></span>
                     <span>Edit Profile</span></a
                   >
@@ -76,7 +76,7 @@
           </span>
         </div>
         <div class="user-wrapper">
-          <img src="./img/img_1.jpg" width="40px" height="40px" alt="" />
+          <img src="" width="40px" height="40px" alt="" />
           <div>
             <h4>
               <%= user.fname  %>
@@ -114,20 +114,20 @@
               </div>
               <div class="r2">
                 <span class="textDesign" for="mname">Middle Name</span>
-                <input class="input_2" type="text" name="mname" id="mname" />
+                <input class="input_2" type="text" name="mname" id="mname" value="<%= user.mname %>" />
               </div>
               <div class="r3">
                 <span class="textDesign" for="test3">Last Name</span>
-                <input class="input_2" type="text" name="lname" id="lname" />
+                <input class="input_2" type="text" name="lname" id="lname" value="<%= user.lname %>" />
               </div>
               <div class="r4">
                 <span class="textDesign" for="test4">Age</span>
-                <input class="input_2" type="text" name="age" id="age" />
+                <input class="input_2" type="text" name="age" id="age" value="<%= user.age %>" />
               </div>
               <div class="r5">
                 <span class="textDesign" for="test5">Blood Group</span>
-                <select class="input_2" type="text" name="bg" id="bg">
-                  <option value=""></option>
+                <select class="input_2" type="text" name="bg" id="bg" >
+                  <option value="">Select your Blood Group</option>
                   <option value="a+">A+</option>
                   <option value="a-"> A-</option>
                   <option value="b+ ">B+</option>
@@ -140,8 +140,8 @@
               </div>
               <div class="r6">
                 <span class="textDesign" for="test6">Gender</span>
-                <select class="input_2" type="text" name="gender" id="gender">
-                  <option value=""></option>
+                <select class="input_2" type="text" name="gender" id="gender" value="<%= user.gender %>" >
+                  <option value="">Select your Gender</option>
                       <option value="Male">Male</option>
                       <option value="Female">Female</option>
                       <option value="Other">Other</option>
@@ -150,12 +150,12 @@
             </div>
             <div class="grid_3" enctype="multipart/form-data">
               <div class="u1">
-                <span class="textDesign" for="true1">Date of Birth</span>
-                <input class="input_3" type="date" name="dob" id="dob" />
+                <span class="textDesign" for="dob">Date of Birth</span>
+                <input class="input_3" type="date" name="dob" id="dob" value="<%= user.dob %>" />
               </div>
                <div class="u2">
-                <span class="textDesign" for="true1">Occupation</span>
-                <input class="input_3" type="text" name="occ" id="occ" />
+                <span class="textDesign" for="occ">Occupation</span>
+                <input class="input_3" type="text" name="occ" id="occ" value="<%= user.occ %>" />
               </div>
               <div class="u3">
                 <span class="textDesign" for="true1">Username</span>
@@ -173,8 +173,8 @@
               </div>
               <div class="u6">
                 <span class="textDesign" for="true1">Language</span>
-                <select class="input_3" type="text" name="lan" id="lan">
-                  <option value=""></option>
+                <select class="input_3" type="text" name="lan" id="lan" value="<%= user.lan %>" >
+                  <option value="" selected>Select Languages</option>
                   <option value="English">English</option>
                   <option value="Hindi">Hindi</option>
                   <option value="Marathi">Marathi</option>
@@ -187,15 +187,15 @@
             <div class="grid_4">
               <div class="q1">
                 <span class="textDesign" for="true1">Home Address</span>
-                <input class="input_3" type="text" name="hadd" id="hadd" />
+                <input class="input_3" type="text" name="hadd" id="hadd" value="<%= user.hadd %>" />
               </div>
               <div class="q2">
                 <span class="textDesign" for="true1">Locality</span>
-                <input class="input_3" type="text" name="loc" id="loc" />
+                <input class="input_3" type="text" name="loc" id="loc" value="<%= user.loc %>" />
               </div>
               <div class="q3">
                 <span class="textDesign" for="true1">State</span>
-                <select class="input_3" type="text" name="state" id="state">
+                <select class="input_3" type="text" name="state" id="state" value="<%= user.state %>">
                   <option value="">Select Your State</option>
                     <option value="Andhra Pradesh">Andhra Pradesh</option>
                     <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -231,15 +231,15 @@
               </div>
               <div class="q4">
                 <span class="textDesign" for="true1">City</span>
-                <input class="input_3" type="text" name="city"  id="city"/>
+                <input class="input_3" type="text" name="city"  id="city" value="<%= user.city %>" />
               </div>
               <div class="q5">
                 <span class="textDesign" for="true1">Pin Code</span>
-                <input class="input_3" type="number" name="pincode"  id="pincode"/>
+                <input class="input_3" type="number" name="pincode" id="pincode" value="<%= user.pincode %>" />
               </div>
               <div class="q6">
                 <span class="textDesign" for="true1">Contact no.</span>
-                <input class="input_3" type="number" name="con" id="cno"/>
+                <input class="input_3" type="number" name="con" id="cno" value="<%= user.cno %>" />
               </div>
             </div>
           </div>
@@ -302,7 +302,7 @@
           const res = await fetch('/user/editProfile/<%= user._id  %>', {
             method: 'PUT',
             body: form,
-            headers: {//'Content-Type': 'multipart/form-data',
+            headers: {/*'Content-Type': 'multipart/form-data',*/
                       'Authorization': 'Bearer <%= token %>'
             }
           });
