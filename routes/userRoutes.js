@@ -1,21 +1,32 @@
-const express = require('express');
-const userController = require('../controllers/userController');
+const express = require('express')
 const { checkUser } = require('../middleware/authMiddleware')
+const { 
+    userDashboard_get,
+    userAppointment_History_get,
+    userBook_Appointment_get,
+    userRecords_get,
+    userProfile_get,
+    userChangePassword_get,
+    userChangePassword_put,
+    userEditProfile_get,
+    userEditProfile_put,
+    userLogout_get
+} = require('../controllers/userController');
 
 const router = express.Router(); 
 
 router.use('*', checkUser);
 
-router.get('/dashboard', userController.userDashboard_get);
-router.put('/dashboard/:id', userController.userDashboard_put);
-router.get('/appointment_history', userController.userAppointment_History_get);
-router.get('/book_appointment', userController.userBook_Appointment_get);
-router.get('/records', userController.userRecords_get);
-router.get('/profile', userController.userProfile_get);
-router.get('/changePassword/:id', userController.userChangePassword_get);
-router.put('/changePassword/:id', userController.userChangePassword_put);
-router.get('/editProfile/:id', userController.userEditProfile_get);
-router.put('/editProfile/:id', userController.userEditProfile_put);
-router.get('/logout', userController.userLogout_get);
+router.get('/dashboard',userDashboard_get);
+router.put('/dashboard/:id', userDashboard_get);
+router.get('/appointment_history',userAppointment_History_get);
+router.get('/book_appointment',userBook_Appointment_get);
+router.get('/records',userRecords_get);
+router.get('/profile',userProfile_get);
+router.get('/changePassword/:id',userChangePassword_get);
+router.put('/changePassword/:id',userChangePassword_put);
+router.get('/editProfile/:id',userEditProfile_get);
+router.put('/editProfile/:id',userEditProfile_put);
+router.get('/logout',userLogout_get);
 
 module.exports = router;

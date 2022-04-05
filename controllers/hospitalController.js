@@ -73,7 +73,7 @@ module.exports.hospitalLogin_post = async (req, res) => {
         const hospital = await Hospital.login(email, password);
         const token = createToken(hospital._id);
         res.cookie('hlogin', token, { httpOnly: true, maxAge: maxAge * 3 });
-        res.status(200).json({hospital: hospital._id});
+        res.status(200).json({ hospital: hospital._id, token });
     }
     catch (err) {
         const errors = handleErrors(err);
@@ -95,16 +95,31 @@ module.exports.hospitalListPatientDetails_get = async (req, res)=>{
             res.json(err);
         })
 };
+module.exports.hospitalListSinglePatientDetails_get = async (req, res)=>{
+    
+    const id = req.params.id
+
+    await User.findById({_id: id })
+        .then(result => {
+            res.status(200).render('hospital/single.ejs', { user: result, title: 'Add Patient' })
+        })
+        .catch(err =>{
+            res.json(err);
+        })
+};
 
 module.exports.hospitalAddListPatientDetails_get = async (req, res)=>{
-    res.status(200).render('hospital/add.ejs',{title: 'Patient Details'})
+    res.status(200).render('hospital/add',{title: 'Patient Details'})
+}
+module.exports.hospitalPaitentVistedEntry_get = async (req, res)=>{
+    res.status(200).render('hospital/view',{title: 'View Patient Details'})
 }
 
 module.exports.hospitalProfile_get = (req, res)=>{
     res.status(200).render('hospital/profile', { title: 'Profile'});
-};
+}
 
 module.exports.hospitalLogout_get = (req, res) => {          
     res.cookie('hlogin','',{ maxAge: 1 });
     res.redirect('/hospital/login')
-};
+}
