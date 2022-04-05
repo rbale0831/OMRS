@@ -23,7 +23,7 @@ router.post('/login', hospitalLogin_post);
 router.get('/dashboard', [ hospitalAuth, checkHospital ], hospitalDashboard_get);
 router.get('/listPatientDetails', [ hospitalAuth, checkHospital ],hospitalListPatientDetails_get);
 router.get('/addPatientDetails', [ hospitalAuth, checkHospital ], hospitalAddListPatientDetails_get);
-router.get('/listPatientDetails/:id', [ hospitalAuth, checkHospital ],  hospitalListSinglePatientDetails_get);
+router.get('/listSinglePatientDetails/:id', [ hospitalAuth, checkHospital ],  hospitalListSinglePatientDetails_get);
 router.get('/paitentVistedEntry', [ hospitalAuth, checkHospital ], hospitalPaitentVistedEntry_get);
 router.get('/profile', [ hospitalAuth, checkHospital ], hospitalProfile_get);
 router.get('/logout', [ hospitalAuth, checkHospital ], hospitalLogout_get); 
