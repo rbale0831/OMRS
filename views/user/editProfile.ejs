@@ -25,7 +25,7 @@
                   >
                 </li>
                 <li>
-                  <a href="/user/editProfile/<%= user._id  %>"
+                  <a href="/user/editProfile/<%= user._id  %>" class="active"
                     ><span class="las la-clipboard-check"></span>
                     <span>Edit Profile</span></a
                   >
@@ -76,7 +76,7 @@
           </span>
         </div>
         <div class="user-wrapper">
-          <img src="./img/img_1.jpg" width="40px" height="40px" alt="" />
+          <img src="" width="40px" height="40px" alt="" />
           <div>
             <h4>
               <%= user.fname  %>
@@ -94,7 +94,7 @@
         </div>
       </header>
       <section class="editProfile_form">
-        <form action="/user/editProfile/<%= user._id  %>" method="PUT" enctype="multipart/form-data">
+        <form action="/user/editProfile/<%= user._id %>" method="PUT" enctype="multipart/form-data" id="login-form">
           <div class="header_1">Profile</div>
           <div class="st_bs1">
             <div class="form-header1">General Information</div>
@@ -104,27 +104,30 @@
                 <!-- <input class="input" type="text" class="input" name="false1" /> -->
               </div>
             </div>
+            <script>
+              
+            </script>
             <div class="grid_2">
               <div class="r1">
                 <span class="textDesign" for="fname">First Name</span>
-                <input class="input_2" type="text" name="fname" id="fname" />
+                <input class="input_2" type="text" name="fname" id="fname" value="<%= user.fname %>" />
               </div>
               <div class="r2">
                 <span class="textDesign" for="mname">Middle Name</span>
-                <input class="input_2" type="text" name="mname" id="mname" />
+                <input class="input_2" type="text" name="mname" id="mname" value="<%= user.mname %>" />
               </div>
               <div class="r3">
                 <span class="textDesign" for="test3">Last Name</span>
-                <input class="input_2" type="text" name="lname" id="lname" />
+                <input class="input_2" type="text" name="lname" id="lname" value="<%= user.lname %>" />
               </div>
               <div class="r4">
                 <span class="textDesign" for="test4">Age</span>
-                <input class="input_2" type="text" name="age" id="age" />
+                <input class="input_2" type="text" name="age" id="age" value="<%= user.age %>" />
               </div>
               <div class="r5">
                 <span class="textDesign" for="test5">Blood Group</span>
-                <select class="input_2" type="text" name="bg" id="bg">
-                  <option value=""></option>
+                <select class="input_2" type="text" name="bg" id="bg" >
+                  <option value="">Select your Blood Group</option>
                   <option value="a+">A+</option>
                   <option value="a-"> A-</option>
                   <option value="b+ ">B+</option>
@@ -137,8 +140,8 @@
               </div>
               <div class="r6">
                 <span class="textDesign" for="test6">Gender</span>
-                <select class="input_2" type="text" name="gender" id="gender">
-                  <option value=""></option>
+                <select class="input_2" type="text" name="gender" id="gender" value="<%= user.gender %>" >
+                  <option value="">Select your Gender</option>
                       <option value="Male">Male</option>
                       <option value="Female">Female</option>
                       <option value="Other">Other</option>
@@ -147,12 +150,12 @@
             </div>
             <div class="grid_3" enctype="multipart/form-data">
               <div class="u1">
-                <span class="textDesign" for="true1">Date of Birth</span>
-                <input class="input_3" type="date" name="dob" id="dob" />
+                <span class="textDesign" for="dob">Date of Birth</span>
+                <input class="input_3" type="date" name="dob" id="dob" value="<%= user.dob %>" />
               </div>
                <div class="u2">
-                <span class="textDesign" for="true1">Occupation</span>
-                <input class="input_3" type="text" name="occ" id="occ" />
+                <span class="textDesign" for="occ">Occupation</span>
+                <input class="input_3" type="text" name="occ" id="occ" value="<%= user.occ %>" />
               </div>
               <div class="u3">
                 <span class="textDesign" for="true1">Username</span>
@@ -170,8 +173,8 @@
               </div>
               <div class="u6">
                 <span class="textDesign" for="true1">Language</span>
-                <select class="input_3" type="text" name="lan" id="lan">
-                  <option value=""></option>
+                <select class="input_3" type="text" name="lan" id="lan" value="<%= user.lan %>" >
+                  <option value="" selected>Select Languages</option>
                   <option value="English">English</option>
                   <option value="Hindi">Hindi</option>
                   <option value="Marathi">Marathi</option>
@@ -184,15 +187,15 @@
             <div class="grid_4">
               <div class="q1">
                 <span class="textDesign" for="true1">Home Address</span>
-                <input class="input_3" type="text" name="hadd" id="hadd" />
+                <input class="input_3" type="text" name="hadd" id="hadd" value="<%= user.hadd %>" />
               </div>
               <div class="q2">
                 <span class="textDesign" for="true1">Locality</span>
-                <input class="input_3" type="text" name="loc" id="loc" />
+                <input class="input_3" type="text" name="loc" id="loc" value="<%= user.loc %>" />
               </div>
               <div class="q3">
                 <span class="textDesign" for="true1">State</span>
-                <select class="input_3" type="text" name="state" id="state">
+                <select class="input_3" type="text" name="state" id="state" value="<%= user.state %>">
                   <option value="">Select Your State</option>
                     <option value="Andhra Pradesh">Andhra Pradesh</option>
                     <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -228,15 +231,15 @@
               </div>
               <div class="q4">
                 <span class="textDesign" for="true1">City</span>
-                <input class="input_3" type="text" name="city"  id="city"/>
+                <input class="input_3" type="text" name="city"  id="city" value="<%= user.city %>" />
               </div>
               <div class="q5">
                 <span class="textDesign" for="true1">Pin Code</span>
-                <input class="input_3" type="number" name="pincode"  id="pincode"/>
+                <input class="input_3" type="number" name="pincode" id="pincode" value="<%= user.pincode %>" />
               </div>
               <div class="q6">
                 <span class="textDesign" for="true1">Contact no.</span>
-                <input class="input_3" type="number" name="con" id="cno"/>
+                <input class="input_3" type="number" name="con" id="cno" value="<%= user.cno %>" />
               </div>
             </div>
           </div>
@@ -247,61 +250,71 @@
   </body>
 
   <script>
+    // async function sendData(url, data) {}
 
-    async function fn1() {
+    async function fn1(url, data) {
       event.preventDefault();
 
-      const fname = document.getElementById("fname").value;
-      const mname = document.getElementById('mname').value;
-      const lname = document.getElementById('lname').value;
-      const dob = document.getElementById('dob').value;
-      const age = document.getElementById('age').value;
-      const bg = document.getElementById('bg').value;
-      const gender = document.getElementById('gender').value;
-      const occupation = document.getElementById('occ').value;
-      const cp = document.getElementById('cp').value;
-      const lan = document.getElementById('lan').value;
-      const hadd = document.getElementById('hadd').value;
-      const state = document.getElementById('state').value;
-      const city = document.getElementById('city').value;
-      const loc = document.getElementById('loc').value;
-      const pincode = document.getElementById('pincode').value;
-      const cno= document.getElementById('cno').value;
+      // const fname = document.getElementById("fname").value;
+      // const mname = document.getElementById('mname').value;
+      // const lname = document.getElementById('lname').value;
+      // const dob = document.getElementById('dob').value;
+      // const age = document.getElementById('age').value;
+      // const bg = document.getElementById('bg').value;
+      // const gender = document.getElementById('gender').value;
+      // const occupation = document.getElementById('occ').value;
+      // const cp = document.getElementById('cp').value;
+      // const lan = document.getElementById('lan').value;
+      // const hadd = document.getElementById('hadd').value;
+      // const state = document.getElementById('state').value;
+      // const city = document.getElementById('city').value;
+      // const loc = document.getElementById('loc').value;
+      // const pincode = document.getElementById('pincode').value;
+      // const cno= document.getElementById('cno').value;
+
+      const form = new FormData(document.getElementById('login-form'));
+
+      // const formData = new FormData();
+      const fileField = document.querySelector('input[type="file"]');
+
+      // formData.append('username', 'abc123');
+      form.append('', fileField.files[0]);
+
+      /*fetch('https://example.com/profile/avatar', {
+      method: 'PUT',
+      body: formData
+      })
+      .then(response => response.json())
+      .then(result => {
+      console.log('Success:', result);
+      })
+      .catch(error => {
+      console.error('Error:', error);
+      });
       
-      // console.log(fname)
-      // console.log(lname)
-      // console.log(mname)
-      // console.log(dob)
-      // console.log(age)
-      // console.log(bg)
-      // console.log(gender)
-      // console.log(occupation)
-      // console.log(cp)
-      // console.log(lan)
-      // console.log(hadd)
-      // console.log(state)
-      // console.log(city)
-      // console.log(loc)
-      // console.log(pincode)
-      // console.log(cno)
+      const formData  = new FormData();
+
+      for(const name in data) {
+        formData.append(name, data[name]);
+      }*/
 
       try{
-        const res = await fetch('/user/editProfile/<%= user._id  %>', {
-          method: 'PUT',
-          body: JSON.stringify({ fname, mname, lname, dob, age, bg, gender, occupation, cp, lan, hadd, state, city, loc, pincode, cno }),
-          headers: {'Content-Type': 'multipart/form-data'}
-        });
-        const data = await res.json()
-        console.log(data)
-        if (data.user) {
-          location.assign('/user/dashboard');
+          const res = await fetch('/user/editProfile/<%= user._id  %>', {
+            method: 'PUT',
+            body: form,
+            headers: {/*'Content-Type': 'multipart/form-data',*/
+                      'Authorization': 'Bearer <%= token %>'
+            }
+          });
+          const data = await res.json()
+          console.log(data)
+          if (data.user) {
+            location.assign('/user/dashboard');
+          }
+        }
+        catch (err){
+          throw err
         }
       }
-      catch (err){
-        throw err
-      }
-    }
   </script>
-
-
   </html>
