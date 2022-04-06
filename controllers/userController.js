@@ -19,7 +19,6 @@ const handleMultipartData = multer({ storage }).single('cp')
  module.exports.userDashboard_get =  (req, res) => {
     res.status(200).render('user/index', { title: 'Profile' })
 };
-
 module.exports.userAppointment_History_get = (req, res) => {
   res
     .status(200)
