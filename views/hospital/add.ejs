@@ -187,89 +187,102 @@
               <label for="lastname" class="label-title">Consultant </label>
               <input type="text"   placeholder="Refer Dr. name" id="text" "/>
             </div>
-            <div class="horizontal-group">
+            <!-- <div class="horizontal-group">
             <div class="form-group ">
               <label for="lastname" class="label-title">Diagnostic </label>
               <textarea class="form-input" rows="2" cols="55" style="  min-width: 50px;
               min-height: 60px; " ></textarea>
-            </div>
+            </div> -->
+
+            <label for="lastname" class="label-title">Diagnostic </label>
+            <form method="post" action="">
+              <div class="row">
+                  <div class="col-lg-12">
+                      <div id="inputFormRow3">
+                          <div class="form-group">
+  
+                              <textarea type="text"  rows="2" cols="55" class="form-control m-input" placeholder="Enter title"
+                                  autocomplete="off"  style="min-width: 50px;
+                                  min-height: 60px"></textarea>
+                              <br>
+  
+                          </div>
+
+                          
+                      </div>
+                      <div id="inputFormRow2">
+                          <div class="input-group mb-3">
+                              <textarea type="text"  rows="2" cols="55" class="form-control m-input" placeholder="Enter title"
+                              autocomplete="off"  style="min-width: 50px;
+                              min-height: 60px"></textarea>    
+                              <br>
+  
+                          </div>
+                      </div>
+                      <div>
+  
+  
+                          <div id="newRow1"></div>
+  
+  
+                      </div>
+  
+                  </div>
+              </div>
+          </form>
+  
+  
+  
+          <button id="addRow1" type="button" class="btn btn-info">Add Row</button>
+          <br>
+      </div>
             
     
             
               
-<div class="form-group ">
+            <label for="lastname" class="label-title">Treatment Given </label>
+            <form method="post" action="">
+              <div class="row">
+                  <div class="col-lg-12">
+                      <div id="inputFormRow1">
+                          <div class="form-group">
+  
+                              <textarea type="text"  rows="2" cols="55" class="form-control m-input" placeholder="Enter title"
+                                  autocomplete="off"  style="min-width: 50px;
+                                  min-height: 60px"></textarea>
+                              <br>
+  
+                          </div>
 
-      <div class="text-center" style="margin: 20px 0px 20px 0px;">
-
-          <span class="text-secondary">Add or Remove fields </span>
-      </div>
-      <div class="form-group ">
-       
-
-      <form method="post" action="">
-          <div class="row">
-              <div class="col-lg-12">
-                  <div id="inputFormRow1">
-                      
-                  <div>
-
-                    <label id="newRow" class="label-title">Treatments Given </label>
-                    <textarea class="form-input" rows="2" cols="55" style="  min-width: 50px;
-                    min-height: 60px; " ></textarea>
-            
-                    
-
-
+                          
+                      </div>
+                      <div id="inputFormRow">
+                          <div class="input-group mb-3">
+                              <textarea type="text"  rows="2" cols="55" class="form-control m-input" placeholder="Enter title"
+                              autocomplete="off"  style="min-width: 50px;
+                              min-height: 60px"></textarea>    
+                              <br>
+  
+                          </div>
+                      </div>
+                      <div>
+  
+  
+                          <div id="newRow2"></div>
+  
+  
+                      </div>
+  
                   </div>
-
               </div>
-          </div>
-      </form>
+          </form>
+  
+  
+  
+          <button id="addRow2" type="button" class="btn btn-info1">Add Row</button>
+          <br>
+      </div>
 
-
-
-      <button id="addRow" type="button" class="btn btn-info">Add Row</button>
-      <br>
-  </div>
-
-  <script type="text/javascript">
-      // add row
-      $("#addRow").click(function () {
-          var html = '';
-          html += '<div id="inputFormRow">';
-          html += '<div class="input-group mb-3">';
-          html += '<input type="text" name="title[]" class="form-control m-input" placeholder="Enter deaseas" autocomplete="off">';
-          html += '<div class="input-group-append">';
-
-          html += '</div>';
-          html += '</div>';
-          html += '<div id="inputFormRow1">';
-          html += '<div class="input-group mb-3">';
-          html += '<input type="text" name="title[]" class="form-control m-input" placeholder="Enter treatment" autocomplete="off">';
-          html += '<div class="input-group-append">';
-
-          html += '</div>';
-          html += '</div>';
-          html += '<button id="removeRow"  , id="removeRow1" type="button" class="btn btn-danger">Remove</button>';
-
-
-          $('#newRow').append(html);
-      });
-
-      // remove row
-      $(document).on('click', '#removeRow', '#removeRow1', function () {
-          $(this).closest('#inputFormRow').remove();
-          $(this).closest('#inputFormRow1').remove();
-      });
-
-  </script>
-</body>
-            </div>
-    
-          </div>
-    
-           
-          </div>
     
     
           <!-- Bio -->
@@ -301,6 +314,74 @@
   </div>
   
   
+  <script type="text/javascript">
+    // add row
+    $("#addRow1").click(function () {
+        var html = '';
+        html += '<div id="inputFormRow">';
+        html += '<div class="input-group mb-3">';
+        html += '<textarea type="text" name="title[]" class="form-input" rows="2" cols="55" class="form-control m-input" style="min-width: 50px; min-height:60px" ></textarea>';
+        html += '<div class="input-group-append">';
+
+     
+
+        html += '</div>';
+        html += '</div>';
+        html += '<div id="inputFormRow1">';
+        html += '<div class="input-group mb-3">';
+        html += '<textarea type="text" name="title[]" class="form-input" rows="2" cols="55" class="form-control m-input"  style="min-width: 50px; min-height:60px"></textarea>';
+        html += '<div class="input-group-append">';
+          
+       
+
+        html += '</div>';
+        html += '</div>';
+        html += '<button id="removeRow"  , id="removeRow1" type="button" class="btn btn-danger">Remove</button>';
+
+
+        $('#newRow1').append(html);
+    });
+
+    // remove row
+    $(document).on('click', '#removeRow', '#removeRow1', function () {
+        $(this).closest('#inputFormRow').remove();
+        $(this).closest('#inputFormRow1').remove();
+    });
+
+
+    $("#addRow2").click(function () {
+        var html = '';
+        html += '<div id="inputFormRow2">';
+        html += '<div class="input-group mb-3">';
+        html += '<textarea type="text" name="title[]" class="form-input" rows="2" cols="55" class="form-control m-input" style="min-width: 50px; min-height:60px" ></textarea>';
+        html += '<div class="input-group-append">';
+
+        
+
+        html += '</div>';
+        html += '</div>';
+        html += '<div id="inputFormRow3">';
+        html += '<div class="input-group mb-3">';
+        html += '<textarea type="text" name="title[]" class="form-input" rows="2" cols="55" class="form-control m-input"  style="min-width: 50px; min-height:60px"></textarea>';
+        html += '<div class="input-group-append">';
+          
+       
+
+        html += '</div>';
+        html += '</div>';
+        html += '<button id="removeRow2"  , id="removeRow3" type="button" class="btn btn-danger">Remove</button>';
+
+
+        $('#newRow2 ').append(html);
+    });
+
+    // remove row
+    $(document).on('click', '#removeRow2', '#removeRow3', function () {
+        $(this).closest('#inputFormRow2').remove();
+        $(this).closest('#inputFormRow3').remove();
+    });
+
+</script>
 
 
 </body>
