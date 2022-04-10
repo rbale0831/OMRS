@@ -6,7 +6,7 @@ const Joi = require('joi')
 
 
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, 'uploads/'),
+  destination: (req, file, cb) => cb(null, 'public/uploads/'),
   filename: (req, file, cb) => {
       const uniqueName = `${Date.now()}-${Math.round( Math.random() * 1e9 )}${path.extname(file.originalname)}`;
       cb(null, uniqueName)
@@ -31,9 +31,6 @@ module.exports.userBook_Appointment_get = (req, res) => {
 };
 module.exports.userRecords_get = (req, res) => {
   res.status(200).render("user/Records", { title: "Records" });
-};
-module.exports.userProfile_get = (req, res) => {
-  res.status(200).render("user/profile", { title: "" });
 };
 module.exports.userChangePassword_get = (req, res) => {
   res.status(200).render("user/changePassword", { title: "Change Password" });
