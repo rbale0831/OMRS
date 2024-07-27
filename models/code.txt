@@ -1,0 +1,124 @@
+const userSchema = new mongoose.Schema({
+    fname:{
+        type: String,
+        required: true,
+        lowercase: true,
+    },
+    lname:{
+        type: String,
+        required: true,
+        lowercase: true,
+    },
+    uname:{
+        type: String,
+        required: [true, "Enter your Username"],
+        unique: true,
+        lowercase: true,
+    },
+    dob:{
+        type: String,
+        required: true,
+    },
+    gender:{
+        type: String,
+        required: true,
+    },
+    add1:{
+        type: String,
+        required: true,
+    },
+    add2:{
+        type: String,
+    },
+    locality:{
+        type: String,
+        required: true,
+    },
+    district:{
+        type: String,
+        required: true,
+    },
+    state:{
+        type: String,
+        required: true,
+    },
+    pincode:{
+        type: String,
+        required: true,
+    },
+    occupation:{
+        type: String,
+        required: true,
+    },
+    pmn:{
+        type: Number,
+        required: true,
+    },
+    smn:{
+        type: Number,
+    },
+    email: {
+        type: String,
+        required: [true, "Enter Your Email Address"],
+        unique: true,
+        lowercase: true,
+        validate: [isEmail, "Enter a Valid Email Address"],
+    },
+    password: {
+        type: String,
+        required: [true, 'Enter your password'],
+        minlength: [8, 'Minimum password length 8 charaters'],
+        maxlength: [16, 'Maximum password length 16 charaters'],
+    },
+});
+
+
+ fname = req.body.fname
+  mname = req.body.mname
+  lname = req.body.lname
+  occupation = req.body.occ
+  age = req.body.age
+
+  console.log(fname, mname, lname, occupation, age)
+
+
+  {
+	"fname":"hunt",
+	"mname":"dunt",
+	"lname":"ant",
+	"occupation":"Tailor",
+	"age": "45",
+	"bg":"A+",
+	"gender":"male",
+	"dob":"81/11/2020",
+	"lan": ["English","hindi"],
+	"hadd":"BDD chawl 43 room 56",
+	"city":"mumbai",
+	"loc":"worli",
+	"state":"maharastra",
+	"pincode":"50002",
+	"cno":"4567894561"
+}
+
+
+// app.use(bodyParser.urlencoded({     
+//     // to support URL-encoded bodies
+//     extended: true
+//   })); 
+
+      console.log(fname)
+      console.log(lname)
+      console.log(mname)
+      console.log(dob)
+      console.log(age)
+      console.log(bloodGroup)
+      console.log(gender)
+      console.log(occupation)
+      console.log(cp)
+      console.log(language)
+      console.log(hadd)
+      console.log(state)
+      console.log(city)
+      console.log(locality)
+      console.log(pincode)
+      console.log(contact)

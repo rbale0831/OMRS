@@ -1,0 +1,321 @@
+<%- include('./partials/head.ejs') %>
+
+  <body>
+    <input type="checkbox" id="nav-toggle" />
+    <div class="sidebar">
+      <div class="sidebar-brand">
+        <h2><span class="lab la-magento"></span><span>Meridan</span></h2>
+      </div>
+      <div class="sidebar-menu">
+        <ul>
+          <li>
+            <input type="checkbox" id="sidebar-toggle_2" checked />
+            <a href="#"
+              ><label for="sidebar-toggle_2"
+                ><span class="las la-igloo"></span>
+                <span>Dashboard</span></label
+              ></a
+            >
+            <div class="sub-menu-2">
+              <ul>
+                <li>
+                  <a href="/user/dashboard"
+                    ><span class="las la-clipboard-check"></span>
+                    <span>My Profile</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/user/editProfile/<%= user._id  %>" class="active"
+                    ><span class="las la-clipboard-check"></span>
+                    <span>Edit Profile</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/user/changePassword/<%= user._id  %>" 
+                    ><span class="las la-clipboard-check"></span>
+                    <span>Change Password</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="/user/records"><span class="las la-file"></span> <span>Records</span></a>
+          </li>
+          <li>
+            <input type="checkbox" id="sidebar-toggle" />
+            <a href="#"><label for="sidebar-toggle"><span class="las la-clipboard-list"></span>
+                <span>Appointment</span></label></a>
+            <div class="sub-menu-1">
+              <ul>
+                <li>
+                  <a href="/user/book_appointment"><span class="las la-clipboard-check"></span>
+                    <span>Book Appointment</span></a>
+                </li>
+                <li>
+                  <a href="/user/appointment_history"><span class="las la-clipboard-check"></span>
+                    <span>Appointment History</span></a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-content">
+      <header>
+        <h2>
+          <label for="nav-toggle">
+            <span class="las la-bars"></span>
+          </label>
+          Dashboard
+        </h2>
+        <div class="search-wrapper">
+          <span class="las la-search">
+            <input type="search" placeholder="Search here" />
+          </span>
+        </div>
+        <div class="user-wrapper">
+          <img src="" width="40px" height="40px" alt="" />
+          <div>
+            <h4>
+              <%= user.fname  %>
+                <%= user.lname %>
+            </h4>
+            <small><%= user.uname %></small>
+          </div>
+          <div class="sub-menu">
+            <ul>
+              <li><span class="las la-user"></span><a href="/user/editProfile/<%= user._id  %>">Edit Profile</a></li>
+              <li><span class="las la-key"></span><a href="/user/changePassword/<%= user._id  %>">Change Password</a></li>
+              <li><span class="las la-sign-out-alt"></span><a href="/user/logout">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <section class="editProfile_form">
+        <form action="/user/editProfile/<%= user._id %>" 
+          method="PUT" 
+          enctype="multipart/form-data" 
+          id="login-form">
+          <div class="header_1">Profile</div>
+          <div class="st_bs1">
+            <div class="form-header1">General Information</div>
+            <div class="grid_1">
+              <div class="f1">
+                <span class="textDesign" for="false1">Policy no.</span>
+                <!-- <input class="input" type="text" class="input" name="false1" /> -->
+              </div>
+            </div>
+            <div class="grid_2">
+              <div class="r1">
+                <span class="textDesign" for="fname">First Name</span>
+                <input class="input_2" type="text" name="fname" id="fname" value="<%= user.fname %>" />
+              </div>
+              <div class="r2">
+                <span class="textDesign" for="mname">Middle Name</span>
+                <input class="input_2" type="text" name="mname" id="mname" value="<%= user.mname %>" />
+              </div>
+              <div class="r3">
+                <span class="textDesign" for="test3">Last Name</span>
+                <input class="input_2" type="text" name="lname" id="lname" value="<%= user.lname %>" />
+              </div>
+              <div class="r4">
+                <span class="textDesign" for="test4">Age</span>
+                <input class="input_2" type="text" name="age" id="age" value="<%= user.age %>" />
+              </div>
+              <div class="r5">
+                <span class="textDesign" for="test5">Blood Group</span>
+                <select class="input_2" type="text" name="bg" id="bg" >
+                  <option value="">Select your Blood Group</option>
+                  <option value="a+">A+</option>
+                  <option value="a-"> A-</option>
+                  <option value="b+ ">B+</option>
+                  <option value="b- ">B-</option>
+                  <option value="o+ ">O+</option>
+                  <option value="o- ">O-</option>
+                  <option value="ab+ ">AB+</option>
+                  <option value="ab- ">AB-</option>
+                </select>
+              </div>
+              <div class="r6">
+                <span class="textDesign" for="test6">Gender</span>
+                <select class="input_2" type="text" name="gender" id="gender" value="<%= user.gender %>" >
+                  <option value="">Select your Gender</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
+                    </select>
+              </div>
+            </div>
+            <div class="grid_3" enctype="multipart/form-data">
+              <div class="u1">
+                <span class="textDesign" for="dob">Date of Birth</span>
+                <input class="input_3" type="date" name="dob" id="dob" value="<%= user.dob %>" />
+              </div>
+               <div class="u2">
+                <span class="textDesign" for="occ">Occupation</span>
+                <input class="input_3" type="text" name="occ" id="occ" value="<%= user.occupation %>" />
+              </div>
+              <div class="u3">
+                <span class="textDesign" for="true1">Username</span>
+                <!-- <input class="input_3" type="text" name="true1" /> -->
+                <%= user.uname %>
+              </div>
+              <div class="u4">
+                <span class="textDesign" for="true1">Email</span>
+                <!-- <input class="input_3" type="email" name="true1" /> -->
+                <%= user.email %> 
+              </div>
+              <div class="u5" enctype="multipart/form-data">
+                <span class="textDesign" for="true1">Choose File</span>
+                <input class="input_3 c_css" type="file" name="cp" id="cp" />
+              </div>
+              <div class="u6">
+                <span class="textDesign" for="true1">Language</span>
+                <select class="input_3" type="text" name="lan" id="lan" value="<%= user.lan %>" >
+                  <option value="" selected>Select Languages</option>
+                  <option value="English">English</option>
+                  <option value="Hindi">Hindi</option>
+                  <option value="Marathi">Marathi</option>
+                </select>
+              </div>    
+            </div>
+          </div>
+          <div class="st_bs2">
+            <div class="form-header2">Address</div>
+            <div class="grid_4">
+              <div class="q1">
+                <span class="textDesign" for="true1">Home Address</span>
+                <input class="input_3" type="text" name="hadd" id="hadd" value="<%= user.hadd %>" />
+              </div>
+              <div class="q2">
+                <span class="textDesign" for="true1">Locality</span>
+                <input class="input_3" type="text" name="loc" id="loc" value="<%= user.loc %>" />
+              </div>
+              <div class="q3">
+                <span class="textDesign" for="true1">State</span>
+                <select class="input_3" type="text" name="state" id="state" value="<%= user.state %>">
+                  <option value="">Select Your State</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="West Bengal">West Bengal</option>
+                  </select>
+              </div>
+              <div class="q4">
+                <span class="textDesign" for="true1">City</span>
+                <input class="input_3" type="text" name="city"  id="city" value="<%= user.city %>" />
+              </div>
+              <div class="q5">
+                <span class="textDesign" for="true1">Pin Code</span>
+                <input class="input_3" type="number" name="pincode" id="pincode" value="<%= user.pincode %>" />
+              </div>
+              <div class="q6">
+                <span class="textDesign" for="true1">Contact no.</span>
+                <input class="input_3" type="number" name="con" id="cno" value="<%= user.cno %>" />
+              </div>
+            </div>
+          </div>
+          <button class="button" onclick="fn1()">Click me</button>
+        </form>
+      </section>
+    </div> 
+  </body>
+
+  <!-- <script>
+    // async function sendData(url, data) {}
+
+    async function fn1(url, data) {
+      event.preventDefault();
+
+      // const fname = document.getElementById("fname").value;
+      // const mname = document.getElementById('mname').value;
+      // const lname = document.getElementById('lname').value;
+      // const dob = document.getElementById('dob').value;
+      // const age = document.getElementById('age').value;
+      // const bg = document.getElementById('bg').value;
+      // const gender = document.getElementById('gender').value;
+      // const occupation = document.getElementById('occ').value;
+      // const cp = document.getElementById('cp').value;
+      // const lan = document.getElementById('lan').value;
+      // const hadd = document.getElementById('hadd').value;
+      // const state = document.getElementById('state').value;
+      // const city = document.getElementById('city').value;
+      // const loc = document.getElementById('loc').value;
+      // const pincode = document.getElementById('pincode').value;
+      // const cno= document.getElementById('cno').value;
+
+      const form = new FormData(document.getElementById('login-form'));
+
+      // const formData = new FormData();
+      const fileField = document.querySelector('input[type="file"]');
+
+      // formData.append('username', 'abc123');
+      form.append('', fileField.files[0]);
+      console.log(form)
+
+      /*fetch('https://example.com/profile/avatar', {
+      method: 'PUT',
+      body: formData
+      })
+      .then(response => response.json())
+      .then(result => {
+      console.log('Success:', result);
+      })
+      .catch(error => {
+      console.error('Error:', error);
+      });
+      
+      const formData  = new FormData();
+
+      for(const name in data) {
+        formData.append(name, data[name]);
+      }*/
+
+      // try{
+      //     const res = await fetch('/user/editProfile/<%= user._id  %>', {
+      //       method: 'PUT',
+      //       body: form,
+      //       headers: {/*'Content-Type': 'multipart/form-data',*/
+      //                 'Authorization': 'Bearer <%= token %>'
+      //       }
+      //     });
+      //     const data = await res.json()
+      //     console.log(data)
+      //     if (data.user) {
+      //       location.assign('/user/dashboard');
+      //     }
+      //   }
+      //   catch (err){
+      //     throw err
+      //   }
+      }
+  </script> -->
+  </html>

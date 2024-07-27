@@ -1,0 +1,210 @@
+<%- include('./partials/head.ejs') %>
+
+  <body>
+    <input type="checkbox" id="nav-toggle" />
+    <div class="sidebar">
+      <div class="sidebar-brand">
+        <h2><span class="lab la-magento"></span><span>Meridan</span></h2>
+      </div>
+      <div class="sidebar-menu">
+        <ul>
+          <li>
+            <input type="checkbox" id="sidebar-toggle_2" checked />
+            <a href="#"
+              ><label for="sidebar-toggle_2"
+                ><span class="las la-igloo"></span>
+                <span>Dashboard</span></label
+              ></a
+            >
+            <div class="sub-menu-2">
+              <ul>
+                <li>
+                  <a href="/user/dashboard" class="active"
+                    ><span class="las la-clipboard-check"></span>
+                    <span>My Profile</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/user/editProfile/<%= user._id  %>"
+                    ><span class="las la-clipboard-check"></span>
+                    <span>Edit Profile</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/user/changePassword/<%= user._id  %>" 
+                    ><span class="las la-clipboard-check"></span>
+                    <span>Change Password</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="/user/records"><span class="las la-file"></span> <span>Records</span></a>
+          </li>
+          <li>
+            <input type="checkbox" id="sidebar-toggle" />
+            <a href="#"><label for="sidebar-toggle"><span class="las la-clipboard-list"></span>
+                <span>Appointment</span></label></a>
+            <div class="sub-menu-1">
+              <ul>
+                <li>
+                  <a href="/user/book_appointment"><span class="las la-clipboard-check"></span>
+                    <span>Book Appointment</span></a>
+                </li>
+                <li>
+                  <a href="/user/appointment_history"><span class="las la-clipboard-check"></span>
+                    <span>Appointment History</span></a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-content">
+      <header>
+        <h2>
+          <label for="nav-toggle">
+            <span class="las la-bars"></span>
+          </label>
+          Dashboard
+        </h2>
+        <div class="search-wrapper">
+          <span class="las la-search">
+            <input type="search" placeholder="Search here" />
+          </span>
+        </div>
+        <div class="user-wrapper">
+          <img src="<%= user.cp %>" width="40px" height="40px" alt="" />
+          <div>
+            <h4>
+              <%= user.fname  %>
+                <%= user.lname %>
+            </h4>
+            <small><%= user.uname %></small>
+          </div>
+          <div class="sub-menu">
+            <ul>
+              <li><span class="las la-user"></span><a href="/user/editProfile/<%= user._id  %>">Edit Profile</a></li>
+              <li><span class="las la-key"></span><a href="/user/changePassword/<%= user._id  %>">Change Password</a></li>
+              <li><span class="las la-sign-out-alt"></span><a href="/user/logout">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <section>
+        <div class="container_Profile">
+
+          <!-- ===== ===== User Main-Profile ===== ===== -->
+          <section class="userProfile card">
+              <div class="profile">
+                  <figure><img src="<%= user.cp %>" alt="profile" width="250px" height="250px"></figure>
+              </div>
+          </section>
+  
+  
+          <!-- ===== ===== Work & Skills Section ===== ===== -->
+          <section class="work_skills card">
+  
+          </section>
+  
+          <!-- ===== ===== User Details Sections ===== ===== -->
+          <section class="userDetails card">
+              <div class="userName">
+                  <h1 class="name"><%= user.fname %> <%= user.lname %> </h1>
+                  <div class="map">
+                      <i class="ri-map-pin-fill ri"></i>
+                      <span class="city"><%= user.uname %></span>
+                  </div>
+              </div>
+  
+              <!-- <div class="rank">
+                  <h1 class="heading">Diagnosis</h1>
+                  <span>Any diagnosis</span>
+              </div> -->
+          </section>
+  
+  
+          <!-- ===== ===== Timeline & About Sections ===== ===== -->
+          <section class="timeline_about card">
+  
+              <div class="general_info">
+                  <h1 class="heading">General Information</h1>
+                  <ul>
+                      <li class="phone">
+                          <h1 class="label">Policy No.</h1>
+                          <span class="info">M11234567890</span>
+                      <li class="phone">
+                          <h1 class="label">First Name :</h1>
+                          <span class="info"><%= user.fname %></span>
+                      <li class="phone">
+                          <h1 class="label">Middle Name :</h1>
+                          <span class="info"><%= user.mname %></span>
+                      <li class="phone">
+                          <h1 class="label">Last Name :</h1>
+                          <span class="info"><%= user.lname %></span>
+                      <li class="phone">
+                          <h1 class="label">Date Of Birth :</h1>
+                          <span class="info"><%= user.dob %></span>
+                      </li>
+                      <li class="phone">
+                          <h1 class="label">Gender :</h1>
+                          <span class="info"><%= user.gender %></span>
+                      </li>
+                      <li class="phone">
+                          <h1 class="label">Blood Group :</h1>
+                          <span class="info"><%= user.bg %></span>
+                      </li>
+                      <li class="phone">
+                          <h1 class="label">Occupation :</h1>
+                          <span class="info"><%= user.occupation %></span>
+                      </li>
+                  </div>
+          </section>
+  
+          <section class="contact_info1 card">
+              <div class="contact_info">
+                  <h1 class="heading">Contact Information</h1>
+                  <ul>
+                      <li class="address">
+                          <h1 class="label">Street Address:</h1>
+                          <span class="info"><%= user.hadd %> <br> </span>
+                      </li>
+                      <li class="address">
+                          <h1 class="label">Locality:</h1>
+                          <span class="info"><%= user.loc %> <br> </span>
+                      </li>
+
+                      <li class="site">
+                          <h1 class="label">City:</h1>
+                          <span class="info"><%= user.city %></span>
+                      </li>
+                      <li class="site">
+
+                          <h1 class="label">State:</h1>
+                          <span class="info"><%= user.state %></span>
+                      </li>
+
+                      <li class="site">
+                          <h1 class="label">Pincode:</h1>
+                          <span class="info"><%= user.pincode %></span>
+                      </li>
+  
+                      <li class="email">
+                          <h1 class="label">E-mail:</h1>
+                          <span class="email"><%= user.email %></span>
+                      </li>
+
+                      <li class="phone">
+                        <h1 class="label">Phone:</h1>
+                        <span class="info"><%= user.cno %></span>
+                    </li>
+                  </ul>
+              </div>
+          </section>
+      </div>
+      </section>
+    </div>    
+  </body>
+</html>

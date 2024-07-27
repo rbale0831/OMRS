@@ -1,0 +1,420 @@
+
+<%- include('./partials/head.ejs') %> 
+
+<body>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <input type="checkbox" id="nav-toggle" />
+  <div class="sidebar">
+    <div class="sidebar-brand">
+      <h2><span class="lab la-magento"></span><span>Meridan</span></h2>
+    </div>
+    <div class="sidebar-menu">
+      <ul>
+        <li>
+          <input type="checkbox" id="sidebar-toggle_2" />
+          <a href="#"
+            ><label for="sidebar-toggle_2"
+              ><span class="las la-igloo"></span>
+              <span>Dashboard</span></label
+            ></a
+          >
+          <div class="sub-menu-2">
+            <ul>
+              <li>
+                <a href="/hospital/dashboard" 
+                  ><span class="las la-clipboard-check"></span>
+                  <span>My Profile</span></a
+                >
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <input type="checkbox" id="sidebar-toggle" checked />
+          <a href="#"
+            ><label for="sidebar-toggle"
+              ><span class="las la-clipboard-list"></span>
+              <span>Admission</span></label
+            ></a
+          >
+          <div class="sub-menu-1">
+            <ul>
+              <li>
+                <a href="/hospital/listPatientDetails" 
+                  ><span class="las la-clipboard-check"></span>
+                  <span>Lists of Patient details</details></span></a>
+                
+              </li>
+              <li>
+                <a href="/hospital/addPatientDetails" class="active"
+                  ><span class="las la-clipboard-check"></span>
+                  <span>Add Patient</details></span></a
+                >
+              </li>
+              <li>
+                <a href="/hospital/paitentVistedEntry"
+                  ><span class="las la-clipboard-check"></span>
+                  <span>Paitent Visted Entry</details></span></a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="main-content">
+    <header>
+      <h2>
+        <label for="nav-toggle">
+          <span class="las la-bars"></span>
+        </label>
+        Dashboard
+      </h2>
+      <div class="search-wrapper">
+        <span class="las la-search">
+          <input type="search" placeholder="Search here" />
+        </span>
+      </div>
+      <div class="user-wrapper">
+        <img src="./img/img_1.jpg" width="40px" height="40px" alt="" />
+        <div>
+          <h4><%= hospital.hosname %></h4>
+          <small><%= hospital.uname %></small>
+        </div>
+        <div class="sub-menu">
+          <ul>
+            <li><span class="las la-user"></span>My Profile</li>
+            <li><span class="las la-key"></span>Change Password</li>
+            <li><span class="las la-sign-out-alt"></span><a href="/hospital/logout">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <section class="addCard"> 
+
+      <form class="signup-form" action="/register" method="post">
+  
+        <!-- form header -->
+        <div class="form-header">
+          <h1>Addmision Form</h1>
+        </div>
+    
+        <!-- form body -->
+      
+    
+          <!-- Firstname and Lastname -->
+          <div class="horizontal-group">
+            <div class="form-group left">
+              <label  class="label-title">Policy Number</label>
+              <input type="text"  id="text" class="form-input" placeholder="enter your first name"
+                required="required" />
+            </div>
+            <div class="form-group right">
+              <label  class="label-title">first name</label>
+              <input type="text" id="text" class="form-input" placeholder="enter your last name" />
+            </div>
+    
+            <div class="form-group left">
+              <label  class="label-title">Last name</label>
+              <input type="text" id="text" class="form-input" placeholder="enter your last name" />
+            </div>
+         
+    
+          
+          <!-- Email -->
+          <div class="form-group left" >
+            <label class="label-title" > Email</label>
+            <input type="email" id="text" class="form-input" placeholder="enter your email" required="required" style="margin-left: 12px;">
+          </div>
+          
+          <div class="form-group">
+             <div class="form-group right">
+              <div >Weight</label>
+            <input type="email" id="text" class="form-input" placeholder="enter your email" required="required">
+          </div>
+          
+          </div>
+          
+    
+          <div class="form-group left" >
+            <label for="email" class="label-title">Height</label>
+            <input type="text" id="text" class="form-input" placeholder="enter your Height" required="required">
+          </div>
+        </div>
+          
+          <!-- Gender and Hobbies -->
+          <div class="horizontal-group">
+            <div class="form-group left">
+              <label class="label-title">Gender:</label>
+              <div class="input-group">
+                <label for="male"><input type="radio" name="gender" value="male" id="male"> Male</label>
+                <label for="female"><input type="radio" name="gender" value="female" id="female"> Female</label>
+              </div>
+            </div>
+            <div class="form-group right">
+              <label class="label-title">Habbits</label>
+              <div>
+                <label><input type="checkbox" value="Web">Tobacco</label>
+                <label><input type="checkbox" value="iOS">Alcohal</label>
+                <label><input type="checkbox" value="Andriod">Sigrate</label>
+                <label><input type="checkbox" value="Game">Drugs</label>
+              </div>
+            </div>
+          </div>
+    
+    
+    
+          <div class="horizontal-group">
+            <div class="form-group left">
+              <label for="firstname" class="label-title">Date of Addmision</label>
+              <input type="date" class="form-input" id="text" placeholder="enter your first name"
+                required="required" />
+            </div>
+            <div class="form-group right">
+              <label for="lastname" class="label-title">Discharge Date</label>
+              <input type="date" class="form-input" id="text" placeholder="enter your last name" />
+            </div>
+    
+           
+         
+    
+            <div class="form-group right">
+              <label for="lastname" class="label-title">Refer Dr. </label>
+              <input type="text" class="form-input"  placeholder="Refer Dr. name" id="text"/>
+            </div>
+    
+            <div class="form-group left">
+              <label for="lastname" class="label-title">Consultant </label>
+              <input type="text"   placeholder="Refer Dr. name" id="text" />
+            </div>
+
+             
+          <div class="form-group ">
+            <label for="choose-file"    class="label-title">Diagnostic</label>
+            <!-- <textarea class="form-input"  rows="2" cols="55"   ></textarea> -->
+            <select type="text" name="cars" id="text">
+              <option value="none">Selet an option </option>
+              <option value="volvo">unspecified essential hypertension</option>
+              <option value="volvo">type II diabetes mellitus without complications</option>
+              <option value="volvo">other and unspecified hyperlipidemia</option>
+              <option value="volvo">Lumbago</option>
+              <option value="volvo">routine general medical examination at a healthcare facility</option>
+              <option value="volvo">chronic airway obstruction, not elsewhere classified</option>
+              <option value="volvo">atrial fibrillation</option>
+              <option value="volvo">abdominal pain, unspecified site</option>
+              <option value="volvo">coronary artery atherosclerosis of unspecified type of vessel, native, or graft</option>
+              <option value="volvo">need for prophylactic vaccination and inoculation against unspecified single disease</option>
+              <option value="volvo">urinary tract infection, site not specified</option>
+              <option value="volvo">anxiety state, unspecified</option>
+              <option value="volvo">depressive disorder, not elsewhere classified</option>
+              <option value="volvo">esophageal reflux</option>
+              <option value="volvo">pain in limb</option>
+              <option value="volvo">chest pain, unspecified</option>
+              <option value="volvo">other malaise and fatigue</option>
+              <option value="volvo">acute upper respiratory infections of unknown site</option>
+              <option value="volvo">pneumonia, organism unspecified</option>
+              <option value="volvo">acute bronchitis</option>
+              <option value="volvo">pain in joint, lower leg</option>
+              <option value="volvo">congestive heart failure, unspecified</option>
+              <option value="volvo">unspecified hypothyroidism</option>
+ 
+              
+            </select>
+          </div>
+
+            <!-- <div class="horizontal-group">
+            <div class="form-group ">
+              <label for="lastname" class="label-title">Diagnostic </label>
+              <textarea class="form-input" rows="2" cols="55" style="  min-width: 50px;
+              min-height: 60px; " ></textarea>
+            </div> -->
+
+            <label for="lastname" class="label-title">Treatment Given </label>
+            <form method="post" action="">
+              <div class="row">
+                  <div class="col-lg-12">
+                      <div id="inputFormRow3">
+                          <div class="form-group">
+  
+                              <textarea type="text"  rows="2" cols="55" class="form-control m-input" placeholder="Enter title"
+                                  autocomplete="off"  style="min-width: 50px;
+                                  min-height: 60px"></textarea>
+                              <br>
+  
+                          </div>
+
+                          
+                      </div>
+                      <div id="inputFormRow2">
+                          <div class="input-group mb-3">
+                              <textarea type="text"  rows="2" cols="55" class="form-control m-input" placeholder="Enter description"
+                              autocomplete="off"  style="min-width: 50px;
+                              min-height: 60px"></textarea>    
+                              <br>
+  
+                          </div>
+                      </div>
+                      <div>
+  
+  
+                          <div id="newRow1"></div>
+  
+  
+                      </div>
+  
+                  </div>
+              </div>
+          </form>
+  
+  
+  
+          <button id="addRow1" type="button" class="btn btn-info">Add MORE TREATMENT </button>
+          <br>
+      </div>
+            
+    
+            
+              
+            <label for="lastname" class="label-title">Complaint </label>
+            <form method="post" action="">
+              <div class="row">
+                  <div class="col-lg-12">
+                      <div id="inputFormRow1">
+                          <div class="form-group">
+  
+                              <textarea type="text"  rows="2" cols="55" class="form-control m-input" placeholder="Enter title"
+                                  autocomplete="off"  style="min-width: 50px;
+                                  min-height: 60px"></textarea>
+                              <br>
+  
+                          </div>
+
+                          
+                      </div>
+                      <div id="inputFormRow">
+                          <div class="input-group mb-3">
+                              <textarea type="text"  rows="2" cols="55" class="form-control m-input" placeholder="Enter description"
+                              autocomplete="off"  style="min-width: 50px;
+                              min-height: 60px"></textarea>    
+                              <br>
+  
+                          </div>
+                      </div>
+                      <div>
+  
+  
+                          <div id="newRow2"></div>
+  
+  
+                      </div>
+  
+                  </div>
+              </div>
+          </form>
+  
+  
+  
+          <button id="addRow2" type="button" class="btn btn-info1">Add MORE COMPLAINTS</button>
+          <br>
+      </div>
+
+    
+    
+          <!-- Bio -->
+          <div class="horizontal-group">
+          <div class=  "form-group ">
+            <label for="choose-file" class="label-title">Bio</label>
+            <textarea class="form-input" rows="4" cols="55" style="height:auto"></textarea>
+          </div>
+          <div class="form-footer">
+            
+            <button type="submit" class="btn">ADD</button>
+          </div>
+        </div>
+      </div>
+    
+    
+        
+        <!-- form-footer -->
+       
+    
+      </form>
+    
+    
+    </section>
+  </div>
+  
+  
+  <script type="text/javascript">
+    // add row
+    $("#addRow1").click(function () {
+        var html = '';
+        html += '<div id="inputFormRow">';
+        html += '<div class="input-group mb-3">';
+        html += '<textarea type="text" name="title[]" class="form-input" rows="2" cols="55" class="form-control m-input" style="min-width: 50px; min-height:60px" ></textarea>';
+        html += '<div class="input-group-append">';
+
+     
+
+        html += '</div>';
+        html += '</div>';
+        html += '<div id="inputFormRow1">';
+        html += '<div class="input-group mb-3">';
+        html += '<textarea type="text" name="title[]" class="form-input" rows="2" cols="55" class="form-control m-input"  style="min-width: 50px; min-height:60px"></textarea>';
+        html += '<div class="input-group-append">';
+          
+       
+
+        html += '</div>';
+        html += '</div>';
+        html += '<button style="color:red" id="removeRow"  , id="removeRow1" type="button" class="btn btn-danger">Remove</button>';
+
+
+        $('#newRow1').append(html);
+    });
+
+    // remove row
+    $(document).on('click', '#removeRow', '#removeRow1', function () {
+        $(this).closest('#inputFormRow').remove();
+        $(this).closest('#inputFormRow1').remove();
+    });
+
+
+    $("#addRow2").click(function () {
+        var html = '';
+        html += '<div id="inputFormRow2">';
+        html += '<div class="input-group mb-3">';
+        html += '<textarea type="text" name="title[]" class="form-input" rows="2" cols="55" class="form-control m-input" style="min-width: 50px; min-height:60px" ></textarea>';
+        html += '<div class="input-group-append">';
+
+        
+
+        html += '</div>';
+        html += '</div>';
+        html += '<div id="inputFormRow3">';
+        html += '<div class="input-group mb-3">';
+        html += '<textarea type="text" name="title[]" class="form-input" rows="2" cols="55" class="form-control m-input"  style="min-width: 50px; min-height:60px"></textarea>';
+        html += '<div class="input-group-append">';
+          
+       
+
+        html += '</div>';
+        html += '</div>';
+        html += '<button style="color:red" id="removeRow2"  , id="removeRow3" type="button" class="btn btn-danger">Remove</button>';
+
+
+        $('#newRow2 ').append(html);
+    });
+
+    // remove row
+    $(document).on('click', '#removeRow2', '#removeRow3', function () {
+        $(this).closest('#inputFormRow2').remove();
+        $(this).closest('#inputFormRow3').remove();
+    });
+
+</script>
+
+
+</body>
+</html>
+

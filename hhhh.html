@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./public/user/css/main.css" />
+    <title>Meridan |</title>
+  </head>
+
+  <body>
+    <input type="checkbox" id="nav-toggle" />
+    <div class="sidebar">
+      <div class="sidebar-brand">
+        <h2><span class="lab la-magento"></span><span>Meridan</span></h2>
+      </div>
+      <div class="sidebar-menu">
+        <ul>
+          <li>
+            <a href="#"
+              ><span class="las la-igloo"></span> <span>Dashboard</span></a
+            >
+            <div class="sub-menu-1">
+              <ul>
+                <li>
+                  <a href="/user/dashboard" class="active"
+                    ><span class="las la-clipboard-check"></span>
+                    <span>My Profile</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="/user/records"
+              ><span class="las la-file"></span> <span>Records</span></a
+            >
+          </li>
+          <li>
+            <input type="checkbox" id="sidebar-toggle" />
+            <a href="#"
+              ><label for="sidebar-toggle"
+                ><span class="las la-clipboard-list"></span>
+                <span>Appointment</span></label
+              ></a
+            >
+            <div class="sub-menu-1">
+              <ul>
+                <li>
+                  <a href="/user/book_appointment"
+                    ><span class="las la-clipboard-check"></span>
+                    <span>Book Appointment</span></a
+                  >
+                </li>
+                <li>
+                  <a href="/user/appointment_history"
+                    ><span class="las la-clipboard-check"></span>
+                    <span>Appointment History</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-content">
+      <header>
+        <h2>
+          <label for="nav-toggle">
+            <span class="las la-bars"></span>
+          </label>
+          Dashboard
+        </h2>
+        <div class="search-wrapper">
+          <span class="las la-search">
+            <input type="search" placeholder="Search here" />
+          </span>
+        </div>
+        <div class="user-wrapper">
+          <img src="./img/img_1.jpg" width="40px" height="40px" alt="" />
+          <div>
+            <h4>kkk</h4>
+            <small>kkkk</small>
+          </div>
+          <div class="sub-menu">
+            <ul>
+              <li>
+                <span class="las la-user"></span
+                ><a href="/user/editProfile">Edit Profile</a>
+              </li>
+              <li><span class="las la-key"></span>Change Password</li>
+              <li>
+                <span class="las la-sign-out-alt"></span
+                ><a href="/user/logout">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <form class="form1" method="POST">
+        <div class="header">Profile</div>
+        <div class="form-header1">General Information</div>
+        <div class="row">
+          <div class="col1">
+            <div class="inputbox">
+              <span class="details">Policy no.</span>
+              <!-- <input id="policynum" class="input" type="text"> -->
+            </div>
+            <div class="inputbox">
+              <span class="details">First Name</span>
+              <span> kkkk </span>
+              <!-- <input id="fname" class="input" type="text"> -->
+            </div>
+            <div class="inputbox">
+              <span class="details">Middle Name</span>
+              <input id="mname" class="input" type="text" />
+            </div>
+            <div class="inputbox">
+              <span class="details">Last Name</span>
+              <p>kkkkk</p>
+              <!-- <input id="lname" class="input" type="text"> -->
+            </div>
+            <div class="inputbox">
+              <span class="details">Username</span>
+              <p>kkkk</p>
+              <!-- <input id="uname" class="input" type="text"> -->
+            </div>
+            <div class="inputbox">
+              <span class="details">Email</span>
+              <p>kkkkkk</p>
+              <!-- <input id="email" class="input" type="email"> -->
+            </div>
+            <div class="inputbox">
+              <span class="details">Occupation</span>
+              <input id="occupation" class="input" type="text" />
+            </div>
+          </div>
+
+          <div class="col2">
+            <div class="inputbox">
+              <span class="details">Choose Photo</span>
+              <input class="input" type="file" />
+            </div>
+
+            <div class="inputbox">
+              <span class="details">Age</span>
+              <input id="age" class="input" type="text" />
+            </div>
+
+            <div class="inputbox">
+              <span class="details" value="" disabled selected
+                >Blood Group</span
+              >
+              <select class="input" id="bloodGroup">
+                <option value=""></option>
+                <option value="a+">A+</option>
+                <option value="a-">A-</option>
+                <option value="b+ ">B+</option>
+                <option value="b- ">B-</option>
+                <option value="o+ ">O+</option>
+                <option value="o- ">O-</option>
+                <option value="ab+ ">AB+</option>
+                <option value="ab- ">AB-</option>
+              </select>
+            </div>
+            <div class="inputbox">
+              <span class="details" value="" disabled selected>Gender</span>
+              <select class="input" id="gender">
+                <option value=""></option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="inputbox">
+              <span class="details">Date Of Birth</span>
+              <input id="dob" class="input" type="date" />
+            </div>
+            <div class="inputbox">
+              <span class="details">Language</span>
+              <input id="language" class="input" type="text" />
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <form class="form2" action="">
+        <div class="form-header2">Address</div>
+        <div class="row">
+          <div class="col1">
+            <div class="inputbox">
+              <span class="details">Home Address</span>
+              <input id="address" class="input" type="text" />
+            </div>
+
+            <div class="inputbox">
+              <span class="details">Locality</span>
+              <input id="localilty" class="input" type="text" />
+            </div>
+
+            <div class="inputbox">
+              <span class="details" value="" disabled selected>State</span>
+              <select class="input" id="state">
+                <option value=""></option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Andaman and Nicobar">Andaman and Nicobar</option>
+                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                <option value="Assam">Assam</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Chandigarh">Chandigarh</option>
+                <option value="Chhattisgarh">Chhattisgarh</option>
+                <option value="Daman and Diu">Daman and Diu</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Puducherry">Puducherry</option>
+                <option value="Lakshadweep">Lakshadweep</option>
+                <option value="Goa">Goa</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Manipur">Manipur</option>
+                <option value="Meghalaya">Meghalaya</option>
+                <option value="Mizoram">Mizoram</option>
+                <option value="Nagaland">Nagaland</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Sikkim">Sikkim</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Tripura">Tripura</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Uttarakhand">Uttarakhand</option>
+                <option value="West Bengal">West Bengal</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col2">
+            <div class="inputbox">
+              <span class="details">City </span>
+              <input id="city" class="input" type="text" />
+            </div>
+            <div class="inputbox">
+              <span class="details">Pin Code</span>
+              <input id="pincode" class="input" type="text" />
+            </div>
+            <div class="inputbox">
+              <span class="details">Contact no.</span>
+              <input id="contact" class="input" type="number" />
+            </div>
+          </div>
+        </div>
+        <!-- <div class="button">
+          <input class="btn" type="submit" value="Submit">
+
+        </div> -->
+        <button class="button" onclick="fn1()">Click me</button>
+      </form>
+    </div>
+  </body>
+
+  <script>
+    async function fn1() {
+      event.preventDefault();
+      const policynum = document.getElementById("policynum").value;
+      const age = document.getElementById("age").value;
+      const fname = document.getElementById("fname").value;
+      const lname = document.getElementById("lname").value;
+      const uname = document.getElementById("uname").value;
+      const email = document.getElementById("email").value;
+      const bloodGroup = document.getElementById("bloodGroup").value;
+      const state = document.getElementById("state").value;
+      const city = document.getElementById("city").value;
+      const pincode = document.getElementById("pincode").value;
+      const contact = document.getElementById("contact").value;
+      const mname = document.getElementById("mname").value;
+      const gender = document.getElementById("gender").value;
+      //const bloodGroup = document.getElementById('bloodGroup').value;
+      console.log(policynum);
+
+      console.log(fname);
+      console.log(lname);
+      console.log(mname);
+      console.log(uname);
+      console.log(email);
+      console.log(bloodGroup);
+      console.log(city);
+      console.log(pincode);
+      console.log(state);
+      console.log(contact);
+      console.log(age);
+
+      /*
+      try {
+        const res = await fetch('/user/dashboard', {
+          method: 'POST',
+          body: JSON.stringify({ fname, lname, email }),
+          headers: { 'Content-Type': 'application/json' }
+        });
+
+        const data = await res.json();
+      console.log(data)
+     
+      }
+
+
+      catch (err) {
+        console.log(err)
+      }
+      
+
+*/
+    }
+  </script>
+</html>
